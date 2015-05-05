@@ -1,3 +1,7 @@
+.test {
+  position: relative;
+}
+
 .fade {
   opacity: 0;
   -webkit-transition: opacity 0.15s linear;
@@ -1352,7 +1356,8 @@ a.thumbnail.active {
 }
 
 .panel-body {
-  padding: 15px;
+  padding: 10px;
+  font-size: 14px;
 }
 
 .panel-body:before, .panel-body:after {
@@ -3525,7 +3530,6 @@ input[type=text]:focus {
 }
 
 .outer-container .survey-innerContainer {
-  max-width: 1200px;
   min-width: 950px;
   margin: auto;
   position: absolute;
@@ -3540,7 +3544,7 @@ input[type=text]:focus {
 .outer-container .survey-innerContainer .survey {
   width: 60%;
   float: left;
-  padding: 0px 40px 0px 0px;
+  padding: 0px 10px 0px 0px;
   position: relative;
   text-align: center;
   height: 100%;
@@ -3571,7 +3575,7 @@ input[type=text]:focus {
   overflow-y: scroll;
   text-align: left;
   position: absolute;
-  right: 40px;
+  right: 10px;
   left: 0;
   bottom: 55px;
   top: 120px;
@@ -3579,7 +3583,7 @@ input[type=text]:focus {
 }
 
 .outer-container .survey-innerContainer .survey__list .survey-collapse {
-  height: 100px;
+  height: auto;
   width: 100%;
   border: solid 2px #acacac;
   overflow: hidden;
@@ -3607,8 +3611,7 @@ input[type=text]:focus {
 }
 
 .outer-container .survey-innerContainer .survey__list .survey-collapse h3 {
-  margin: 0;
-  padding: 15px 0 0 20px;
+  margin: 5px 20px 15px;
 }
 
 .outer-container .survey-innerContainer .survey__list .survey-collapse span:hover {
@@ -3720,6 +3723,7 @@ input[type=text]:focus {
   padding: 0 0 0 20px;
   display: inline-block;
   margin-right: 20px;
+  font-size: 16px;
 }
 
 .outer-container .survey-innerContainer .survey__list .survey-collapse .question input {
@@ -3767,7 +3771,7 @@ input[type=text]:focus {
   height: 20px;
   background-repeat: no-repeat;
   left: 4px;
-  top: 1px;
+  top: -2px;
 }
 
 .outer-container .survey-innerContainer .survey__list .survey-collapse .question.draggable h3:hover {
@@ -3780,7 +3784,7 @@ input[type=text]:focus {
   height: auto;
   position: absolute;
   background: #fff;
-  right: 40px;
+  right: 10px;
   left: 0;
   z-index: -1;
   will-change: opacity;

@@ -50,7 +50,10 @@ module.exports = function (grunt) {
             },
             vendors : {
                 src : [
-                    '<%= src.bower %>/jquery/dist/jquery.js',
+                    '<%= src.bower %>/bootstrap-sass/assets/javascripts/bootstrap/tab.js',
+                    '<%= src.bower %>/bootstrap-sass/assets/javascripts/bootstrap/tooltip.js',
+                    '<%= src.bower %>/bootstrap-sass/assets/javascripts/bootstrap/collapse.js',
+                    '<%= src.bower %>/bootstrap-sass/assets/javascripts/bootstrap/transition.js',
                 ],
                 dest : '<%= app.js %>/vendors.js',
                 nonull : true
@@ -343,9 +346,9 @@ module.exports = function (grunt) {
 
     grunt.registerTask('js_build', [
         // 'ngAnnotate', 
-        'concat:app',
+        'concat',
         // 'modernizr',
-        'uglify:site',
+        'uglify',
         // 'clean',
         'notify:js'
     ]);
@@ -367,6 +370,7 @@ module.exports = function (grunt) {
         // 'concurrent:concurrentTwo',
         // 'modernizr',
         // 'clean',
+        'sass',
         'notify:all'
     ]);
 
