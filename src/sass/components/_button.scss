@@ -1,0 +1,29 @@
+.btn {
+  -webkit-transition: background-color 0.3s ease;
+  -o-transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease;
+  background-color: #02b1e8;
+  border-radius: 0;
+  border: 0;
+  color: #fff;
+  padding: 0 13px;
+  height: 35px;
+  font-size: 18px;
+  font-weight: normal;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  &:hover {
+    background-color: #028fe7;
+  }
+  &:focus {
+    outline: 0;
+  }
+}

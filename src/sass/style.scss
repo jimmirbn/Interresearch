@@ -1,3 +1,24 @@
+@import "utils/reset";
 @import "utils/vendors";
+@import "utils/helpers";
+
+@import "base/fonts";
 @import "base/base";
-@import "css/main"; // OLD FUCK UP!
+
+@import "components/button";
+@import "components/checkbox";
+@import "components/radio";
+@import "components/select";
+@import "components/nav";
+@import "components/modal";
+@import "components/slide-nav";
+@import "components/input-text";
+@import "components/tab";
+@import "components/footer";
+@import "components/slide-menu-tree";
+@import "components/panels";
+@import "components/question-types";
+@import "components/dashboard";
+@import "components/ie";
+
+@import "layout/survey";

@@ -1,0 +1,389 @@
+
+
+.outer-container .survey-innerContainer {
+  // max-width: 1200px;
+  min-width: 950px;
+  margin: auto;
+  position: absolute;
+  top: 70px;
+  left: 0px;
+  right: 0px;
+  bottom: 10px;
+  padding: 10px;
+  will-change: left;
+  .survey {
+    width: 60%;
+    float: left;
+    padding: 0px 10px 0px 0px;
+    position: relative;
+    text-align: center;
+    height: 100%;
+    .page-break {
+      position: relative;
+      padding: 0px 15px 0px 35px;
+      height: 35px;
+      span {
+        background: url(../img/page-break.png);
+        position: absolute;
+        width: 26px;
+        height: 27px;
+        left: 5px;
+        top: 7px;
+        background-size: 21px;
+        background-repeat: no-repeat;
+      }
+    }
+  }
+  .survey__title {
+    text-align: left;
+  }
+  .survey__list {
+    overflow-y: scroll;
+    text-align: left;
+    position: absolute;
+    right: 10px;
+    left: 0;
+    bottom: 55px;
+    top: 120px;
+    z-index: 9;
+    .survey-collapse {
+      height: auto;
+      width: 100%;
+      border: solid 2px #acacac;
+      overflow: hidden;
+      margin-bottom: 25px;
+      position: relative;
+      p {
+        margin: 0;
+        padding: 3px;
+        color: #02b1e8;
+      }
+      .dots {
+        position: absolute;
+        left: 50%;
+        -webkit-transform: translate(-50%, 5px);
+        -ms-transform: translate(-50%, 5px);
+        -o-transform: translate(-50%, 5px);
+        transform: translate(-50%, 5px);
+        &:hover {
+          cursor: move;
+        }
+      }
+      h3 {
+        margin: 5px 20px 15px;
+      }
+      span {
+        &:hover {
+          cursor: pointer;
+        }
+        &:active {
+          background-color: #0096d7;
+          color: #fff;
+        }
+      }
+      .deleteQ {
+        color: #0096d7;
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        border: solid 1px #0096d7;
+        height: 25px;
+        width: 25px;
+        background: url("../img/trash.png") no-repeat 1px 1px;
+        background-size: 21px;
+        &:before {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          -webkit-transform: translate(-50%, -50%);
+          -moz-transform: translate(-50%, -50%);
+          -ms-transform: translate(-50%, -50%);
+          -o-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+          font-size: 20px;
+        }
+        &:active {
+          background: url("../img/trash_white.png") #0096d7 no-repeat 1px 1px;
+          background-size: 21px;
+        }
+      }
+      .duplicateQ {
+        color: #0096d7;
+        position: absolute;
+        top: 5px;
+        right: 35px;
+        border: solid 1px #0096d7;
+        height: 25px;
+        width: 25px;
+        background: url("../img/duplicate.png") no-repeat 1px 1px;
+        background-size: 21px;
+        &:before {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          -webkit-transform: translate(-50%, -50%);
+          -moz-transform: translate(-50%, -50%);
+          -ms-transform: translate(-50%, -50%);
+          -o-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+          font-size: 20px;
+        }
+        &:active {
+          background: url("../img/duplicate_white.png") #0096d7 no-repeat 1px 1px;
+          background-size: 21px;
+        }
+      }
+      .resizeQ {
+        position: absolute;
+        top: 5px;
+        right: 65px;
+        border: solid 1px #0096d7;
+        height: 25px;
+        width: 25px;
+        background: url("../img/expand_1.png") no-repeat 1px 1px;
+        background-size: 21px;
+        &:active {
+          background: url("../img/expand_1_white.png") #0096d7 no-repeat 1px 1px;
+          background-size: 21px;
+        }
+        &.min {
+          background: url("../img/minimize_1.png") no-repeat 1px 1px;
+          background-size: 21px;
+          &:active {
+            background: url("../img/minimize_1_white.png") #0096d7 no-repeat 1px 1px;
+            background-size: 21px;
+          }
+        }
+      }
+      &.collapsed {
+        height: auto;
+        .question-nr {
+          margin-bottom: 20px;
+        }
+      }
+      .question {
+        margin-bottom: 20px;
+        h3 {
+          padding: 0 0 0 20px;
+          display: inline-block;
+          margin-right: 20px;
+          font-size: 16px;
+        }
+        input {
+          display: inline-block;
+          width: 60%;
+        }
+        .deleteQ-btn {
+          color: #acacac;
+        }
+        &.dimmed {
+          h3 {
+            color: #efefef;
+          }
+          input {
+            border-color: #efefef;
+            &::-webkit-input-placeholder, &:-moz-placeholder, &::-moz-placeholder, &:-ms-input-placeholder {
+              color: #efefef;
+            }
+          }
+        }
+        &.draggable h3 {
+          position: relative;
+          &:before {
+            position: absolute;
+            content: '';
+            background-image: url(../img/dots_turned.png);
+            width: 8px;
+            height: 20px;
+            background-repeat: no-repeat;
+            left: 4px;
+            top: -2px;
+          }
+          &:hover {
+            cursor: move;
+          }
+        }
+      }
+    }
+  }
+  .survey .question-types {
+    opacity: 0;
+    filter: alpha(opacity = 0);
+    height: auto;
+    position: absolute;
+    background: #fff;
+    right: 10px;
+    left: 0;
+    z-index: -1;
+    will-change: opacity;
+    border: solid 2px #acacac;
+    -webkit-transition: opacity 550ms ease;
+    -o-transition: opacity 550ms ease;
+    transition: opacity 550ms ease;
+    -webkit-box-shadow: 0px 0px 3px 3px rgba(50, 50, 50, 0.35);
+    -moz-box-shadow: 0px 0px 3px 3px rgba(50, 50, 50, 0.35);
+    box-shadow: 0px 0px 3px 3px rgba(50, 50, 50, 0.35);
+    &.active {
+      opacity: 1;
+      filter: alpha(opacity = 100);
+      z-index: 10;
+    }
+    .row {
+      margin: 0;
+    }
+    .col {
+      padding: 0;
+    }
+    .btn {
+      width: 100%;
+      font-size: 0.875rem;
+      height: 35px;
+      padding: 10px 0 8px;
+      span {
+        display: inline-block;
+      }
+    }
+    .thumbnail {
+      margin-bottom: 0px;
+      border: 0;
+      padding: 1px;
+      &.oneAnswerBtn {
+        padding: 2px 1px 1px 2px;
+        .btn span {
+          background: url(../img/radio.png);
+          position: absolute;
+          width: 16px;
+          height: 16px;
+          left: 10px;
+          top: 9px;
+          background-size: 16px;
+          background-repeat: no-repeat;
+        }
+      }
+      &.sliderBtn {
+        padding: 2px 1px 1px 1px;
+        .btn span {
+          background: url(../img/slider.png);
+          position: absolute;
+          width: 30px;
+          height: 15px;
+          left: 10px;
+          top: 13px;
+          background-size: 30px;
+          background-repeat: no-repeat;
+        }
+      }
+      &.freeTextBtn {
+        padding: 2px 2px 1px 1px;
+        .btn span {
+          background: url(../img/freeText.png);
+          position: absolute;
+          width: 30px;
+          height: 20px;
+          left: 10px;
+          top: 10px;
+          background-size: 30px;
+          background-repeat: no-repeat;
+        }
+      }
+      &.multipleBtn {
+        padding: 1px 1px 1px 2px;
+        .btn span {
+          background: url(../img/multiple.png);
+          position: absolute;
+          width: 18px;
+          height: 18px;
+          left: 10px;
+          top: 8px;
+          background-size: 18px;
+          background-repeat: no-repeat;
+        }
+      }
+      &.frequencyBtn .btn span {
+        background: url(../img/scale.png);
+        position: absolute;
+        width: 40px;
+        height: 18px;
+        left: 10px;
+        top: 8px;
+        background-size: 40px;
+        background-repeat: no-repeat;
+      }
+      &.descriptionBtn {
+        padding: 1px 2px 1px 1px;
+        .btn span {
+          background: url(../img/description.png);
+          position: absolute;
+          width: 35px;
+          height: 20px;
+          left: 10px;
+          top: 7px;
+          background-size: 35px;
+          background-repeat: no-repeat;
+        }
+      }
+      &.numericBtn {
+        padding: 1px 1px 2px 2px;
+        .btn span {
+          position: absolute;
+          left: 10px;
+        }
+      }
+      &.formBtn {
+        padding: 1px 1px 2px 1px;
+        .btn span {
+          background: url(../img/form.png);
+          position: absolute;
+          width: 20px;
+          height: 22px;
+          left: 15px;
+          top: 6px;
+          background-size: 20px;
+          background-repeat: no-repeat;
+        }
+      }
+      &.fileBtn {
+        padding: 1px 2px 2px 1px;
+        .btn span {
+          background: url(../img/file.png);
+          position: absolute;
+          width: 18px;
+          height: 22px;
+          left: 15px;
+          top: 6px;
+          background-size: 18px;
+          background-repeat: no-repeat;
+        }
+      }
+    }
+  }
+  .survey-settings {
+    width: 40%;
+    border-top: 0;
+    float: left;
+    padding-top: 0px;
+    position: relative;
+    height: 100%;
+  }
+  .survey-settings__heading {
+    height: 35px;
+    line-height: 35px;
+    border: solid 2px #acacac;
+    text-align: center;
+    p {
+      margin: 0;
+    }
+  }
+}
+
+@media (max-width: 1223px) {
+  .outer-container .survey-innerContainer .survey .question-types .btn span {
+    display: none;
+  }
+}
+
+.survey-language {
+  float: right;
+  width: 110px;
+  position: relative;
+}

@@ -1,0 +1,111 @@
+
+
+
+
+.lt-ie9 .modal-dialog, .ie9 .modal-dialog {
+  width: 600px;
+  margin: auto;
+}
+
+.lt-ie9 .survey-language, .ie9 .survey-language {
+  background: transparent;
+}
+
+.lt-ie9 .survey-language select, .ie9 .survey-language select {
+  padding: 6px 0 6px 9px !important;
+}
+
+.lt-ie9 .survey-language {
+  &:before, &:after {
+    background: transparent;
+    border: 0;
+  }
+}
+
+.ie9 .survey-language {
+  &:before, &:after {
+    background: transparent;
+    border: 0;
+  }
+}
+
+.lt-ie9 select, .ie9 select {
+  background: transparent;
+}
+
+.lt-ie9 .lang-dropdown select, .ie9 .lang-dropdown select {
+  height: auto !important;
+  padding: 6px 0 6px 9px !important;
+}
+
+.lt-ie9 .lang-dropdown:after, .ie9 .lang-dropdown:after {
+  display: none;
+}
+
+.lt-ie9 .q-folder select, .ie9 .q-folder select {
+  height: auto;
+  padding: 6px 0 6px 9px;
+}
+
+.lt-ie9 .q-folder:before, .ie9 .q-folder:before {
+  display: none;
+}
+
+.lt-ie9 .q-template .checkbox, .ie9 .q-template .checkbox {
+  left: 0 !important;
+}
+
+.lt-ie9 .slide-menu-btn, .ie9 .slide-menu-btn {
+  display: inline-block;
+  background-color: transparent !important;
+}
+
+.lt-ie9 .slide-menu-btn img, .ie9 .slide-menu-btn img {
+  display: inline-block !important;
+  width: 25px;
+}
+
+.lt-ie9 {
+  .q-types {
+    background-position-x: 135px;
+    background-position-y: center;
+    padding-top: 1px !important;
+    &:after {
+      bottom: 2px;
+      top: -6px;
+    }
+    &.active {
+      background: url("../img/chevron_blue.png") no-repeat;
+      background-position-x: 135px;
+      background-position-y: center;
+    }
+  }
+  .deleteQ:before {
+    -webkit-transform: none;
+    -moz-transform: none;
+    -ms-transform: none;
+    -o-transform: none;
+    transform: none;
+    left: 3px !important;
+    top: 2px !important;
+  }
+  .dublicateQ:before {
+    -webkit-transform: none;
+    -moz-transform: none;
+    -ms-transform: none;
+    -o-transform: none;
+    transform: none;
+    left: 1px !important;
+    top: 2px !important;
+  }
+  .survey-collapse img {
+    top: 5px;
+  }
+  .question-types .btn {
+    padding-top: 7px !important;
+  }
+}
+
+.ie-active {
+  left: -5px;
+}

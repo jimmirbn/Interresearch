@@ -1,0 +1,82 @@
+.dashboard-container {
+  min-width: 950px;
+  position: absolute;
+  top: 70px;
+  bottom: 0;
+  left: 50px;
+  right: 0;
+  padding: 20px;
+  .item-overview-header {
+    display: block;
+    width: 100%;
+    margin-bottom: 50px;
+    ul {
+      margin: 0;
+      list-style: none;
+      li {
+        float: left;
+        width: 13%;
+        padding-left: 10px;
+        color: #888888;
+        &.name {
+          width: 35%;
+        }
+        &.settlement {
+          width: 10%;
+          padding-left: 0;
+          text-align: center;
+        }
+        &.respondStatus {
+          width: 16%;
+        }
+      }
+    }
+  }
+  .survey-item {
+    display: block;
+    width: 100%;
+    background: #ddd;
+    height: 50px;
+    margin-bottom: 20px;
+    box-shadow: inset 0px -1px 1px rgba(0, 0, 0, 0.25), 0px 1px 0px rgba(0, 0, 0, 0.15);
+    ul {
+      margin: 0;
+      list-style: none;
+      height: 100%;
+      li {
+        position: relative;
+        float: left;
+        width: 13%;
+        padding-left: 10px;
+        padding-top: 16px;
+        height: 100%;
+        white-space: nowrap;
+        &.name {
+          width: 35%;
+        }
+        &.settlement {
+          width: 10%;
+          padding-left: 0;
+          text-align: center;
+        }
+        &.respondStatus {
+          width: 16%;
+        }
+        &.startEndDate {
+          padding-top: 0;
+          span {
+            display: block;
+            width: 100%;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+          }
+        }
+        p {
+          margin: 0;
+          display: inline;
+        }
+      }
+    }
+  }
+}

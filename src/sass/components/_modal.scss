@@ -1,0 +1,100 @@
+.modal {
+  display: block;
+  .modal-header {
+    text-align: center;
+    padding: 10px 10px 0 10px;
+    min-height: 0;
+    border: 0;
+    height: 50px;
+    img {
+      float: left;
+    }
+    .close {
+      -webkit-transition: opacity 300ms ease;
+      -o-transition: opacity 300ms ease;
+      transition: opacity 300ms ease;
+    }
+    h4 {
+      font-family: "Corisande-light";
+      font-size: 20px;
+      font-weight: normal;
+    }
+  }
+  .modal-body {
+    padding: 35px 40px 15px;
+    p {
+      margin-top: 5px;
+      margin-bottom: 5px;
+      font-weight: normal;
+      font-size: 18px;
+    }
+    .q-title {
+      margin-bottom: 35px;
+    }
+    .q-folder {
+      margin-bottom: 35px;
+      select {
+        color: #02b1e8;
+      }
+    }
+    .q-template__list {
+      position: relative;
+      top: -1px;
+      padding: 5px 10px 10px 10px;
+      border: solid 1px #acacac;
+      height: 100px;
+      overflow-y: scroll;
+      width: 100%;
+      p {
+        margin-top: 0px;
+        font-family: "Corisande-light";
+        font-weight: normal;
+        font-size: 16px;
+      }
+    }
+    .q-template {
+      .checkbox {
+        float: left;
+        position: relative;
+        top: 6px;
+        left: -22px;
+        label {
+          font-size: 18px;
+        }
+        input:focus {
+          outline: none;
+        }
+      }
+      .lang-dropdown {
+        float: right;
+        width: 90px;
+        border-color: #ddd;
+        top: 1px;
+        &:after {
+          border-color: #ddd;
+        }
+      }
+    }
+  }
+  .modal-content {
+    border-radius: 0;
+    border: 1px solid #acacac;
+  }
+  .modal-footer .btn-help {
+    float: left;
+  }
+  .panel-body {
+    padding: 0;
+    ul {
+      margin: 0;
+      list-style: none;
+      li a {
+        display: block;
+        padding: 10px;
+        &:hover {
+          background: #eee;
+        }
+      }
+    }
+  }
+}
