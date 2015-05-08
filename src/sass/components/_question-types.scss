@@ -1,47 +1,162 @@
-.q-types {
-  height: 35px;
-  float: left;
-  &.active span {
-    background: url("../img/chevron_blue.png") no-repeat;
-    background-position: center right 10px;
-    background-size: 13px;
-  }
-  &:hover {
-    cursor: pointer;
-  }
-  button {
-    background: none repeat scroll 0 0 transparent;
-    border: medium none;
-    border-spacing: 0;
-    font-weight: normal;
-    list-style: none outside none;
-    margin: 0;
-    padding: 0;
-    text-align: left;
-    text-decoration: none;
-    text-indent: 0;
-    padding: 0 8px;
-    position: relative;
-    border: solid 1px #acacac;
-    text-align: left;
-    float: left;
-    height: 100%;
-    &::-moz-focus-inner {
-      border: 0;
-      padding: 0;
+.question-types {
+    opacity: 0;
+    filter: alpha(opacity = 0);
+    height: auto;
+    position: absolute;
+    background: #fff;
+    right: 10px;
+    // left: 0;
+    max-width: 60%;
+    width: 100%;
+    z-index: -1;
+    will-change: opacity;
+    // border: solid 2px #acacac;
+    -webkit-transition: opacity 550ms ease;
+    -o-transition: opacity 550ms ease;
+    transition: opacity 550ms ease;
+    // -webkit-box-shadow: 0px 0px 3px 3px rgba(50, 50, 50, 0.35);
+    // -moz-box-shadow: 0px 0px 3px 3px rgba(50, 50, 50, 0.35);
+    // box-shadow: 0px 0px 3px 3px rgba(50, 50, 50, 0.35);
+    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.5);
+    -webkit-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.5);
+    &.active {
+        opacity: 1;
+        filter: alpha(opacity = 100);
+        z-index: 10;
     }
-    &:focus {
-      outline: 0;
+    .row {
+        margin: 0;
     }
-  }
-  span {
-    border-right: 1px solid #acacac;
-    height: 100%;
-    float: left;
-    width: 34px;
-    border-top: solid 1px #acacac;
-    border-bottom: solid 1px #acacac;
-    background: url("../img/chevron.png") no-repeat;
-    background-position: center right 10px;
-  }
+    .col {
+        padding: 0;
+    }
+    .btn {
+        width: 100%;
+        font-size: 0.875rem;
+        height: 35px;
+        padding: 10px 0 8px;
+        span {
+            display: inline-block;
+        }
+    }
+    .thumbnail {
+        margin-bottom: 0px;
+        border: 0;
+        padding: 1px;
+        &.oneAnswerBtn {
+            padding: 2px 1px 1px 2px;
+            .btn span {
+                background: url(../img/radio.png);
+                position: absolute;
+                width: 16px;
+                height: 16px;
+                left: 10px;
+                top: 9px;
+                background-size: 16px;
+                background-repeat: no-repeat;
+            }
+        }
+        &.sliderBtn {
+            padding: 2px 1px 1px 1px;
+            .btn span {
+                background: url(../img/slider.png);
+                position: absolute;
+                width: 30px;
+                height: 15px;
+                left: 10px;
+                top: 13px;
+                background-size: 30px;
+                background-repeat: no-repeat;
+            }
+        }
+        &.freeTextBtn {
+            padding: 2px 2px 1px 1px;
+            .btn span {
+                background: url(../img/freeText.png);
+                position: absolute;
+                width: 30px;
+                height: 20px;
+                left: 10px;
+                top: 10px;
+                background-size: 30px;
+                background-repeat: no-repeat;
+            }
+        }
+        &.multipleBtn {
+            padding: 1px 1px 1px 2px;
+            .btn span {
+                background: url(../img/multiple.png);
+                position: absolute;
+                width: 18px;
+                height: 18px;
+                left: 10px;
+                top: 8px;
+                background-size: 18px;
+                background-repeat: no-repeat;
+            }
+        }
+        &.frequencyBtn .btn span {
+            background: url(../img/scale.png);
+            position: absolute;
+            width: 40px;
+            height: 18px;
+            left: 10px;
+            top: 8px;
+            background-size: 40px;
+            background-repeat: no-repeat;
+        }
+        &.descriptionBtn {
+            padding: 1px 2px 1px 1px;
+            .btn span {
+                background: url(../img/description.png);
+                position: absolute;
+                width: 35px;
+                height: 20px;
+                left: 10px;
+                top: 7px;
+                background-size: 35px;
+                background-repeat: no-repeat;
+            }
+        }
+        &.numericBtn {
+            padding: 1px 1px 2px 2px;
+            .btn span {
+                position: absolute;
+                left: 10px;
+            }
+        }
+        &.formBtn {
+            padding: 1px 1px 2px 1px;
+            .btn span {
+                background: url(../img/form.png);
+                position: absolute;
+                width: 20px;
+                height: 22px;
+                left: 15px;
+                top: 6px;
+                background-size: 20px;
+                background-repeat: no-repeat;
+            }
+        }
+        &.fileBtn {
+            padding: 1px 2px 2px 1px;
+            .btn span {
+                background: url(../img/file.png);
+                position: absolute;
+                width: 18px;
+                height: 22px;
+                left: 15px;
+                top: 6px;
+                background-size: 18px;
+                background-repeat: no-repeat;
+            }
+        }
+    }
+}
+
+@media (max-width: 1223px) {
+    .question-types .btn span {
+        display: none;
+    }
 }

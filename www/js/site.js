@@ -3,6 +3,7 @@
     slideMenu();
     questionType();
     slideNav();
+    showSettings();
 })(jQuery, window, document);
 
 function slideMenu() {
@@ -89,6 +90,23 @@ function slideNav() {
         if(slideNav.hasClass('active')){
             slideNav.removeClass('active');
             navBtn.removeClass('active');   
+        }
+    });
+}
+function showSettings() {
+    var settingsBtn = $('.settingsBtn');
+    var settings = $('.survey-settings');
+    var survey = $('.survey');
+    settingsBtn.click(function(){
+        if(!settings.hasClass('active')){
+            settings.addClass('active');
+            settingsBtn.addClass('active');
+            survey.addClass('active');
+        }
+        else{
+            settingsBtn.removeClass('active');
+            settings.removeClass('active');
+            survey.removeClass('active');
         }
     });
 }

@@ -2452,11 +2452,11 @@ button.close {
 .modal-footer:after {
   clear: both;
 }
-.modal-footer .btn + .btn {
+.modal-footer .btn + .btn, .modal-footer .btn--header + .btn, .modal-footer .btn + .btn--header, .modal-footer .btn--header + .btn--header {
   margin-left: 5px;
   margin-bottom: 0;
 }
-.modal-footer .btn-group .btn + .btn {
+.modal-footer .btn-group .btn + .btn, .modal-footer .btn-group .btn--header + .btn, .modal-footer .btn-group .btn + .btn--header, .modal-footer .btn-group .btn--header + .btn--header {
   margin-left: -1px;
 }
 .modal-footer .btn-block + .btn-block {
@@ -2668,7 +2668,7 @@ ul {
   padding: 0;
 }
 
-.btn {
+.btn, .btn--header {
   -webkit-transition: background-color 0.3s ease;
   -o-transition: background-color 0.3s ease;
   transition: background-color 0.3s ease;
@@ -2691,11 +2691,133 @@ ul {
   -ms-user-select: none;
   user-select: none;
 }
-.btn:hover {
+.btn:hover, .btn--header:hover {
   background-color: #028fe7;
 }
-.btn:focus {
+.btn:focus, .btn--header:focus {
   outline: 0;
+}
+.btn--header {
+  padding: 0 13px 0 30px;
+  height: 30px;
+  font-size: 0.875rem;
+}
+
+.helpBtn {
+  padding: 0 10px;
+}
+
+.saveBtn {
+  float: right;
+  position: relative;
+}
+.saveBtn span {
+  background: url(../img/save_white.png);
+  position: absolute;
+  width: 17px;
+  height: 16px;
+  left: 5px;
+  top: 6px;
+  background-size: 17px;
+  background-repeat: no-repeat;
+}
+
+.cancelBtn {
+  position: relative;
+}
+.cancelBtn span {
+  background: url(../img/cancel_white.png);
+  position: absolute;
+  width: 17px;
+  height: 16px;
+  left: 5px;
+  top: 6px;
+  background-size: 17px;
+  background-repeat: no-repeat;
+}
+
+.previewBtn {
+  position: relative;
+}
+.previewBtn span {
+  background: url(../img/preview_white.png);
+  position: absolute;
+  width: 17px;
+  height: 16px;
+  left: 5px;
+  top: 6px;
+  background-size: 17px;
+  background-repeat: no-repeat;
+}
+
+.q-types, .settingsBtn {
+  margin-right: 10px;
+  height: 35px;
+  float: right;
+}
+.q-types.active span, .active.settingsBtn span {
+  background: url("../img/chevron_blue.png") no-repeat;
+  background-position: center right 10px;
+  background-size: 13px;
+}
+.q-types:hover, .settingsBtn:hover {
+  cursor: pointer;
+}
+.q-types button, .settingsBtn button {
+  background: none repeat scroll 0 0 transparent;
+  border: medium none;
+  border-spacing: 0;
+  font-weight: normal;
+  list-style: none outside none;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  text-decoration: none;
+  text-indent: 0;
+  padding: 0 8px;
+  position: relative;
+  border: solid 1px #acacac;
+  text-align: left;
+  float: left;
+  height: 100%;
+}
+.q-types button::-moz-focus-inner, .settingsBtn button::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+.q-types button:focus, .settingsBtn button:focus {
+  outline: 0;
+}
+.q-types span, .settingsBtn span {
+  border-right: 1px solid #acacac;
+  height: 100%;
+  float: left;
+  width: 34px;
+  border-top: solid 1px #acacac;
+  border-bottom: solid 1px #acacac;
+  background: url("../img/chevron.png") no-repeat;
+  background-position: center right 10px;
+}
+
+.settingsBtn {
+  margin-right: 0px;
+}
+
+.page-break {
+  position: relative;
+  padding: 0px 15px 0px 35px;
+  height: 35px;
+  margin-left: 10px;
+}
+.page-break span {
+  background: url(../img/page-break.png);
+  position: absolute;
+  width: 26px;
+  height: 27px;
+  left: 5px;
+  top: 7px;
+  background-size: 21px;
+  background-repeat: no-repeat;
 }
 
 .checkbox label {
@@ -2920,10 +3042,9 @@ ul {
   width: auto;
   height: auto;
   overflow: hidden;
-  border: solid 1px #acacac;
 }
 .styled_select select {
-  border: 0;
+  border: solid 1px #acacac;
   text-transform: none !important;
   background: transparent;
   border-radius: 0;
@@ -2999,19 +3120,43 @@ ul {
   list-style: none;
   margin: 0;
   height: 100%;
+  float: left;
+}
+.nav-container .nav ul.right {
+  float: right;
 }
 .nav-container .nav ul li {
   float: left;
+  padding: 10px;
+}
+.nav-container .nav ul li a {
+  display: block;
+  padding: 13px;
+  color: #fff;
+  font-weight: bold;
+  -webkit-transition: background 300ms ease;
+  -o-transition: background 300ms ease;
+  transition: background 300ms ease;
+}
+.nav-container .nav ul li a:hover {
+  background: rgba(0, 0, 0, 0.3);
+  text-decoration: none;
+}
+.nav-container .nav ul li a:before {
+  float: left;
+  margin-right: 10px;
+  content: '';
+  position: relative;
 }
 .nav-container .nav ul li.info {
   position: relative;
   height: 65px;
   width: 60px;
   background: rgba(0, 0, 0, 0.3);
+  padding: 0;
 }
 .nav-container .nav ul li.info a {
   background-color: transparent;
-  display: block;
   overflow: hidden;
   margin: 0;
   padding: 0;
@@ -3050,93 +3195,46 @@ ul {
 .nav-container .nav ul li.info a span:after {
   bottom: -7px;
 }
-.nav-container .nav ul li.dashboard {
-  padding: 10px;
-}
-.nav-container .nav ul li.dashboard a {
-  display: block;
-  padding: 13px;
-}
-.nav-container .nav ul li.dashboard a:before {
-  float: left;
-  height: 18px;
-  width: 22px;
-  margin-right: 10px;
-  background-size: 18px;
-  content: '';
-}
-.nav-container .nav ul li.dashboard a:hover {
-  background: rgba(0, 0, 0, 0.3);
-  text-decoration: none;
-}
-.nav-container .nav ul li.newQ {
-  padding: 10px;
-}
-.nav-container .nav ul li.newQ a {
-  display: block;
-  padding: 13px;
+.nav-container .nav ul li.info a:hover {
+  background: transparent;
 }
 .nav-container .nav ul li.newQ a:before {
   background: url(../img/plus_white.png) no-repeat;
-  float: left;
-  height: 18px;
-  width: 18px;
-  margin-right: 10px;
-  content: '';
-}
-.nav-container .nav ul li.newQ a:hover {
-  background: rgba(0, 0, 0, 0.3);
-  text-decoration: none;
-}
-.nav-container .nav ul li.sendout {
-  padding: 10px;
-}
-.nav-container .nav ul li.sendout a {
-  display: block;
-  padding: 13px;
+  height: 16px;
+  width: 16px;
+  top: 1px;
 }
 .nav-container .nav ul li.sendout a:before {
   background: url(../img/sendout_white.png) no-repeat;
-  float: left;
   height: 15px;
   width: 19px;
-  margin-right: 10px;
-  content: '';
-  position: relative;
   top: 1px;
-}
-.nav-container .nav ul li.sendout a:hover {
-  background: rgba(0, 0, 0, 0.3);
-  text-decoration: none;
-}
-.nav-container .nav ul li.analyze {
-  padding: 10px;
-}
-.nav-container .nav ul li.analyze a {
-  display: block;
-  padding: 13px;
 }
 .nav-container .nav ul li.analyze a:before {
   background: url(../img/analyze4_white.png) no-repeat;
-  float: left;
   height: 18px;
   width: 18px;
-  margin-right: 10px;
-  content: '';
 }
-.nav-container .nav ul li.analyze a:hover {
-  background: rgba(0, 0, 0, 0.3);
-  text-decoration: none;
+.nav-container .nav ul li.cancelBtn a:before {
+  background: url(../img/cancel_white.png) no-repeat;
+  width: 17px;
+  height: 16px;
+  top: 1px;
 }
-.nav-container .nav ul li a {
-  color: #fff;
-  font-weight: bold;
-  -webkit-transition: background 300ms ease;
-  -o-transition: background 300ms ease;
-  transition: background 300ms ease;
+.nav-container .nav ul li.previewBtn a:before {
+  background: url(../img/preview_white.png) no-repeat;
+  width: 17px;
+  height: 16px;
+  top: 1px;
 }
-.nav-container .nav ul li a:hover {
-  text-decoration: underline;
+.nav-container .nav ul li.saveBtn a:before {
+  background: url(../img/save_white.png) no-repeat;
+  width: 17px;
+  height: 16px;
+  top: 1px;
+}
+.nav-container .nav ul li.helpBtn a {
+  text-align: center;
 }
 
 .modal {
@@ -3382,11 +3480,10 @@ input[type=text]:focus {
 }
 
 .tabpanel .nav-tabs {
-  margin-top: -1px;
+  margin-top: 0px;
   border-bottom: solid 2px #acacac;
-  border-left: solid 2px #acacac;
-  border-right: solid 2px #acacac;
   text-align: center;
+  border-top: solid 2px #acacac;
 }
 .tabpanel .nav-tabs li {
   margin-bottom: -2px;
@@ -3399,7 +3496,6 @@ input[type=text]:focus {
   border-right: 0;
 }
 .tabpanel .nav-tabs li.active a {
-  margin-top: 1px;
   border: solid 2px #acacac;
   border-top: 0;
   border-bottom-color: transparent;
@@ -3422,15 +3518,7 @@ input[type=text]:focus {
   border-color: transparent;
 }
 .tabpanel .tab-content {
-  border-bottom: solid 2px #acacac;
-  position: absolute;
-  width: 100%;
-  border-left: 2px solid #acacac;
-  border-right: 2px solid #acacac;
-  bottom: 55px;
-  top: 76px;
   padding: 15px 10px 10px;
-  overflow-y: auto;
 }
 .tabpanel .tab-content p {
   margin: 0;
@@ -3451,54 +3539,6 @@ input[type=text]:focus {
   bottom: 10px;
   left: 10px;
   right: 10px;
-}
-.footerNav .btn {
-  padding: 0 13px 0 30px;
-  height: 30px;
-  font-size: 0.875rem;
-}
-.footerNav .helpBtn {
-  padding: 0 10px;
-}
-.footerNav .saveBtn {
-  float: right;
-  position: relative;
-}
-.footerNav .saveBtn span {
-  background: url(../img/save_white.png);
-  position: absolute;
-  width: 17px;
-  height: 16px;
-  left: 5px;
-  top: 6px;
-  background-size: 17px;
-  background-repeat: no-repeat;
-}
-.footerNav .cancelBtn {
-  position: relative;
-}
-.footerNav .cancelBtn span {
-  background: url(../img/cancel_white.png);
-  position: absolute;
-  width: 17px;
-  height: 16px;
-  left: 5px;
-  top: 6px;
-  background-size: 17px;
-  background-repeat: no-repeat;
-}
-.footerNav .previewBtn {
-  position: relative;
-}
-.footerNav .previewBtn span {
-  background: url(../img/preview_white.png);
-  position: absolute;
-  width: 17px;
-  height: 16px;
-  left: 5px;
-  top: 6px;
-  background-size: 17px;
-  background-repeat: no-repeat;
 }
 
 .slide-menu {
@@ -3819,54 +3859,163 @@ input[type=text]:focus {
   margin: 0;
 }
 
-.q-types {
-  height: 35px;
-  float: left;
+.question-types {
+  opacity: 0;
+  filter: alpha(opacity=0);
+  height: auto;
+  position: absolute;
+  background: #fff;
+  right: 10px;
+  max-width: 60%;
+  width: 100%;
+  z-index: -1;
+  will-change: opacity;
+  -webkit-transition: opacity 550ms ease;
+  -o-transition: opacity 550ms ease;
+  transition: opacity 550ms ease;
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.5);
 }
-.q-types.active span {
-  background: url("../img/chevron_blue.png") no-repeat;
-  background-position: center right 10px;
-  background-size: 13px;
+.question-types.active {
+  opacity: 1;
+  filter: alpha(opacity=100);
+  z-index: 10;
 }
-.q-types:hover {
-  cursor: pointer;
-}
-.q-types button {
-  background: none repeat scroll 0 0 transparent;
-  border: medium none;
-  border-spacing: 0;
-  font-weight: normal;
-  list-style: none outside none;
+.question-types .row {
   margin: 0;
-  padding: 0;
-  text-align: left;
-  text-decoration: none;
-  text-indent: 0;
-  padding: 0 8px;
-  position: relative;
-  border: solid 1px #acacac;
-  text-align: left;
-  float: left;
-  height: 100%;
 }
-.q-types button::-moz-focus-inner {
+.question-types .col {
+  padding: 0;
+}
+.question-types .btn, .question-types .btn--header {
+  width: 100%;
+  font-size: 0.875rem;
+  height: 35px;
+  padding: 10px 0 8px;
+}
+.question-types .btn span, .question-types .btn--header span {
+  display: inline-block;
+}
+.question-types .thumbnail {
+  margin-bottom: 0px;
   border: 0;
-  padding: 0;
+  padding: 1px;
 }
-.q-types button:focus {
-  outline: 0;
+.question-types .thumbnail.oneAnswerBtn {
+  padding: 2px 1px 1px 2px;
 }
-.q-types span {
-  border-right: 1px solid #acacac;
-  height: 100%;
-  float: left;
-  width: 34px;
-  border-top: solid 1px #acacac;
-  border-bottom: solid 1px #acacac;
-  background: url("../img/chevron.png") no-repeat;
-  background-position: center right 10px;
+.question-types .thumbnail.oneAnswerBtn .btn span, .question-types .thumbnail.oneAnswerBtn .btn--header span {
+  background: url(../img/radio.png);
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  left: 10px;
+  top: 9px;
+  background-size: 16px;
+  background-repeat: no-repeat;
+}
+.question-types .thumbnail.sliderBtn {
+  padding: 2px 1px 1px 1px;
+}
+.question-types .thumbnail.sliderBtn .btn span, .question-types .thumbnail.sliderBtn .btn--header span {
+  background: url(../img/slider.png);
+  position: absolute;
+  width: 30px;
+  height: 15px;
+  left: 10px;
+  top: 13px;
+  background-size: 30px;
+  background-repeat: no-repeat;
+}
+.question-types .thumbnail.freeTextBtn {
+  padding: 2px 2px 1px 1px;
+}
+.question-types .thumbnail.freeTextBtn .btn span, .question-types .thumbnail.freeTextBtn .btn--header span {
+  background: url(../img/freeText.png);
+  position: absolute;
+  width: 30px;
+  height: 20px;
+  left: 10px;
+  top: 10px;
+  background-size: 30px;
+  background-repeat: no-repeat;
+}
+.question-types .thumbnail.multipleBtn {
+  padding: 1px 1px 1px 2px;
+}
+.question-types .thumbnail.multipleBtn .btn span, .question-types .thumbnail.multipleBtn .btn--header span {
+  background: url(../img/multiple.png);
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  left: 10px;
+  top: 8px;
+  background-size: 18px;
+  background-repeat: no-repeat;
+}
+.question-types .thumbnail.frequencyBtn .btn span, .question-types .thumbnail.frequencyBtn .btn--header span {
+  background: url(../img/scale.png);
+  position: absolute;
+  width: 40px;
+  height: 18px;
+  left: 10px;
+  top: 8px;
+  background-size: 40px;
+  background-repeat: no-repeat;
+}
+.question-types .thumbnail.descriptionBtn {
+  padding: 1px 2px 1px 1px;
+}
+.question-types .thumbnail.descriptionBtn .btn span, .question-types .thumbnail.descriptionBtn .btn--header span {
+  background: url(../img/description.png);
+  position: absolute;
+  width: 35px;
+  height: 20px;
+  left: 10px;
+  top: 7px;
+  background-size: 35px;
+  background-repeat: no-repeat;
+}
+.question-types .thumbnail.numericBtn {
+  padding: 1px 1px 2px 2px;
+}
+.question-types .thumbnail.numericBtn .btn span, .question-types .thumbnail.numericBtn .btn--header span {
+  position: absolute;
+  left: 10px;
+}
+.question-types .thumbnail.formBtn {
+  padding: 1px 1px 2px 1px;
+}
+.question-types .thumbnail.formBtn .btn span, .question-types .thumbnail.formBtn .btn--header span {
+  background: url(../img/form.png);
+  position: absolute;
+  width: 20px;
+  height: 22px;
+  left: 15px;
+  top: 6px;
+  background-size: 20px;
+  background-repeat: no-repeat;
+}
+.question-types .thumbnail.fileBtn {
+  padding: 1px 2px 2px 1px;
+}
+.question-types .thumbnail.fileBtn .btn span, .question-types .thumbnail.fileBtn .btn--header span {
+  background: url(../img/file.png);
+  position: absolute;
+  width: 18px;
+  height: 22px;
+  left: 15px;
+  top: 6px;
+  background-size: 18px;
+  background-repeat: no-repeat;
 }
 
+@media (max-width: 1223px) {
+  .question-types .btn span, .question-types .btn--header span {
+    display: none;
+  }
+}
 .dashboard-container {
   min-width: 950px;
   position: absolute;
@@ -4009,16 +4158,16 @@ input[type=text]:focus {
   width: 25px;
 }
 
-.lt-ie9 .q-types {
+.lt-ie9 .q-types, .lt-ie9 .settingsBtn {
   background-position-x: 135px;
   background-position-y: center;
   padding-top: 1px !important;
 }
-.lt-ie9 .q-types:after {
+.lt-ie9 .q-types:after, .lt-ie9 .settingsBtn:after {
   bottom: 2px;
   top: -6px;
 }
-.lt-ie9 .q-types.active {
+.lt-ie9 .q-types.active, .lt-ie9 .active.settingsBtn {
   background: url("../img/chevron_blue.png") no-repeat;
   background-position-x: 135px;
   background-position-y: center;
@@ -4044,7 +4193,7 @@ input[type=text]:focus {
 .lt-ie9 .survey-collapse img {
   top: 5px;
 }
-.lt-ie9 .question-types .btn {
+.lt-ie9 .question-types .btn, .lt-ie9 .question-types .btn--header {
   padding-top: 7px !important;
 }
 
@@ -4053,51 +4202,46 @@ input[type=text]:focus {
 }
 
 .outer-container .survey-innerContainer {
+  max-width: 1224px;
   min-width: 950px;
   margin: auto;
   position: absolute;
   top: 70px;
   left: 0px;
   right: 0px;
-  bottom: 10px;
+  bottom: 0px;
   padding: 10px;
-  will-change: left;
 }
 .outer-container .survey-innerContainer .survey {
-  width: 60%;
-  float: left;
-  padding: 0px 10px 0px 0px;
-  position: relative;
-  text-align: center;
-  height: 100%;
-}
-.outer-container .survey-innerContainer .survey .page-break {
-  position: relative;
-  padding: 0px 15px 0px 35px;
-  height: 35px;
-}
-.outer-container .survey-innerContainer .survey .page-break span {
-  background: url(../img/page-break.png);
+  will-change: width;
+  padding: 0;
   position: absolute;
-  width: 26px;
-  height: 27px;
-  left: 5px;
-  top: 7px;
-  background-size: 21px;
-  background-repeat: no-repeat;
+  overflow-y: scroll;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  top: 120px;
+  -webkit-transition: width 100ms ease;
+  -o-transition: width 100ms ease;
+  transition: width 100ms ease;
+}
+.outer-container .survey-innerContainer .survey.active {
+  width: 60%;
+  padding-right: 30px;
+}
+.outer-container .survey-innerContainer .survey.active .survey__list {
+  width: 96%;
 }
 .outer-container .survey-innerContainer .survey__title {
   text-align: left;
+  display: inline-block;
 }
 .outer-container .survey-innerContainer .survey__list {
-  overflow-y: scroll;
   text-align: left;
   position: absolute;
-  right: 10px;
-  left: 0;
-  bottom: 55px;
-  top: 120px;
-  z-index: 9;
+  bottom: 0;
+  width: 100%;
+  top: 0;
 }
 .outer-container .survey-innerContainer .survey__list .survey-collapse {
   height: auto;
@@ -4106,6 +4250,9 @@ input[type=text]:focus {
   overflow: hidden;
   margin-bottom: 25px;
   position: relative;
+}
+.outer-container .survey-innerContainer .survey__list .survey-collapse:last-of-type {
+  margin: 0;
 }
 .outer-container .survey-innerContainer .survey__list .survey-collapse p {
   margin: 0;
@@ -4254,164 +4401,42 @@ input[type=text]:focus {
 .outer-container .survey-innerContainer .survey__list .survey-collapse .question.draggable h3:hover {
   cursor: move;
 }
-.outer-container .survey-innerContainer .survey .question-types {
+.outer-container .survey-innerContainer .fadeInUp {
+  -webkit-transform: translateY(10px);
+  -moz-transform: translateY(10px);
+  -ms-transform: translateY(10px);
+  -o-transform: translateY(10px);
+  transform: translateY(10px);
+  -webkit-transition: opacity 200ms ease, transform 550ms ease;
+  -o-transition: opacity 200ms ease, transform 550ms ease;
+  transition: opacity 200ms ease, transform 550ms ease;
   opacity: 0;
-  filter: alpha(opacity=0);
-  height: auto;
-  position: absolute;
-  background: #fff;
-  right: 10px;
-  left: 0;
-  z-index: -1;
-  will-change: opacity;
-  border: solid 2px #acacac;
-  -webkit-transition: opacity 550ms ease;
-  -o-transition: opacity 550ms ease;
-  transition: opacity 550ms ease;
-  -webkit-box-shadow: 0px 0px 3px 3px rgba(50, 50, 50, 0.35);
-  -moz-box-shadow: 0px 0px 3px 3px rgba(50, 50, 50, 0.35);
-  box-shadow: 0px 0px 3px 3px rgba(50, 50, 50, 0.35);
+  will-change: opacity, transform;
 }
-.outer-container .survey-innerContainer .survey .question-types.active {
+.outer-container .survey-innerContainer .fadeInUp.active {
+  -webkit-transform: translateY(0px);
+  -moz-transform: translateY(0px);
+  -ms-transform: translateY(0px);
+  -o-transform: translateY(0px);
+  transform: translateY(0px);
   opacity: 1;
-  filter: alpha(opacity=100);
-  z-index: 10;
-}
-.outer-container .survey-innerContainer .survey .question-types .row {
-  margin: 0;
-}
-.outer-container .survey-innerContainer .survey .question-types .col {
-  padding: 0;
-}
-.outer-container .survey-innerContainer .survey .question-types .btn {
-  width: 100%;
-  font-size: 0.875rem;
-  height: 35px;
-  padding: 10px 0 8px;
-}
-.outer-container .survey-innerContainer .survey .question-types .btn span {
-  display: inline-block;
-}
-.outer-container .survey-innerContainer .survey .question-types .thumbnail {
-  margin-bottom: 0px;
-  border: 0;
-  padding: 1px;
-}
-.outer-container .survey-innerContainer .survey .question-types .thumbnail.oneAnswerBtn {
-  padding: 2px 1px 1px 2px;
-}
-.outer-container .survey-innerContainer .survey .question-types .thumbnail.oneAnswerBtn .btn span {
-  background: url(../img/radio.png);
-  position: absolute;
-  width: 16px;
-  height: 16px;
-  left: 10px;
-  top: 9px;
-  background-size: 16px;
-  background-repeat: no-repeat;
-}
-.outer-container .survey-innerContainer .survey .question-types .thumbnail.sliderBtn {
-  padding: 2px 1px 1px 1px;
-}
-.outer-container .survey-innerContainer .survey .question-types .thumbnail.sliderBtn .btn span {
-  background: url(../img/slider.png);
-  position: absolute;
-  width: 30px;
-  height: 15px;
-  left: 10px;
-  top: 13px;
-  background-size: 30px;
-  background-repeat: no-repeat;
-}
-.outer-container .survey-innerContainer .survey .question-types .thumbnail.freeTextBtn {
-  padding: 2px 2px 1px 1px;
-}
-.outer-container .survey-innerContainer .survey .question-types .thumbnail.freeTextBtn .btn span {
-  background: url(../img/freeText.png);
-  position: absolute;
-  width: 30px;
-  height: 20px;
-  left: 10px;
-  top: 10px;
-  background-size: 30px;
-  background-repeat: no-repeat;
-}
-.outer-container .survey-innerContainer .survey .question-types .thumbnail.multipleBtn {
-  padding: 1px 1px 1px 2px;
-}
-.outer-container .survey-innerContainer .survey .question-types .thumbnail.multipleBtn .btn span {
-  background: url(../img/multiple.png);
-  position: absolute;
-  width: 18px;
-  height: 18px;
-  left: 10px;
-  top: 8px;
-  background-size: 18px;
-  background-repeat: no-repeat;
-}
-.outer-container .survey-innerContainer .survey .question-types .thumbnail.frequencyBtn .btn span {
-  background: url(../img/scale.png);
-  position: absolute;
-  width: 40px;
-  height: 18px;
-  left: 10px;
-  top: 8px;
-  background-size: 40px;
-  background-repeat: no-repeat;
-}
-.outer-container .survey-innerContainer .survey .question-types .thumbnail.descriptionBtn {
-  padding: 1px 2px 1px 1px;
-}
-.outer-container .survey-innerContainer .survey .question-types .thumbnail.descriptionBtn .btn span {
-  background: url(../img/description.png);
-  position: absolute;
-  width: 35px;
-  height: 20px;
-  left: 10px;
-  top: 7px;
-  background-size: 35px;
-  background-repeat: no-repeat;
-}
-.outer-container .survey-innerContainer .survey .question-types .thumbnail.numericBtn {
-  padding: 1px 1px 2px 2px;
-}
-.outer-container .survey-innerContainer .survey .question-types .thumbnail.numericBtn .btn span {
-  position: absolute;
-  left: 10px;
-}
-.outer-container .survey-innerContainer .survey .question-types .thumbnail.formBtn {
-  padding: 1px 1px 2px 1px;
-}
-.outer-container .survey-innerContainer .survey .question-types .thumbnail.formBtn .btn span {
-  background: url(../img/form.png);
-  position: absolute;
-  width: 20px;
-  height: 22px;
-  left: 15px;
-  top: 6px;
-  background-size: 20px;
-  background-repeat: no-repeat;
-}
-.outer-container .survey-innerContainer .survey .question-types .thumbnail.fileBtn {
-  padding: 1px 2px 2px 1px;
-}
-.outer-container .survey-innerContainer .survey .question-types .thumbnail.fileBtn .btn span {
-  background: url(../img/file.png);
-  position: absolute;
-  width: 18px;
-  height: 22px;
-  left: 15px;
-  top: 6px;
-  background-size: 18px;
-  background-repeat: no-repeat;
+  z-index: 1;
 }
 .outer-container .survey-innerContainer .survey-settings {
+  opacity: 0;
   width: 40%;
   border-top: 0;
   float: left;
   padding-top: 0px;
-  position: relative;
-  height: 100%;
+  position: absolute;
+  top: 55px;
+  right: 10px;
+  bottom: 10px;
+  border-left: 2px solid #acacac;
+  border-right: 2px solid #acacac;
+  border-bottom: 2px solid #acacac;
+  overflow-y: scroll;
+  z-index: -1;
 }
 .outer-container .survey-innerContainer .survey-settings__heading {
   height: 35px;
@@ -4423,14 +4448,8 @@ input[type=text]:focus {
   margin: 0;
 }
 
-@media (max-width: 1223px) {
-  .outer-container .survey-innerContainer .survey .question-types .btn span {
-    display: none;
-  }
-}
 .survey-language {
-  float: right;
-  width: 110px;
+  float: left;
   position: relative;
 }
 

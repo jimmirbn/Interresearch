@@ -1,11 +1,12 @@
 
 .tabpanel {
   .nav-tabs {
-    margin-top: -1px;
+    margin-top: 0px;
     border-bottom: solid 2px #acacac;
-    border-left: solid 2px #acacac;
-    border-right: solid 2px #acacac;
+    // border-left: solid 2px #acacac;
+    // border-right: solid 2px #acacac;
     text-align: center;
+    border-top: solid 2px #acacac;
     li {
       margin-bottom: -2px;
       width: 33.33333333%;
@@ -17,10 +18,11 @@
           border-right: 0;
         }
         a {
-          margin-top: 1px;
+          // margin-top: 1px;
           border: solid 2px #acacac;
           border-top: 0;
           border-bottom-color: transparent;
+            // border-right: solid 3px #acacac;
         }
       }
       a {
@@ -43,15 +45,15 @@
     }
   }
   .tab-content {
-    border-bottom: solid 2px #acacac;
-    position: absolute;
-    width: 100%;
-    border-left: 2px solid #acacac;
-    border-right: 2px solid #acacac;
-    bottom: 55px;
-    top: 76px;
+    // border-bottom: solid 2px #acacac;
+    // position: absolute;
+    // width: 100%;
+    // border-left: 2px solid #acacac;
+    // border-right: 2px solid #acacac;
+    // bottom: 55px;
+    // top: 41px;
     padding: 15px 10px 10px;
-    overflow-y: auto;
+    // overflow-y: auto;
     p {
       margin: 0;
     }
