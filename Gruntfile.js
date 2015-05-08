@@ -201,30 +201,30 @@ module.exports = function (grunt) {
         /**
          * Minify svg assets
          */
-        // svgmin: {
-        //     options: {
-        //         plugins: [
-        //             {
-        //                 removeViewBox: false
-        //             }, {
-        //                 removeUselessStrokeAndFill: false
-        //             }, {
-        //                 convertPathData: {
-        //                     straightCurves: false
-        //                 }
-        //             }
-        //         ]
-        //     },
-        //     dist: {
-        //         files: [{
-        //             expand: true,
-        //             cwd: '<%= src.assets %>/',
-        //             src: ['**/*.svg'],
-        //             dest: '<%= app.assets %>/',
-        //             ext: '.svg'
-        //         }]
-        //     }
-        // },
+        svgmin: {
+            options: {
+                plugins: [
+                    {
+                        removeViewBox: false
+                    }, {
+                        removeUselessStrokeAndFill: false
+                    }, {
+                        convertPathData: {
+                            straightCurves: false
+                        }
+                    }
+                ]
+            },
+            dist: {
+                files: [{
+                    expand: true,
+                    cwd: '<%= src.assets %>/',
+                    src: ['**/*.svg'],
+                    dest: '<%= app.img %>/',
+                    ext: '.svg'
+                }]
+            }
+        },
 
         /**
          * Watch setup
@@ -355,7 +355,7 @@ module.exports = function (grunt) {
 
     grunt.registerTask('assets_build', [
         'cssmin',
-        // 'svgmin',
+        'svgmin',
         'copy:assets',
         'notify:assets'
     ]);

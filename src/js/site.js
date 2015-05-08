@@ -161,3 +161,19 @@ $(function(){
 $(function () {
   $('[data-toggle="tooltip"]').tooltip();
 })
+
+$( ".tree li a span" ).hover(
+  function() {
+    var parent = $(this).parent();
+    var toggler = $('.toggler');
+    parent.css('background-color', '#02b1e8');
+    $(this).css('color','white')
+    // toggler.addClass('hover');
+  }, function() {
+    var parent = $(this).parent();
+    var toggler = $('.toggler');
+    $(this).css('color','#333333')
+    parent.css('background-color', 'transparent');
+    // toggler.removeClass('hover');
+  }
+);
