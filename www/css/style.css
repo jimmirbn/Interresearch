@@ -3060,7 +3060,6 @@ ul {
   overflow: hidden;
 }
 .styled_select select {
-  border: solid 1px #acacac;
   text-transform: none !important;
   background: transparent;
   border-radius: 0;
@@ -3074,13 +3073,14 @@ ul {
   width: 100%;
   font-style: normal;
   cursor: pointer;
-  -moz-appearance: window;
+  -moz-appearance: none;
   -webkit-appearance: none;
   -ms-appearance: none;
   -o-appearance: none;
   appearance: none;
   outline: none;
   z-index: 2;
+  border: solid 1px #acacac;
 }
 .styled_select select:focus {
   outline: none;
