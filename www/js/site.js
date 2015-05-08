@@ -4,6 +4,8 @@
     questionType();
     slideNav();
     showSettings();
+    showSettings2();
+    
 })(jQuery, window, document);
 
 function slideMenu() {
@@ -75,35 +77,53 @@ function slideNav() {
     var slideNav = $('.slide-nav');
     var closeNav = $('.survey-innerContainer');
 
-    navBtn.click(function(){
-        if(!slideNav.hasClass('active')){
+    navBtn.click(function() {
+        if (!slideNav.hasClass('active')) {
             slideNav.addClass('active');
             navBtn.addClass('active');
-        }
-        else{
+        } else {
             slideNav.removeClass('active');
             navBtn.removeClass('active');
         }
     });
 
-    $('.survey-innerContainer, .dashboard-container').click(function(){
-        if(slideNav.hasClass('active')){
+    $('.survey-innerContainer, .dashboard-container').click(function() {
+        if (slideNav.hasClass('active')) {
             slideNav.removeClass('active');
-            navBtn.removeClass('active');   
+            navBtn.removeClass('active');
         }
     });
 }
+
 function showSettings() {
     var settingsBtn = $('.settingsBtn');
     var settings = $('.survey-settings');
     var survey = $('.survey');
-    settingsBtn.click(function(){
-        if(!settings.hasClass('active')){
+    settingsBtn.click(function() {
+        if (!settings.hasClass('active')) {
             settings.addClass('active');
             settingsBtn.addClass('active');
             survey.addClass('active');
+        } else {
+            settingsBtn.removeClass('active');
+            settings.removeClass('active');
+            survey.removeClass('active');
         }
-        else{
+    });
+}
+function showSettings2() {
+    var settingsBtn = $('.settingsBtn2');
+    var settings = $('.survey-settings');
+    var survey = $('.survey');
+    settingsBtn.click(function() {
+        if (!settings.hasClass('active')) {
+            setTimeout(function() {
+                size();
+            }, 50);
+            settings.addClass('active');
+            settingsBtn.addClass('active');
+            survey.addClass('active');
+        } else {
             settingsBtn.removeClass('active');
             settings.removeClass('active');
             survey.removeClass('active');
@@ -111,16 +131,16 @@ function showSettings() {
     });
 }
 
-(function($){
+(function($) {
     $.fn.openActive = function(activeSel) {
         activeSel = activeSel || ".active";
 
         var c = this.attr("class");
 
-        this.find(activeSel).each(function(){
+        this.find(activeSel).each(function() {
             var el = $(this).parent();
             while (el.attr("class") !== c) {
-                if(el.prop("tagName") === 'UL') {
+                if (el.prop("tagName") === 'UL') {
                     el.show();
                 } else if (el.prop("tagName") === 'LI') {
                     el.removeClass('tree-closed');
@@ -147,7 +167,7 @@ function showSettings() {
             toggler.addClass('toggler');
 
             e.prepend(toggler);
-            if(subtree.length > 0) {
+            if (subtree.length > 0) {
                 subtree.hide();
 
                 e.addClass('tree-closed');
@@ -173,26 +193,32 @@ function showSettings() {
     }
 })(jQuery);
 
-$(function(){
-        $(".tree").treemenu({delay:300}).openActive();
-    });
-$(function () {
-  $('[data-toggle="tooltip"]').tooltip();
+$(function() {
+    $(".tree").treemenu({
+        delay: 300
+    }).openActive();
+});
+$(function() {
+    $('[data-toggle="tooltip"]').tooltip();
 })
 
-$( ".tree li a span" ).hover(
-  function() {
-    var parent = $(this).parent();
-    var toggler = $('.toggler');
-    parent.css('background-color', '#02b1e8');
-    $(this).css('color','white')
-    // toggler.addClass('hover');
-  }, function() {
-    var parent = $(this).parent();
-    var toggler = $('.toggler');
-    $(this).css('color','#333333')
-    parent.css('background-color', 'transparent');
-    // toggler.removeClass('hover');
-  }
+$(".tree li a span").hover(
+    function() {
+        var parent = $(this).parent();
+        var toggler = $('.toggler');
+        parent.css('background-color', '#02b1e8');
+        $(this).css('color', 'white')
+            // toggler.addClass('hover');
+    },
+    function() {
+        var parent = $(this).parent();
+        var toggler = $('.toggler');
+        $(this).css('color', '#333333')
+        parent.css('background-color', 'transparent');
+        // toggler.removeClass('hover');
+    }
 );
+
+
+
 //# sourceMappingURL=site.js.map

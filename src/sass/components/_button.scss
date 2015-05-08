@@ -1,144 +1,149 @@
 .btn {
-  -webkit-transition: background-color 0.3s ease;
-  -o-transition: background-color 0.3s ease;
-  transition: background-color 0.3s ease;
-  background-color: #02b1e8;
-  border-radius: 0;
-  border: 0;
-  color: #fff;
-  padding: 0 13px;
-  height: 35px;
-  font-size: 18px;
-  font-weight: normal;
-  text-align: center;
-  white-space: nowrap;
-  vertical-align: middle;
-  -ms-touch-action: manipulation;
-  touch-action: manipulation;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  &:hover {
-    background-color: #028fe7;
-  }
-  &:focus {
-    outline: 0;
-  }
-
-  &--header{
-  @extend .btn;
-    padding: 0 13px 0 30px;
-    height: 30px;
-    font-size: 0.875rem;
-  }
+    -webkit-transition: background-color 0.3s ease;
+    -o-transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease;
+    background-color: #02b1e8;
+    border-radius: 0;
+    border: 0;
+    color: #fff;
+    padding: 0 13px;
+    height: 35px;
+    font-size: 18px;
+    font-weight: normal;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    &:hover {
+        background-color: #028fe7;
+    }
+    &:focus {
+        outline: 0;
+    }
+    &--header {
+        @extend .btn;
+        padding: 0 13px 0 30px;
+        height: 30px;
+        font-size: 0.875rem;
+    }
 }
 
-  .helpBtn {
+.helpBtn {
     padding: 0 10px;
-  }
-  .saveBtn {
+}
+
+.saveBtn {
     float: right;
     position: relative;
     span {
-      background: url(../img/save_white.png);
-      position: absolute;
-      width: 17px;
-      height: 16px;
-      left: 5px;
-      top: 6px;
-      background-size: 17px;
-      background-repeat: no-repeat;
+        background: url(../img/save_white.png);
+        position: absolute;
+        width: 17px;
+        height: 16px;
+        left: 5px;
+        top: 6px;
+        background-size: 17px;
+        background-repeat: no-repeat;
     }
-  }
-  .cancelBtn {
-    position: relative;
-    span {
-      background: url(../img/cancel_white.png);
-      position: absolute;
-      width: 17px;
-      height: 16px;
-      left: 5px;
-      top: 6px;
-      background-size: 17px;
-      background-repeat: no-repeat;
-    }
-  }
-  .previewBtn {
-    position: relative;
-    span {
-      background: url(../img/preview_white.png);
-      position: absolute;
-      width: 17px;
-      height: 16px;
-      left: 5px;
-      top: 6px;
-      background-size: 17px;
-      background-repeat: no-repeat;
-    }
-  }
-
-  .q-types {
-  margin-right: 10px;
-  height: 35px;
-  float: right;
-  &.active span {
-    background: url("../img/chevron_blue.png") no-repeat;
-    background-position: center right 10px;
-    background-size: 13px;
-  }
-  &:hover {
-    cursor: pointer;
-  }
-  button {
-    background: none repeat scroll 0 0 transparent;
-    border: medium none;
-    border-spacing: 0;
-    font-weight: normal;
-    list-style: none outside none;
-    margin: 0;
-    padding: 0;
-    text-align: left;
-    text-decoration: none;
-    text-indent: 0;
-    padding: 0 8px;
-    position: relative;
-    border: solid 1px #acacac;
-    text-align: left;
-    float: left;
-    height: 100%;
-    &::-moz-focus-inner {
-      border: 0;
-      padding: 0;
-    }
-    &:focus {
-      outline: 0;
-    }
-  }
-  span {
-    border-right: 1px solid #acacac;
-    height: 100%;
-    float: left;
-    width: 34px;
-    border-top: solid 1px #acacac;
-    border-bottom: solid 1px #acacac;
-    background: url("../img/chevron.png") no-repeat;
-    background-position: center right 10px;
-  }
 }
 
-.settingsBtn{
-  @extend .q-types;
-  margin-right: 0px;
+.cancelBtn {
+    position: relative;
+    span {
+        background: url(../img/cancel_white.png);
+        position: absolute;
+        width: 17px;
+        height: 16px;
+        left: 5px;
+        top: 6px;
+        background-size: 17px;
+        background-repeat: no-repeat;
+    }
+}
+
+.previewBtn {
+    position: relative;
+    span {
+        background: url(../img/preview_white.png);
+        position: absolute;
+        width: 17px;
+        height: 16px;
+        left: 5px;
+        top: 6px;
+        background-size: 17px;
+        background-repeat: no-repeat;
+    }
+}
+
+.q-types {
+    margin-right: 10px;
+    height: 35px;
+    float: right;
+    &.active span {
+        background: url("../img/chevron_blue.png") no-repeat;
+        background-position: center right 10px;
+        background-size: 13px;
+    }
+    &:hover {
+        cursor: pointer;
+    }
+    button {
+        background: none repeat scroll 0 0 transparent;
+        border: medium none;
+        border-spacing: 0;
+        font-weight: normal;
+        list-style: none outside none;
+        margin: 0;
+        padding: 0;
+        text-align: left;
+        text-decoration: none;
+        text-indent: 0;
+        padding: 0 8px;
+        position: relative;
+        border: solid 1px #acacac;
+        text-align: left;
+        float: left;
+        height: 100%;
+        &::-moz-focus-inner {
+            border: 0;
+            padding: 0;
+        }
+        &:focus {
+            outline: 0;
+        }
+    }
+    span {
+        border-right: 1px solid #acacac;
+        height: 100%;
+        float: left;
+        width: 34px;
+        border-top: solid 1px #acacac;
+        border-bottom: solid 1px #acacac;
+        background: url("../img/chevron.png") no-repeat;
+        background-position: center right 10px;
+    }
+}
+
+.settingsBtn {
+    @extend .q-types;
+    margin-right: 0px;
+}
+.settingsBtn2{
+    @extend .settingsBtn;
 }
 
 .page-break {
-      position: relative;
-      padding: 0px 15px 0px 35px;
-      height: 35px;
-      margin-left: 10px;
-      span {
+    position: relative;
+    padding: 0px 15px 0px 35px;
+    height: 35px;
+    margin-left: 10px;
+    span {
         background: url(../img/page-break.png);
         position: absolute;
         width: 26px;
@@ -147,5 +152,21 @@
         top: 7px;
         background-size: 21px;
         background-repeat: no-repeat;
-      }
     }
+    &.fixed {
+        position: fixed;
+        padding: 3px 10px 5px 10px;
+        height: auto;
+        margin-left: 0;
+        left: 0px;
+        top: 191px;
+        line-height: 1.2em;
+        span {
+            position: relative;
+            top: 0;
+            left: 0;
+            display: block;
+            display: none;
+        }
+    }
+}

@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if IE 9]>         <html class="no-js ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+  <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+    <div class="outer-container">
+        <!-- <div class="slide-menu">
+            <button type="button" class="slide-menu-btn"><img src="img/burger-menu.png" alt="defgo"><span>Toggle menu</span></button>
+        </div> -->
+        <div class="nav-container">
+            <div class="nav">
+                <ul>
+                    <li class="info"><a><span></span></a></li>
+                    <li class="helpBtn"><a>Help</a></li>
+                </ul>
+                <ul class="right">
+                    <li class="previewBtn"><a>Preview</a></li>
+                    <li class="saveBtn"><a>Save</a></li>
+                    <li class="cancelBtn"><a>Cancel</a></li>
+                </ul>
+                <!-- <div class="nav-right">
+                <button class="btn--header cancelBtn">Cancel <span></span></button>
+                    <button class="btn--header previewBtn">Preview <span></span></button>
+                    <button class="btn--header helpBtn">Help</button>
+                    <button class="btn--header saveBtn">Save <span></span></button>
+                </div> -->
+            </div>
+        </div>
+        <div class="slide-nav">
+            <ul>
+                <li class="logout"><i></i><a>Log out</a></li>
+                <li class="dashboard"><i></i><a>Dashboard</a></li>
+                <li class="contact"><a>Kontakt</a><i></i></li>
+                <li class="users"><a>Brugere</a><i></i></li>
+                <li class="howto"><a>How to</a><i></i></li>
+                <li class="support"><a>Online support</a><i></i></li>
+            </ul>
+        </div>
+        <div class="survey-innerContainer">
+            <div class="survey-header">
+                <div class="survey-language">
+                    <span class="styled_select">
+                        <select name="" id="">
+                            <option value="">English</option>
+                            <option value="">Danish</option>
+                            <option value="">German</option>
+                        </select>
+                    </span>
+                </div>
+                <button class="btn page-break">Page break <span></span></button>
+                <div class="question-types">
+                    <div class="row">
+                        <div class="col col-sm-4 col-md-4">
+                            <div class="thumbnail oneAnswerBtn">
+                                <button class="btn col-md-4">Only one answer<span></span></button>
+                            </div>
+                        </div>
+                        <div class="col col-sm-4 col-md-4">
+                            <div class="thumbnail sliderBtn">
+                                <button class="btn">Slider<span></span></button>
+                            </div>
+                        </div>
+                        <div class="col col-sm-4 col-md-4">
+                            <div class="thumbnail freeTextBtn">
+                                <button class="btn">Free text answer<span></span></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col col-sm-4 col-md-4">
+                            <div class="thumbnail multipleBtn">
+                                <button class="btn">Multiple answers<span></span></button>
+                            </div>
+                        </div>
+                        <div class="col col-sm-4 col-md-4">
+                            <div class="thumbnail frequencyBtn">
+                                <button class="btn">Frequency<span></span></button>
+                            </div>
+                        </div>
+                        <div class="col col-sm-4 col-md-4">
+                            <div class="thumbnail descriptionBtn">
+                                <button class="btn">Description<span></span></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col col-sm-4 col-md-4">
+                            <div class="thumbnail numericBtn">
+                                <button class="btn">Numeric<span>1 2 3</span></button>
+                            </div>
+                        </div>
+                        <div class="col col-sm-4 col-md-4">
+                            <div class="thumbnail formBtn">
+                                <button class="btn">Form<span></span></button>
+                            </div>
+                        </div>
+                        <div class="col col-sm-4 col-md-4">
+                            <div class="thumbnail fileBtn">
+                                <button class="btn">File<span></span></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="settingsBtn2">
+                    <button type="button">Settings</button><span></span>
+                </div>
+                <div class="q-types">
+                    <button type="button">Spørgsmålstyper</button><span></span>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+            <h1 class="survey__title">Survey Title</h1>
+            <div class="lol">
+                <div class="survey fixed">
+                    <div class="survey__list">
+                        <div class="survey-collapse">
+                            <img class="dots" src="img/dots.png" alt="defgo">
+                            <p class="question-nr">Q1</p>
+                            <h3>Question title</h3>
+                            <span class="deleteQ"></span>
+                            <span class="duplicateQ"></span>
+                            <span class="resizeQ"></span>
+                        </div>
+                        <div class="survey-collapse collapsed">
+                            <img class="dots" src="img/dots.png" alt="defgo">
+                            <p class="question-nr">Q2</p>
+                            <span class="deleteQ"></span>
+                            <span class="duplicateQ"></span>
+                            <span class="resizeQ min"></span>
+                            <div class="question draggable">
+                                <h3>Question title 1</h3>
+                                <input type="text">
+                                <a class="deleteQ-btn">X</a>
+                            </div>
+                            <div class="question draggable">
+                                <h3>Question title 2</h3>
+                                <input type="text">
+                                <a class="deleteQ-btn">X</a>
+                            </div>
+                            <div class="question dimmed">
+                                <h3>Question title 3</h3>
+                                <input type="text" placeholder="Click to add option">
+                            </div>
+                        </div>
+                        <div class="survey-collapse collapsed">
+                            <img class="dots" src="img/dots.png" alt="defgo">
+                            <p class="question-nr">Q3</p>
+                            <span class="deleteQ"></span>
+                            <span class="duplicateQ"></span>
+                            <span class="resizeQ min"></span>
+                            <div class="question draggable">
+                                <h3>Question title 1</h3>
+                                <input type="text">
+                                <a class="deleteQ-btn">X</a>
+                            </div>
+                            <div class="question draggable">
+                                <h3>Question title 2</h3>
+                                <input type="text">
+                                <a class="deleteQ-btn">X</a>
+                            </div>
+                            <div class="question dimmed">
+                                <h3>Question title 3</h3>
+                                <input type="text" placeholder="Click to add option">
+                            </div>
+                        </div>
+                        <div class="survey-collapse collapsed">
+                            <img class="dots" src="img/dots.png" alt="defgo">
+                            <p class="question-nr">Q4</p>
+                            <span class="deleteQ"></span>
+                            <span class="duplicateQ"></span>
+                            <span class="resizeQ min"></span>
+                            <div class="question draggable">
+                                <h3>Question title 1</h3>
+                                <input type="text">
+                                <a class="deleteQ-btn">X</a>
+                            </div>
+                            <div class="question draggable">
+                                <h3>Question title 2</h3>
+                                <input type="text">
+                                <a class="deleteQ-btn">X</a>
+                            </div>
+                            <div class="question dimmed">
+                                <h3>Question title 3</h3>
+                                <input type="text" placeholder="Click to add option">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="lol2">
+                    <div class="survey-settings fadeInUp fixed">
+                <!-- <div class="survey-settings__heading">
+                        <p>Settings</p>
+                    </div> -->
+                    <div class="tabpanel" role="tabpanel">
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li role="presentation" class="active questionnaireTab"><a href="#questionnaire" aria-controls="home" role="tab" data-toggle="tab">Questionnaire</a></li>
+                            <li role="presentation" class="surveyTab"><a href="#survey" aria-controls="survey" role="tab" data-toggle="tab">Survey</a></li>
+                            <li role="presentation" class="designTab"><a href="#design" aria-controls="design" role="tab" data-toggle="tab">Design</a></li>
+                        </ul>
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane fade in active" id="questionnaire">
+                                <div class="advancedSettingsBlock">
+                                    <p>Layout på spørgsmålet:</p>
+                                    <label>
+                                        <span class="styled_select">
+                                            <select id="advancedSettingsLayout">
+
+                                                <option selected="" value="choices">Radioknap</option>
+
+                                                <option value="list">Liste</option>
+
+                                                <option value="selectbox">Drop down boks</option>
+
+                                            </select>
+                                        </span>
+                                    </label>
+                                    <hr>
+                                    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading" role="tab" id="headingOne">
+                                                <h4 class="panel-title" id="-collapsible-group-item-#1-">
+                                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                                      Ekstra svaralternativ<span>+</span>
+                                                  </a>
+                                                  <a class="anchorjs-link" href="#-collapsible-group-item-#1-"><span class="anchorjs-icon"></span></a></h4>
+                                              </div>
+                                              <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne" aria-expanded="true">
+                                                <div class="panel-body">
+                                                    <label>
+                                                        <span class="checkbox">
+                                                            Tilføj fritekst-felt:
+                                                            <input id="otherSelected" type="checkbox">
+                                                            <label for="otherSelected"></label>
+                                                        </span>
+                                                    </label>
+                                                    <!-- <br> -->
+                                                    <label>
+                                                        Tekst:
+                                                        <input id="otherText" type="text" name="OtherText" value="Andet">
+                                                    </label>
+                                                    <!-- <br> -->
+                                                    <label>
+                                                        Maximalt antal tegn i besvarelsen:
+                                                        <input id="otherMaxSymbols" type="text" name="maxSymbols" value="4000">
+                                                    </label>
+                                                    <!-- <br> -->
+                                                    <label>
+                                                        Bredde i antal tegn eller %:
+                                                        <input id="otherWidth" type="text" name="width" value="100%">
+                                                    </label>
+                                                    <!-- <br> -->
+                                                    <label>
+                                                        Antal linjer:
+                                                        <input id="otherCountOfLines" type="text" name="countOfLines" value="1">
+                                                    </label>
+                                                    <!-- <br> -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading" role="tab" id="headingTwo">
+                                                <h4 class="panel-title" id="-collapsible-group-item-#2-">
+                                                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                                      Egenskaber for spørgsmål<span>+</span>
+                                                  </a>
+                                                  <a class="anchorjs-link" href="#-collapsible-group-item-#2-"><span class="anchorjs-icon"></span></a></h4>
+                                              </div>
+                                              <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo" aria-expanded="false">
+                                                <div class="panel-body">
+                                                    <label>
+                                                        <span class="checkbox">
+                                                            Spørgsmålet skal besvares<input id="min" type="checkbox">
+                                                            <label for="min"></label>
+                                                        </span>
+                                                    </label>
+                                                    <!-- <br> -->
+                                                    <label>
+                                                        Forhindre fortsættelse inden for dette antal sekunder (nedtælling):
+                                                        <input id="countDown" type="text" name="countDown" value="0">
+                                                    </label>
+                                                    <hr>
+                                                    <p>Rækkefølge for svaralternativer:</p>
+                                                    <label>
+                                                        <span class="styled_select">
+                                                            <select id="randomization">
+                                                                <option selected="" value="0">Som indtastet</option>
+                                                                <option value="1">Tilfældig rækkefølge (Tilbage-knap fjernes)</option>
+                                                                <option value="2">Tilfældig rækkefølge på nær sidste svaralternativ</option>
+                                                            </select>
+                                                        </span>
+                                                    </label>
+                                                    <hr>
+                                                    <p>Vælg korrekt svar:</p>
+                                                    <label>
+                                                        <span class="styled_select">
+                                                            <select id="correctAnswer">
+                                                                <option value="null">Intet korrekt svar</option>
+
+                                                                <option value="0">svaralternativ 1</option>
+
+                                                                <option value="1">svaralternativ 2</option>
+
+                                                                <option value="2">svaralternativ 3</option>
+
+                                                            </select>
+                                                        </span>
+                                                    </label>
+                                                    <!-- <br> -->
+                                                    <label>
+                                                        <span class="checkbox">
+                                                            Spørgsmålet skal besvares korrekt før du fortsætter
+                                                            <input id="isCorrectAnswerChecked" type="checkbox" >
+                                                            <label for="isCorrectAnswerChecked"></label>
+                                                        </span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div role="tabpanel" class="tab-pane fade" id="survey">Survey</div>
+                            <div role="tabpanel" class="tab-pane fade" id="design">Design</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+            <!-- <div class="footerNav">
+                <button class="btn cancelBtn">Cancel <span></span></button>
+                <button class="btn previewBtn">Preview <span></span></button>
+                <button class="btn helpBtn">Help</button>
+                <button class="btn saveBtn">Save <span></span></button>
+            </div> -->
+        </div>
+    </div>
+    <script type="text/javascript" src="js/vendors.js"></script>
+    <script>
+        function size() {
+            var windowW = $(window).width();
+            var surveyW = $('.survey').width();
+            var settings = $('.survey-settings');
+            var containerW = $('.lol').width();
+            var settingsW = containerW - surveyW;
+            var offset = (windowW - containerW) / 2;
+            settings.css({
+                'right': offset,
+                'width': settingsW - 10
+            });
+        }
+
+    </script>
+    <script type="text/javascript" src="js/site.js"></script>
+</body>
+
+</html>
