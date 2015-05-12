@@ -5,7 +5,17 @@
     slideNav();
     showSettings();
     showSettings2();
-    
+
+    $('input').iCheck();
+
+  $('input').iCheck({
+    checkboxClass: 'icheckbox_square-blue',
+    radioClass: 'iradio_square-blue',
+    increaseArea: '20%' // optional
+  });
+
+
+
 })(jQuery, window, document);
 
 function slideMenu() {
@@ -111,6 +121,7 @@ function showSettings() {
         }
     });
 }
+
 function showSettings2() {
     var settingsBtn = $('.settingsBtn2');
     var settings = $('.survey-settings');
@@ -199,9 +210,10 @@ $(function() {
     }).openActive();
 });
 $(function() {
-    $('[data-toggle="tooltip"]').tooltip();
+    $('[data-toggle="tooltip"]').tooltip({
+        container: 'body'
+    });
 })
-
 $(".tree li a span").hover(
     function() {
         var parent = $(this).parent();
@@ -218,5 +230,3 @@ $(".tree li a span").hover(
         // toggler.removeClass('hover');
     }
 );
-
-
