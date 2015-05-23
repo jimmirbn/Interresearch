@@ -24,6 +24,7 @@ function slideMenu() {
     var surveyContainer = $('.survey-innerContainer');
     var htmlMaster = $('html');
     var typeContainer = $('.question-types');
+    var dashboard = $('.dashboard-container');
     slideMenuBtn.click(function() {
         //IE8 Fix
         if (htmlMaster.hasClass('lt-ie9') || htmlMaster.hasClass('ie9')) {
@@ -57,11 +58,12 @@ function slideMenu() {
                 // }
                 slideMenu.addClass('active');
                 slideMenuBtn.addClass('active');
-                surveyContainer.addClass('side-menu-active');
+                dashboard.addClass('side-menu-active');
+                
             } else {
                 slideMenu.removeClass('active');
                 slideMenuBtn.removeClass('active');
-                surveyContainer.removeClass('side-menu-active');
+                dashboard.removeClass('side-menu-active');
             }
         }
     });

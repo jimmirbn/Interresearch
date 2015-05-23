@@ -2691,7 +2691,7 @@ ul {
   background: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   z-index: 99;
-  top: 66px;
+  top: 65px;
   left: 0;
   -webkit-transform: translate(-300px);
   -moz-transform: translate(-300px);
@@ -2894,19 +2894,18 @@ input[type=text]:focus {
   overflow: hidden;
   width: 310px;
   position: absolute;
-  top: 70px;
+  top: 65px;
   bottom: 0px;
   left: 0px;
   border-right: solid 2px #acacac;
-  border-top: solid 2px #acacac;
   background-color: #fff;
   z-index: 1;
   padding-top: 50px;
-  -webkit-transform: translateX(-260px);
-  -moz-transform: translateX(-260px);
-  -ms-transform: translateX(-260px);
-  -o-transform: translateX(-260px);
-  transform: translateX(-260px);
+  -webkit-transform: translateX(-275px);
+  -moz-transform: translateX(-275px);
+  -ms-transform: translateX(-275px);
+  -o-transform: translateX(-275px);
+  transform: translateX(-275px);
   will-change: transform;
   -webkit-transition: all 350ms ease;
   -o-transition: all 350ms ease;
@@ -2923,16 +2922,17 @@ input[type=text]:focus {
   display: block;
 }
 .slide-menu .slide-menu-btn {
-  -webkit-transition: background 300ms ease;
-  -o-transition: background 300ms ease;
-  transition: background 300ms ease;
+  background: url(../img/chevron-large-collapsed.png) no-repeat;
+  -webkit-transition: transform 300ms ease;
+  -o-transition: transform 300ms ease;
+  transition: transform 300ms ease;
   background-color: transparent;
   display: inline-block;
   position: absolute;
   overflow: hidden;
   margin: 0;
   padding: 0;
-  width: 25px;
+  width: 12px;
   height: 19px;
   font-size: 0;
   text-indent: -9999px;
@@ -3007,6 +3007,13 @@ input[type=text]:focus {
   -ms-transform: rotate(-45deg);
   -o-transform: rotate(-45deg);
   transform: rotate(-45deg);
+}
+.slide-menu .slide-menu-btn.active {
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  transform: rotate(180deg);
 }
 .slide-menu .tree {
   display: none;
@@ -3347,70 +3354,85 @@ input[type=text]:focus {
 .dashboard-container {
   min-width: 950px;
   position: absolute;
-  top: 70px;
+  top: 65px;
   bottom: 0;
-  left: 50px;
+  left: 35px;
   right: 0;
   padding: 20px;
+  will-change: left;
+  -webkit-transition: left 300ms ease;
+  -o-transition: left 300ms ease;
+  transition: left 300ms ease;
 }
 .dashboard-container .item-overview-header {
   display: block;
   width: 100%;
-  margin-bottom: 50px;
+  margin-bottom: 15px;
+  padding: 0 10px;
 }
 .dashboard-container .item-overview-header ul {
   margin: 0;
   list-style: none;
+  display: table;
+  width: 100%;
 }
 .dashboard-container .item-overview-header ul li {
-  float: left;
+  display: table-cell;
+  vertical-align: middle;
   width: 13%;
-  padding-left: 10px;
   color: #888888;
 }
 .dashboard-container .item-overview-header ul li.name {
   width: 35%;
 }
+.dashboard-container .item-overview-header ul li.date, .dashboard-container .item-overview-header ul li.status, .dashboard-container .item-overview-header ul li.startEndDate, .dashboard-container .item-overview-header ul li.settlement, .dashboard-container .item-overview-header ul li.respondStatus {
+  text-align: right;
+}
 .dashboard-container .item-overview-header ul li.settlement {
   width: 10%;
   padding-left: 0;
-  text-align: center;
 }
 .dashboard-container .item-overview-header ul li.respondStatus {
   width: 16%;
 }
 .dashboard-container .survey-item {
+  padding: 0 5px 0 10px;
   display: block;
   width: 100%;
   background: #ddd;
-  height: 50px;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
   box-shadow: inset 0px -1px 1px rgba(0, 0, 0, 0.25), 0px 1px 0px rgba(0, 0, 0, 0.15);
 }
 .dashboard-container .survey-item ul {
   margin: 0;
   list-style: none;
   height: 100%;
+  min-height: 35px;
+  display: table;
+  width: 100%;
 }
 .dashboard-container .survey-item ul li {
   position: relative;
-  float: left;
   width: 13%;
-  padding-left: 10px;
-  padding-top: 16px;
   height: 100%;
-  white-space: nowrap;
+  font-size: 12px;
+  word-wrap: break-word;
+  display: table-cell;
+  vertical-align: middle;
 }
 .dashboard-container .survey-item ul li.name {
   width: 35%;
 }
+.dashboard-container .survey-item ul li.date, .dashboard-container .survey-item ul li.status, .dashboard-container .survey-item ul li.startEndDate, .dashboard-container .survey-item ul li.settlement, .dashboard-container .survey-item ul li.respondStatus {
+  text-align: right;
+}
 .dashboard-container .survey-item ul li.settlement {
   width: 10%;
   padding-left: 0;
-  text-align: center;
 }
 .dashboard-container .survey-item ul li.respondStatus {
   width: 16%;
+  padding-left: 30px;
 }
 .dashboard-container .survey-item ul li.startEndDate {
   padding-top: 0;
@@ -3418,13 +3440,13 @@ input[type=text]:focus {
 .dashboard-container .survey-item ul li.startEndDate span {
   display: block;
   width: 100%;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
 }
 .dashboard-container .survey-item ul li p {
   margin: 0;
   display: inline;
+}
+.dashboard-container.side-menu-active {
+  left: 310px;
 }
 
 .lt-ie9 .modal-dialog, .ie9 .modal-dialog {
@@ -3533,6 +3555,69 @@ input[type=text]:focus {
   border-radius: 0;
 }
 
+.progress-bar {
+  position: relative;
+  border: #ccc solid 1px;
+  width: 112px;
+  height: 25px;
+  line-height: 25px;
+  vertical-align: midle;
+  overflow: hidden;
+}
+.progress-bar .bar {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  overflow: hidden;
+}
+.progress-bar .bar span {
+  position: absolute;
+  display: block;
+  width: 112px;
+  height: 100%;
+  text-align: center;
+}
+.progress-bar .bar.positive {
+  background: #fff;
+  left: 0;
+  -webkit-animation: animate-positive 2s;
+  animation: animate-positive 2s;
+}
+.progress-bar .bar.positive span {
+  left: 0;
+  color: #333;
+}
+.progress-bar .bar.negative {
+  background: #07A4DD;
+  right: 0;
+  -webkit-animation: animate-negative 2s;
+  animation: animate-negative 2s;
+}
+.progress-bar .bar.negative span {
+  right: 0;
+  color: #fff;
+}
+
+@-webkit-keyframes animate-positive {
+  0% {
+    width: 0%;
+  }
+}
+@keyframes animate-positive {
+  0% {
+    width: 0%;
+  }
+}
+@-webkit-keyframes animate-negative {
+  0% {
+    width: 100%;
+  }
+}
+@keyframes animate-negative {
+  0% {
+    width: 100%;
+  }
+}
 .outer-container .survey-innerContainer {
   max-width: 1224px;
   min-width: 950px;
