@@ -54,6 +54,7 @@ module.exports = function (grunt) {
                     '<%= src.bower %>/bootstrap-sass/assets/javascripts/bootstrap/tooltip.js',
                     '<%= src.bower %>/bootstrap-sass/assets/javascripts/bootstrap/collapse.js',
                     '<%= src.bower %>/bootstrap-sass/assets/javascripts/bootstrap/transition.js',
+                    '<%= src.bower %>/bootstrap-sass/assets/javascripts/bootstrap/modal.js',
                     '<%= src.bower %>/icheck/icheck.min.js',
                 ],
                 dest : '<%= app.js %>/vendors.js',

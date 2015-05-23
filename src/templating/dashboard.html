@@ -26,7 +26,7 @@
                 <ul>
                     <li class="info"><a><span></span></a></li>
                     <!-- <li class="dashboard"><span></span><a>Dashboard</a></li> -->
-                    <li class="newQ"><a>Nyt Spørgeskema</a></li>
+                    <li class="newQ"><a data-toggle="modal" data-target=".advancedQ-popup">Nyt Spørgeskema</a></li>
                     <li class="sendout"><a>Udsend</a></li>
                     <li class="analyze"><a>analysér</a></li>
                 </ul>
@@ -74,8 +74,9 @@
             </div>
             <div class="survey-item">
                 <ul>
-                    <li class="name"><span class="type type-panel"></span>
-                        <p data-toggle="tooltip" data-placement="top" title="Navn">Survey navn</p>
+                    <span class="type type--questionaire"></span>
+                    <li class="name">
+                        <p data-toggle="tooltip" data-placement="top" title="Navn">Spørgeskema navn</p>
                     </li>
                     <li class="date">10-01-2015</li>
                     <li class="status"></li>
@@ -95,8 +96,9 @@
             </div>
             <div class="survey-item">
                 <ul>
-                    <li class="name"><span class="type type-panel"></span>
-                        <p data-toggle="tooltip" data-placement="top" title="Navn">Survey navn</p>
+                    <span class="type type--rapport"></span>
+                    <li class="name">
+                        <p data-toggle="tooltip" data-placement="top" title="Navn">Rapport dokument navn</p>
                     </li>
                     <li class="date">10-01-2015</li>
                     <li class="status"></li>
@@ -116,8 +118,9 @@
             </div>
             <div class="survey-item">
                 <ul>
-                    <li class="name"><span class="type type-panel"></span>
-                        <p data-toggle="tooltip" data-placement="top" title="Navn">Survey navn</p>
+                    <span class="type type--excel"></span>
+                    <li class="name">
+                        <p data-toggle="tooltip" data-placement="top" title="Navn">Excel dokument navn</p>
                     </li>
                     <li class="date">10-01-2015</li>
                     <li class="status"></li>
@@ -135,7 +138,131 @@
                     </li>
                 </ul>
             </div>
+            <div class="survey-item">
+                <ul>
+                    <span class="type type--folder"></span>
+                    <li class="name">
+                        <p data-toggle="tooltip" data-placement="top" title="Navn">folder navn</p>
+                    </li>
+                    <li class="date">10-01-2015</li>
+                    <li class="status"></li>
+                    <li class="startEndDate"></li>
+                    <li class="settlement"></li>
+                    <li class="respondStatus">
+                       <!--  <div class="progress-bar">
+                            <div class="bar positive" style="width:75%">
+                                <span>150/200</span>
+                            </div>
+                            <div class="bar negative" style="width:25%">
+                                <span>150/200</span>
+                            </div>
+                        </div> -->
+                    </li>
+                </ul>
+            </div>
+            <div class="survey-item">
+                <ul>
+                    <span class="type type--image"></span>
+                    <li class="name">
+                        <p data-toggle="tooltip" data-placement="top" title="Navn">folder navn</p>
+                    </li>
+                    <li class="date">10-01-2015</li>
+                    <li class="status"></li>
+                    <li class="startEndDate"></li>
+                    <li class="settlement"></li>
+                    <li class="respondStatus">
+                       <!--  <div class="progress-bar">
+                            <div class="bar positive" style="width:75%">
+                                <span>150/200</span>
+                            </div>
+                            <div class="bar negative" style="width:25%">
+                                <span>150/200</span>
+                            </div>
+                        </div> -->
+                    </li>
+                </ul>
+            </div>
         </div>
+    </div>
+    <div class="modal advancedQ-popup">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <img src="img/icon-pc.png" alt="defgo-icon-pc">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                    <h4 class="modal-title" id="modal-title">Modal title</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="q-title">
+                        <p>Title</p>
+                        <input class="advancedQ-popup__input" type="text">
+                    </div>
+                    <!-- <p>Folder</p>
+                    <span class="styled_select q-folder">
+                        <select name="" id="">
+                            <option value="">Current Folder</option>
+                            <option value="">Folder 1</option>
+                            <option value="">Folder 2</option>
+                            <option value="">Folder 3</option>
+                        </select>
+                    </span> -->
+                    <div class="q-template">
+                        <!-- <div class="checkbox">
+                            <input type="checkbox" id="checkbox1">
+                            <label for="checkbox1">
+                                Template
+                            </label>
+                        </div> -->
+                        <div class="styled_select lang-dropdown">
+                            <select name="" id="">
+                                <option value="">DK</option>
+                                <option value="">ENG</option>
+                                <option value="">DE</option>
+                            </select>
+                        </div>
+                        <div class="clearfix"></div>
+                        <!-- <div class="q-template__list">
+                            <p>Templates tekst - Lorem ipsum dolor sit amet... </p>
+                            <p>Templates tekst - Lorem ipsum dolor sit amet... </p>
+                            <p>Templates tekst - Lorem ipsum dolor sit amet... </p>
+                            <p>Templates tekst - Lorem ipsum dolor sit amet... </p>
+                            <p>Templates tekst - Lorem ipsum dolor sit amet... </p>
+                            <p>Templates tekst - Lorem ipsum dolor sit amet... </p>
+                            <p>Templates tekst - Lorem ipsum dolor sit amet... </p>
+                            <p>Templates tekst - Lorem ipsum dolor sit amet... </p>
+                        </div> -->
+                        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                            <div class="panel panel-default">
+                                <div class="panel-heading" role="tab" id="headingTwo">
+                                    <h4 class="panel-title" id="-collapsible-group-item-#2-">
+                                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                      <span></span>Templates
+                                  </a>
+                                  </h4>
+                                </div>
+                                <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo" aria-expanded="false">
+                                    <div class="panel-body">
+                                        <ul>
+                                            <li><a>Templates tekst - Lorem ipsum dolor sit</a></li>
+                                            <li><a>Templates tekst - Lorem ipsum dolor sit</a></li>
+                                            <li><a>Templates tekst - Lorem ipsum dolor sit</a></li>
+                                            <li><a>Templates tekst - Lorem ipsum dolor sit</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-help">Help</button>
+                    <button type="button" class="btn btn-cancel">Cancel</button>
+                    <button type="button" class="btn btn-next">Next</button>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
     </div>
     <script type="text/javascript" src="js/vendors.js"></script>
     <script type="text/javascript" src="js/site.js"></script>

@@ -2588,6 +2588,23 @@ ul {
 
 .modal {
   display: block;
+  -webkit-transform: scale(0.7);
+  -moz-transform: scale(0.7);
+  -ms-transform: scale(0.7);
+  transform: scale(0.7);
+  opacity: 0;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+  visibility: hidden;
+}
+.modal.in {
+  visibility: visible;
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  opacity: 1;
 }
 .modal .modal-header {
   text-align: center;
@@ -3400,6 +3417,7 @@ input[type=text]:focus {
   display: block;
   width: 100%;
   background: #ddd;
+  position: relative;
   margin-bottom: 15px;
   box-shadow: inset 0px -1px 1px rgba(0, 0, 0, 0.25), 0px 1px 0px rgba(0, 0, 0, 0.15);
 }
@@ -3422,6 +3440,7 @@ input[type=text]:focus {
 }
 .dashboard-container .survey-item ul li.name {
   width: 35%;
+  padding-left: 30px;
 }
 .dashboard-container .survey-item ul li.date, .dashboard-container .survey-item ul li.status, .dashboard-container .survey-item ul li.startEndDate, .dashboard-container .survey-item ul li.settlement, .dashboard-container .survey-item ul li.respondStatus {
   text-align: right;
@@ -3556,13 +3575,20 @@ input[type=text]:focus {
 }
 
 .progress-bar {
-  position: relative;
+  position: absolute;
   border: #ccc solid 1px;
   width: 112px;
   height: 25px;
   line-height: 25px;
   vertical-align: midle;
   overflow: hidden;
+  top: 50%;
+  right: 2px;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
 }
 .progress-bar .bar {
   position: absolute;
@@ -3618,6 +3644,36 @@ input[type=text]:focus {
     width: 100%;
   }
 }
+.type {
+  float: left;
+  height: 24px;
+  width: 23px;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+.type--questionaire {
+  background: url(../img/questionaire.png) no-repeat;
+}
+.type--rapport {
+  height: 28px;
+  background: url(../img/rapport.png) no-repeat;
+}
+.type--excel {
+  background: url(../img/excel.png) no-repeat;
+}
+.type--folder {
+  background: url(../img/folder.png) no-repeat;
+}
+.type--image {
+  width: 26px;
+  background: url(../img/image.png) no-repeat;
+}
+
 .outer-container .survey-innerContainer {
   max-width: 1224px;
   min-width: 950px;

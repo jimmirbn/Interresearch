@@ -7,13 +7,16 @@
 $bar-width: 112px;
 $bar-height: 25px;
 .progress-bar{
-  position:relative;
+  position:absolute;
   border:#ccc solid 1px;
   width:$bar-width;
   height:$bar-height;
   line-height:$bar-height;
   vertical-align:midle;
   overflow:hidden;
+  top: 50%;
+  right: 2px;
+  @include transform(translateY(-50%));
   // box-shadow:0 4px 10px -5px rgba(0, 0, 0, 0.25);
   .bar{      
     position:absolute;

@@ -1,0 +1,25 @@
+.type {
+    float: left;
+    height: 24px;
+    width: 23px;
+    position: absolute;
+    top: 50%;
+    @include transform(translateY(-50%));
+    &--questionaire {
+        background: url(../img/questionaire.png) no-repeat;
+    }
+    &--rapport{
+    	height: 28px;
+        background: url(../img/rapport.png) no-repeat;
+    }
+    &--excel{
+    	background: url(../img/excel.png) no-repeat;
+    }
+    &--folder{
+    	background: url(../img/folder.png) no-repeat;
+    }
+    &--image{
+    	width: 26px;
+    	background: url(../img/image.png) no-repeat;
+    }
+}
