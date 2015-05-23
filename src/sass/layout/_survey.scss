@@ -24,7 +24,7 @@
         bottom: 10px;
         // text-align: center;
         // height: 100%;
-        top: 120px;
+        top: 55px;
         @include transition(width 100ms ease);
         &.active {
             width: 60%;
@@ -35,6 +35,11 @@
             // }
             .survey__list {
                 width: 95%;
+            }
+            .question-types {
+                &.active {
+                    width: 95%;
+                }
             }
         }
         &.fixed {
@@ -68,8 +73,11 @@
         position: absolute;
         bottom: 0;
         width: 100%;
-        top: 0;
+        top: 90px;
         overflow-y: scroll;
+        &.active{
+            top: 200px;
+        }
         .survey-collapse {
             background: white;
             height: auto;

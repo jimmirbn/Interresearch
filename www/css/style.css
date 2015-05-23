@@ -2147,9 +2147,9 @@ ul {
 }
 
 .btn, .btn--header {
-  -webkit-transition: background-color 0.3s ease;
-  -o-transition: background-color 0.3s ease;
-  transition: background-color 0.3s ease;
+  -webkit-transition: background-color 300ms ease;
+  -o-transition: background-color 300ms ease;
+  transition: background-color 300ms ease;
   background-color: #02b1e8;
   border-radius: 0;
   border: 0;
@@ -2923,9 +2923,9 @@ input[type=text]:focus {
   display: block;
 }
 .slide-menu .slide-menu-btn {
-  -webkit-transition: background, 300ms ease;
-  -o-transition: background, 300ms ease;
-  transition: background, 300ms ease;
+  -webkit-transition: background 300ms ease;
+  -o-transition: background 300ms ease;
+  transition: background 300ms ease;
   background-color: transparent;
   display: inline-block;
   position: absolute;
@@ -3203,28 +3203,12 @@ input[type=text]:focus {
 }
 
 .question-types {
-  opacity: 0;
-  filter: alpha(opacity=0);
-  height: auto;
-  position: absolute;
+  display: none;
   background: #fff;
-  left: 10px;
-  top: 55px;
-  max-width: 60%;
-  width: 100%;
-  z-index: -1;
-  will-change: opacity;
-  -webkit-transition: opacity 550ms ease;
-  -o-transition: opacity 550ms ease;
-  transition: opacity 550ms ease;
+  width: 58%;
   box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.5);
   -moz-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.5);
   -webkit-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.5);
-}
-.question-types.active {
-  opacity: 1;
-  filter: alpha(opacity=100);
-  z-index: 10;
 }
 .question-types .row {
   margin: 0;
@@ -3567,7 +3551,7 @@ input[type=text]:focus {
   left: 10px;
   right: 10px;
   bottom: 10px;
-  top: 120px;
+  top: 55px;
   -webkit-transition: width 100ms ease;
   -o-transition: width 100ms ease;
   transition: width 100ms ease;
@@ -3576,6 +3560,9 @@ input[type=text]:focus {
   width: 60%;
 }
 .outer-container .survey-innerContainer .survey.active .survey__list {
+  width: 95%;
+}
+.outer-container .survey-innerContainer .survey.active .question-types.active {
   width: 95%;
 }
 .outer-container .survey-innerContainer .survey.fixed {
@@ -3599,8 +3586,11 @@ input[type=text]:focus {
   position: absolute;
   bottom: 0;
   width: 100%;
-  top: 0;
+  top: 90px;
   overflow-y: scroll;
+}
+.outer-container .survey-innerContainer .survey__list.active {
+  top: 200px;
 }
 .outer-container .survey-innerContainer .survey__list .survey-collapse {
   background: white;

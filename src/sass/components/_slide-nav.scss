@@ -6,21 +6,11 @@
     z-index: 99;
     top: 66px;
     left: 0;
-    -webkit-transform: translate(-300px);
-    -moz-transform: translate(-300px);
-    -ms-transform: translate(-300px);
-    -o-transform: translate(-300px);
-    transform: translate(-300px);
-    -webkit-transition: transform 300ms ease;
-    -o-transition: transform 300ms ease;
-    transition: transform 300ms ease;
+    @include transform(translate(-300px));
+    @include transition(transform 300ms ease);
     will-change: transform;
     &.active {
-        -webkit-transform: translate(0px);
-        -moz-transform: translate(0px);
-        -ms-transform: translate(0px);
-        -o-transform: translate(0px);
-        transform: translate(0px);
+        @include transform(translate(0px));
         li {
             @include transform(translatex(0px));
         }
@@ -48,11 +38,8 @@
                 position: absolute;
                 top: 50%;
                 left: 15px;
-                -webkit-transform: translateY(-50%);
-                -moz-transform: translateY(-50%);
-                -ms-transform: translateY(-50%);
-                -o-transform: translateY(-50%);
-                transform: translateY(-50%);
+                    @include transform(translateY(-50%));
+
             }
             &.logout {
                 @include transition-delay(20ms);

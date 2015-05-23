@@ -1,7 +1,6 @@
 input[type=text] {
-  -webkit-transition: all 300ms ease;
-  -o-transition: all 300ms ease;
-  transition: all 300ms ease;
+
+  @include transition(all 300ms ease);
   border: solid 1px #acacac;
   padding: 7px 10px 6px;
   width: 100%;

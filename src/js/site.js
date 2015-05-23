@@ -8,11 +8,11 @@
 
     $('input').iCheck();
 
-  $('input').iCheck({
-    checkboxClass: 'icheckbox_square-blue',
-    radioClass: 'iradio_square-blue',
-    increaseArea: '20%' // optional
-  });
+    $('input').iCheck({
+        checkboxClass: 'icheckbox_square-blue',
+        radioClass: 'iradio_square-blue',
+        increaseArea: '20%' // optional
+    });
 
 
 
@@ -70,14 +70,20 @@ function slideMenu() {
 function questionType() {
     var typeBtn = $('.q-types');
     var typeContainer = $('.question-types');
+    var closeContainer = $('.survey-innerContainer');
+    var survey_list = $('.survey__list');
 
     typeBtn.click(function() {
         if (!typeContainer.hasClass('active')) {
-            typeContainer.addClass('active')
+            typeContainer.fadeIn('100000').addClass('active');
             typeBtn.addClass('active');
+            survey_list.addClass('active');
+
         } else {
-            typeContainer.removeClass('active');
+
+            typeContainer.removeClass('active').css('display','none');
             typeBtn.removeClass('active');
+            survey_list.removeClass('active');
         }
     });
 }

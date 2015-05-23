@@ -1,31 +1,24 @@
 .question-types {
-    opacity: 0;
-    filter: alpha(opacity = 0);
-    height: auto;
-    position: absolute;
+    display: none;
+    // opacity: 0;
+    // filter: alpha(opacity = 0);
     background: #fff;
-    left: 10px;
-    top: 55px;
+    // left: 10px;
+    // top: 55px;
     // left: 0;
-    max-width: 60%;
-    width: 100%;
-    z-index: -1;
-    will-change: opacity;
+    width: 58%;
     // border: solid 2px #acacac;
-    -webkit-transition: opacity 550ms ease;
-    -o-transition: opacity 550ms ease;
-    transition: opacity 550ms ease;
     // -webkit-box-shadow: 0px 0px 3px 3px rgba(50, 50, 50, 0.35);
     // -moz-box-shadow: 0px 0px 3px 3px rgba(50, 50, 50, 0.35);
     // box-shadow: 0px 0px 3px 3px rgba(50, 50, 50, 0.35);
     box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.5);
     -moz-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.5);
     -webkit-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.5);
-    &.active {
-        opacity: 1;
-        filter: alpha(opacity = 100);
-        z-index: 10;
-    }
+    // &.active {
+    //     // opacity: 1;
+    //     // filter: alpha(opacity = 100);
+    //     z-index: 10;
+    // }
     .row {
         margin: 0;
     }
