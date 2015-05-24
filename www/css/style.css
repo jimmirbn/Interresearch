@@ -3647,6 +3647,7 @@ input[type=text]:focus {
   list-style: none;
   height: 100%;
   min-height: 35px;
+  height: 35px;
   display: table;
   width: 100%;
 }
