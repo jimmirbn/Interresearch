@@ -14,7 +14,89 @@
         increaseArea: '20%' // optional
     });
 
+    $(function() {
+        $.contextMenu({
+            selector: '.survey-item',
+            trigger: 'left',
+            callback: function(key, options) {
+                var m = "clicked: " + key;
+                window.console && console.log(m) || alert(m);
+            },
+            items: {
+                "open": {
+                    name: "Åbn",
+                    icon: "open"
+                },
+                "open as": {
+                    name: "Åben som",
+                    icon: "openAs"
+                },
+                "print": {
+                    name: "Vis udskrift",
+                    icon: "print"
+                },
+                "Edit": {
+                    name: "Rediger",
+                    icon: "edit"
+                },
+                "settlement": {
+                    name: "Afvikling",
+                    icon: "settlement"
+                },
+                "sep1": "---------",
+                "rapport": {
+                    name: "Tilføj analyserapport",
+                    icon: "rapport"
+                },
+                "copy": {
+                    name: "Kopiér",
+                    icon: "copy"
+                },
+                "rename": {
+                    name: "Omdøb",
+                    icon: "rename"
+                },
+                "delete": {
+                    name: "Slet",
+                    icon: "delete"
+                },
+                "move": {
+                    name: "Flyt",
+                    icon: "move"
+                },
+                "sep2": "---------",
+                "answers": {
+                    name: "Bevarelser",
+                    icon: "answers"
+                },
+                "settings": {
+                    name: "Indstillinger",
+                    icon: "settings"
+                },
+                "jump": {
+                    name: "Spring",
+                    icon: "jump"
+                },
+                "languages": {
+                    name: "Sprogversioner",
+                    icon: "languages"
+                },
+                "autoanswer": {
+                    name: "Autosvar",
+                    icon: "autoanswer"
+                },
+                "adSurvey": {
+                    name: "Advanced edit survey",
+                    icon: "adSurvey"
+                },
 
+            }
+        });
+
+        $('.survey-item').on('click', function(e) {
+            console.log('clicked', this);
+        })
+    });
 
 })(jQuery, window, document);
 
@@ -59,7 +141,7 @@ function slideMenu() {
                 slideMenu.addClass('active');
                 slideMenuBtn.addClass('active');
                 dashboard.addClass('side-menu-active');
-                
+
             } else {
                 slideMenu.removeClass('active');
                 slideMenuBtn.removeClass('active');
@@ -83,7 +165,7 @@ function questionType() {
 
         } else {
 
-            typeContainer.removeClass('active').css('display','none');
+            typeContainer.removeClass('active').css('display', 'none');
             typeBtn.removeClass('active');
             survey_list.removeClass('active');
         }

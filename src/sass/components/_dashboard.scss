@@ -103,6 +103,10 @@
                 }
             }
         }
+        &:hover{
+          cursor: pointer;
+          background: darken(#ddd, 10%);
+        }
     }
     &.side-menu-active {
         left: 310px;
