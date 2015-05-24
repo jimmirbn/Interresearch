@@ -2112,6 +2112,12 @@ button.close {
 .context-menu-item:hover {
   color: #fff;
 }
+.context-menu-item.headline {
+  border-bottom: solid 1px #d5d5d5;
+  background-color: #02b1e8;
+  font-size: 14px;
+  color: #fff;
+}
 
 .context-menu-separator {
   padding: 0;
@@ -2128,7 +2134,7 @@ button.close {
 
 .context-menu-item.hover {
   cursor: pointer;
-  background-color: #39F;
+  background-color: #02b1e8;
 }
 
 .context-menu-item.disabled {
@@ -2203,6 +2209,19 @@ button.close {
   text-decoration: underline;
 }
 
+/* menu header via data attribute */
+.data-title:before {
+  content: attr(data-menutitle);
+  display: block;
+  top: 0;
+  right: 0;
+  left: 0;
+  background: #02b1e8;
+  padding: 10px;
+  font-size: 14px;
+  color: #fff;
+}
+
 .clearfix {
   clear: both;
 }
@@ -2229,6 +2248,18 @@ button.close {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+* ::-moz-selection {
+  background-color: transparent;
+}
+* ::selection {
+  background-color: transparent;
 }
 *:focus {
   outline: 0;
@@ -2314,6 +2345,14 @@ ul {
   padding: 0 13px 0 30px;
   height: 30px;
   font-size: 0.875rem;
+}
+.btn--extra {
+  padding: 0;
+  white-space: pre-wrap;
+  height: auto;
+  width: 100%;
+  padding: 2px 0;
+  font-size: 15px;
 }
 
 .helpBtn {
@@ -2447,6 +2486,16 @@ ul {
   left: 0;
   display: block;
   display: none;
+}
+
+.extra-menu-btn {
+  background: url("../img/extra-menu.png") no-repeat;
+  width: 14px;
+  height: 15px;
+  position: absolute;
+}
+.extra-menu-btn:hover {
+  cursor: pointer;
 }
 
 /* iCheck plugin Line skin, blue
@@ -2592,7 +2641,7 @@ ul {
 
 .nav-container {
   height: 65px;
-  position: absolute;
+  position: relative;
   width: 100%;
   background: #02b1e8;
   box-shadow: inset 0px -1px 1px rgba(0, 0, 0, 0.25), 0px 1px 0px rgba(0, 0, 0, 0.15);
@@ -3529,10 +3578,22 @@ input[type=text]:focus {
   width: 100%;
 }
 .dashboard-container .item-overview-header ul li {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   display: table-cell;
   vertical-align: middle;
   width: 13%;
   color: #888888;
+}
+.dashboard-container .item-overview-header ul li ::-moz-selection {
+  background-color: transparent;
+}
+.dashboard-container .item-overview-header ul li ::selection {
+  background-color: transparent;
 }
 .dashboard-container .item-overview-header ul li.name {
   width: 35%;
@@ -3546,6 +3607,31 @@ input[type=text]:focus {
 }
 .dashboard-container .item-overview-header ul li.respondStatus {
   width: 16%;
+}
+.dashboard-container .item-overview-header ul li.sorted span {
+  position: relative;
+}
+.dashboard-container .item-overview-header ul li.sorted span:before {
+  content: '';
+  display: block;
+  position: absolute;
+  height: 10px;
+  width: 15px;
+  background: url(../img/chevron-sort.png) no-repeat;
+  right: -20px;
+  top: 54%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+.dashboard-container .item-overview-header ul li.sorted.up span:before {
+  background: url(../img/chevron-sort-up.png) no-repeat;
+}
+.dashboard-container .item-overview-header ul li span:hover {
+  cursor: default;
+  color: #6f6f6f;
 }
 .dashboard-container .survey-item {
   padding: 0 5px 0 10px;
@@ -3580,9 +3666,13 @@ input[type=text]:focus {
 .dashboard-container .survey-item ul li.date, .dashboard-container .survey-item ul li.status, .dashboard-container .survey-item ul li.startEndDate, .dashboard-container .survey-item ul li.settlement, .dashboard-container .survey-item ul li.respondStatus {
   text-align: right;
 }
+.dashboard-container .survey-item ul li.status {
+  padding-right: 12px;
+}
 .dashboard-container .survey-item ul li.settlement {
   width: 10%;
   padding-left: 0;
+  padding-right: 20px;
 }
 .dashboard-container .survey-item ul li.respondStatus {
   width: 16%;
@@ -3605,6 +3695,139 @@ input[type=text]:focus {
 }
 .dashboard-container.side-menu-active {
   left: 310px;
+}
+
+@-webkit-keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@-moz-keyframes spin {
+  100% {
+    -moz-transform: rotate(360deg);
+  }
+}
+@keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes check {
+  0% {
+    height: 0;
+    width: 0;
+  }
+  25% {
+    height: 0;
+    width: 10px;
+  }
+  50% {
+    height: 20px;
+    width: 10px;
+  }
+}
+@-moz-keyframes check {
+  0% {
+    height: 0;
+    width: 0;
+  }
+  25% {
+    height: 0;
+    width: 10px;
+  }
+  50% {
+    height: 20px;
+    width: 10px;
+  }
+}
+@keyframes check {
+  0% {
+    height: 0;
+    width: 0;
+  }
+  25% {
+    height: 0;
+    width: 10px;
+  }
+  50% {
+    height: 20px;
+    width: 10px;
+  }
+}
+.compiling {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  position: relative;
+  -webkit-box-sizing: border-box;
+  border-top-color: #FFF;
+  -webkit-animation: spin 1s infinite linear;
+  -o-animation: spin 1s infinite linear;
+  animation: spin 1s infinite linear;
+}
+.compiling--red {
+  border: solid 2px rgba(255, 0, 51, 0.5);
+  border-top-color: red;
+}
+.compiling--yellow {
+  border: solid 2px rgba(255, 204, 0, 0.5);
+  border-top-color: yellow;
+}
+.compiling--done {
+  -webkit-animation: none;
+  -o-animation: none;
+  animation: none;
+  border-radius: 0;
+  border: 0;
+  border-top-color: transparent;
+}
+.compiling--done:after {
+  -webkit-transform: scaleX(-1) rotate(135deg);
+  -moz-transform: scaleX(-1) rotate(135deg);
+  -ms-transform: scaleX(-1) rotate(135deg);
+  -o-transform: scaleX(-1) rotate(135deg);
+  transform: scaleX(-1) rotate(135deg);
+  -webkit-transform-origin: left top;
+  -moz-transform-origin: left top;
+  -ms-transform-origin: left top;
+  transform-origin: left top;
+  border-right: 4px solid #cee;
+  border-top: 4px solid #cee;
+  content: '';
+  display: block;
+  height: 20px;
+  left: 0px;
+  position: absolute;
+  top: 13px;
+  width: 10px;
+  -webkit-animation: check 0.8s;
+  -o-animation: check 0.8s;
+  animation: check 0.8s;
+  border-color: #6aa;
+}
+
+.settlement-icon {
+  display: inline-block;
+  width: 20px;
+  height: 29px;
+  background-size: 20px;
+  text-align: center;
+  top: 2px;
+  position: relative;
+}
+.settlement-icon--open {
+  background: url(../img/open.png) no-repeat;
+}
+.settlement-icon--closed {
+  background: url(../img/closed.png) no-repeat;
+}
+.settlement-icon--clade {
+  background: url(../img/clade.png) no-repeat;
 }
 
 .lt-ie9 .modal-dialog, .ie9 .modal-dialog {
@@ -3811,6 +4034,76 @@ input[type=text]:focus {
 .type--image {
   width: 26px;
   background: url(../img/image.png) no-repeat;
+}
+
+.extra-menu {
+  padding: 5px 0;
+  position: absolute;
+  right: 10px;
+  width: 450px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  background-color: #fff;
+  top: 35px;
+  display: none;
+}
+.extra-menu .row {
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 10px;
+}
+.extra-menu .row:first-of-type {
+  margin-top: 0;
+}
+.extra-menu .col-md-3,
+.extra-menu .col-sm-3 {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.extra-menu.active {
+  display: block;
+}
+
+.extra-menu-btn {
+  top: 5px;
+  right: 23px;
+  will-change: transform;
+  -webkit-transition: transform 250ms ease;
+  -o-transition: transform 250ms ease;
+  transition: transform 250ms ease;
+}
+.extra-menu-btn.active {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.extra-menu:after,
+.extra-menu:before {
+  bottom: 100%;
+  right: 10px;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+}
+
+.extra-menu:after {
+  border-color: rgba(255, 255, 255, 0);
+  border-bottom-color: #fff;
+  border-width: 10px;
+  margin-left: -10px;
+}
+
+.extra-menu:before {
+  border-color: rgba(213, 213, 213, 0);
+  border-bottom-color: rgba(0, 0, 0, 0.2);
+  border-width: 11px;
+  right: 9px;
 }
 
 .outer-container .survey-innerContainer {

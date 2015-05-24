@@ -31,6 +31,45 @@
                     <li class="analyze"><a>analysér</a></li>
                 </ul>
             </div>
+            <div class="extra-menu-btn"></div>
+            <div class="extra-menu">
+                <div class="row">
+                    <div class="col-sm-3 col-md-3">
+                        <button class="btn btn--extra">Opret mappe</button>
+                    </div>
+                    <div class="col-sm-3 col-md-3">
+                        <button class="btn btn--extra">Projectmappe</button>
+                    </div>
+                    <div class="col-sm-3 col-md-3">
+                        <button class="btn btn--extra">Tilføj panel</button>
+                    </div>
+                    <div class="col-sm-3 col-md-3">
+                        <button class="btn btn--extra">Tilføj fil</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-3 col-md-3">
+                        <button class="btn btn--extra">Tilføj blanket</button>
+                    </div>
+                    <div class="col-sm-3 col-md-3">
+                        <button class="btn btn--extra">Tilføj opgave</button>
+                    </div>
+                    <div class="col-sm-3 col-md-3">
+                        <button class="btn btn--extra">Tilføj statestik</button>
+                    </div>
+                    <div class="col-sm-3 col-md-3">
+                        <button class="btn btn--extra">søg</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-3 col-md-3">
+                        <button class="btn btn--extra">Tilføj blanketrapport</button>
+                    </div>
+                    <div class="col-sm-3 col-md-3">
+                        <button class="btn btn--extra">Tilføj fokusgruppe</button>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="slide-nav">
             <ul>
@@ -63,15 +102,15 @@
         <div class="dashboard-container">
             <div class="item-overview-header">
                 <ul>
-                    <li class="name">Navn</li>
-                    <li class="date">Dato</li>
-                    <li class="status">Status</li>
-                    <li class="startEndDate">Startdato<br>Slutdato</li>
-                    <li class="settlement">Afvikling</li>
-                    <li class="respondStatus">Svarstatus</li>
+                    <li class="name"><span>Navn</span></li>
+                    <li class="date"><span>Dato</span></li>
+                    <li class="status"><span>Status</span></li>
+                    <li class="startEndDate"><span>Startdato<br>Slutdato</span></li>
+                    <li class="settlement"><span>Afvikling</span></li>
+                    <li class="respondStatus"><span>Svarstatus</span></li>
                 </ul>
             </div>
-            <div class="survey-item context-demo">
+            <div class="survey-item" id="1234567">
                 <ul>
                     <span class="type type--questionaire"></span>
                     <li class="name">
@@ -80,7 +119,29 @@
                     <li class="date">10-01-2015</li>
                     <li class="status"></li>
                     <li class="startEndDate"><span>10-01-2015<br>10-02-2015</span></li>
-                    <li class="settlement"><span data-toggle="tooltip" data-placement="top" title="Kladde-undersøgelse. Undersøgelsen er endnu ikke blevet afviklet">Kladde</span></li>
+                    <li class="settlement"><span class="settlement-icon settlement-icon--open" data-toggle="tooltip" data-placement="top" title="Igangværende undersøgelse. Undersøgelsen er åben og svar indsamles"></span></li>
+                    <li class="respondStatus">
+                        <div class="progress-bar">
+                            <div class="bar positive" style="width:75%">
+                                <span>150/200</span>
+                            </div>
+                            <div class="bar negative" style="width:25%">
+                                <span>150/200</span>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="survey-item" id="1234567">
+                <ul>
+                    <span class="type type--questionaire"></span>
+                    <li class="name">
+                        <p data-toggle="tooltip" data-placement="top" title="Navn">Spørgeskema navn</p>
+                    </li>
+                    <li class="date">10-01-2015</li>
+                    <li class="status"></li>
+                    <li class="startEndDate"><span>10-01-2015<br>10-02-2015</span></li>
+                    <li class="settlement"><span class="settlement-icon settlement-icon--clade" data-toggle="tooltip" data-placement="top" title="Kladde-undersøgelse. Undersøgelsen er endnu ikke blevet afviklet"></span></li>
                     <li class="respondStatus">
                         <div class="progress-bar">
                             <div class="bar positive" style="width:25%">
@@ -93,16 +154,16 @@
                     </li>
                 </ul>
             </div>
-            <div class="survey-item">
+            <div class="survey-item" id="1234567">
                 <ul>
-                    <span class="type type--rapport"></span>
+                    <span class="type type--questionaire"></span>
                     <li class="name">
-                        <p data-toggle="tooltip" data-placement="top" title="Navn">Rapport dokument navn</p>
+                        <p data-toggle="tooltip" data-placement="top" title="Navn">Spørgeskema navn</p>
                     </li>
                     <li class="date">10-01-2015</li>
                     <li class="status"></li>
                     <li class="startEndDate"><span>10-01-2015<br>10-02-2015</span></li>
-                    <li class="settlement"><span data-toggle="tooltip" data-placement="top" title="afsluttet undersøgelse. Undersøgelsen er afsluttet og svar er blevet indsamlet">Lukket</span></li>
+                    <li class="settlement"><span class="settlement-icon settlement-icon--closed" data-toggle="tooltip" data-placement="top" title="afsluttet undersøgelse. Undersøgelsen er afsluttet og svar er blevet indsamlet"></span></li>
                     <li class="respondStatus">
                         <div class="progress-bar">
                             <div class="bar positive" style="width:50%">
@@ -115,7 +176,29 @@
                     </li>
                 </ul>
             </div>
-            <div class="survey-item">
+            <div class="survey-item" id="7654321">
+                <ul>
+                    <span class="type type--rapport"></span>
+                    <li class="name">
+                        <p data-toggle="tooltip" data-placement="top" title="Navn">Rapport dokument navn</p>
+                    </li>
+                    <li class="date">10-01-2015</li>
+                    <li class="status"><span class="compiling compiling--red"></span></li>
+                    <li class="startEndDate"></li>
+                    <li class="settlement"></li>
+                    <li class="respondStatus">
+                        <!-- <div class="progress-bar">
+                            <div class="bar positive" style="width:50%">
+                                <span>100/200</span>
+                            </div>
+                            <div class="bar negative" style="width:50%">
+                                <span>100/200</span>
+                            </div>
+                        </div> -->
+                    </li>
+                </ul>
+            </div>
+            <div class="survey-item" id="5123435">
                 <ul>
                     <span class="type type--excel"></span>
                     <li class="name">
@@ -123,32 +206,10 @@
                     </li>
                     <li class="date">10-01-2015</li>
                     <li class="status"></li>
-                    <li class="startEndDate"><span>10-01-2015<br>10-02-2015</span></li>
-                    <li class="settlement"><span data-toggle="tooltip" data-placement="top" title="Igangværende undersøgelse. Undersøgelsen er åben og svar indsamles">Åben</span></li>
-                    <li class="respondStatus">
-                        <div class="progress-bar">
-                            <div class="bar positive" style="width:75%">
-                                <span>150/200</span>
-                            </div>
-                            <div class="bar negative" style="width:25%">
-                                <span>150/200</span>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <div class="survey-item">
-                <ul>
-                    <span class="type type--folder"></span>
-                    <li class="name">
-                        <p data-toggle="tooltip" data-placement="top" title="Navn">folder navn</p>
-                    </li>
-                    <li class="date">10-01-2015</li>
-                    <li class="status"></li>
                     <li class="startEndDate"></li>
                     <li class="settlement"></li>
                     <li class="respondStatus">
-                       <!--  <div class="progress-bar">
+                        <!-- <div class="progress-bar">
                             <div class="bar positive" style="width:75%">
                                 <span>150/200</span>
                             </div>
@@ -159,7 +220,29 @@
                     </li>
                 </ul>
             </div>
-            <div class="survey-item">
+            <div class="survey-item" id="9058607">
+                <ul>
+                    <span class="type type--folder"></span>
+                    <li class="name">
+                        <p data-toggle="tooltip" data-placement="top" title="Navn">folder navn</p>
+                    </li>
+                    <li class="date">10-01-2015</li>
+                    <li class="status"></li>
+                    <li class="startEndDate"></li>
+                    <li class="settlement"></li>
+                    <li class="respondStatus">
+                        <!--  <div class="progress-bar">
+                            <div class="bar positive" style="width:75%">
+                                <span>150/200</span>
+                            </div>
+                            <div class="bar negative" style="width:25%">
+                                <span>150/200</span>
+                            </div>
+                        </div> -->
+                    </li>
+                </ul>
+            </div>
+            <div class="survey-item" id="847563">
                 <ul>
                     <span class="type type--image"></span>
                     <li class="name">
@@ -170,7 +253,7 @@
                     <li class="startEndDate"></li>
                     <li class="settlement"></li>
                     <li class="respondStatus">
-                       <!--  <div class="progress-bar">
+                        <!--  <div class="progress-bar">
                             <div class="bar positive" style="width:75%">
                                 <span>150/200</span>
                             </div>

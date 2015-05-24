@@ -32,6 +32,14 @@
         height: 30px;
         font-size: 0.875rem;
     }
+    &--extra{
+        padding: 0;
+        white-space: pre-wrap;
+        height: auto;
+        width: 100%;
+        padding: 2px 0;
+        font-size: 15px;
+    }
 }
 
 .helpBtn {
@@ -169,5 +177,15 @@
             display: block;
             display: none;
         }
+    }
+}
+
+.extra-menu-btn{
+    background:url('../img/extra-menu.png') no-repeat;
+    width: 14px;
+    height: 15px;
+    position: absolute;
+    &:hover{
+        cursor: pointer;
     }
 }

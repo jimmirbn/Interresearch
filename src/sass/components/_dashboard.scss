@@ -19,8 +19,18 @@
             display: table;
             width: 100%;
             li {
-              display: table-cell;
-              vertical-align: middle;
+                -webkit-touch-callout: none;
+                -webkit-user-select: none;
+                -khtml-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+                @include selection {
+                    background-color: transparent;
+                }
+
+                display: table-cell;
+                vertical-align: middle;
                 // float: left;
                 width: 13%;
                 // padding-left: 10px;
@@ -28,22 +38,56 @@
                 &.name {
                     width: 35%;
                 }
-                &.date, &.status, &.startEndDate,&.settlement,&.respondStatus{
-                  text-align: right;
+                &.date,
+                &.status,
+                &.startEndDate,
+                &.settlement,
+                &.respondStatus {
+                    text-align: right;
                 }
                 &.settlement {
                     width: 10%;
                     padding-left: 0;
                     // text-align: center;
+               
                 }
                 &.respondStatus {
                     width: 16%;
+                }
+                &.sorted {
+                    span {
+                        position: relative;
+                        &:before {
+                            content: '';
+                            display: block;
+                            position: absolute;
+                            height: 10px;
+                            width: 15px;
+                            background: url(../img/chevron-sort.png) no-repeat;
+                            right: -20px;
+                            top: 54%;
+                            @include transform(translateY(-50%));
+                        }
+                    }
+                    &.up {
+                        span {
+                            &:before {
+                                background: url(../img/chevron-sort-up.png) no-repeat;
+                            }
+                        }
+                    }
+                }
+                span {
+                    &:hover {
+                        cursor: default;
+                        color: darken(#888888, 10%);
+                    }
                 }
             }
         }
     }
     .survey-item {
-      padding: 0 5px 0 10px;
+        padding: 0 5px 0 10px;
         display: block;
         width: 100%;
         background: #ddd;
@@ -74,13 +118,22 @@
                     width: 35%;
                     padding-left: 30px;
                 }
-                &.date, &.status, &.startEndDate, &.settlement, &.respondStatus{
-                  text-align: right;
+                &.date,
+                &.status,
+                &.startEndDate,
+                &.settlement,
+                &.respondStatus {
+                    text-align: right;
+                }
+                &.status {
+                    padding-right: 12px;
                 }
                 &.settlement {
                     width: 10%;
                     padding-left: 0;
+                    padding-right: 20px;
                     // text-align: center;
+               
                 }
                 &.respondStatus {
                     width: 16%;
@@ -95,6 +148,7 @@
                         // top: 50%;
                         // transform: translateY(-50%);
                         // @include transform(trans)
+                   
                     }
                 }
                 p {
@@ -103,12 +157,96 @@
                 }
             }
         }
-        &:hover{
-          cursor: pointer;
-          background: darken(#ddd, 10%);
+        &:hover {
+            cursor: pointer;
+            background: darken(#ddd, 10%);
         }
     }
     &.side-menu-active {
         left: 310px;
+    }
+}
+
+@include keyframes(spin) {
+    100% {
+        @include transform(rotate(360deg));
+    }
+}
+
+
+@include keyframes(check) {
+    0% {
+        height: 0;
+        width: 0;
+    }
+    25% {
+        height: 0;
+        width: 10px;
+    }
+    50% {
+        height: 20px;
+        width: 10px;
+    }
+}
+
+
+.compiling {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    position: relative;
+    -webkit-box-sizing: border-box;
+    border-top-color: #FFF;
+    @include animation(spin 1s infinite linear);
+    &--red {
+        border: solid 2px rgba(#ff0033, 0.5);
+        border-top-color: red;
+    }
+    &--yellow {
+        border: solid 2px rgba(255, 204, 0, 0.5);
+        border-top-color: yellow;
+    }
+    &--done {
+        @include animation(none);
+        border-radius: 0;
+        border: 0;
+        border-top-color: transparent;
+        &:after {
+            @include transform(scaleX(-1) rotate(180deg + -45deg));
+            @include transform-origin(left top);
+            // The borders
+            border-right: 4px solid #cee;
+            border-top: 4px solid #cee;
+            // Positioning and stuff
+            content: '';
+            display: block;
+            height: 20px;
+            left: 0px;
+            position: absolute;
+            top: 13px;
+            width: 10px;
+            @include animation(check 0.8s);
+            border-color: #6aa;
+        }
+    }
+}
+
+.settlement-icon {
+    display: inline-block;
+    width: 20px;
+    height: 29px;
+    background-size: 20px;
+    text-align: center;
+    top: 2px;
+    position: relative;
+    &--open {
+        background: url(../img/open.png) no-repeat;
+    }
+    &--closed {
+        background: url(../img/closed.png) no-repeat;
+    }
+    &--clade {
+        background: url(../img/clade.png) no-repeat;
     }
 }

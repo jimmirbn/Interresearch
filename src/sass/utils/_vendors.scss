@@ -111,6 +111,12 @@
             &:hover{
             	color: #fff;
             }
+            &.headline{
+            	border-bottom: solid 1px #d5d5d5;
+            	background-color:#02b1e8;
+            	font-size: 14px;
+            	color: #fff;
+            }
 }
 
 .context-menu-separator {
@@ -128,7 +134,7 @@
 
 .context-menu-item.hover {
     cursor: pointer;
-    background-color: #39F;
+    background-color: #02b1e8;
 }
 
 .context-menu-item.disabled {
@@ -207,4 +213,19 @@
 
 .context-menu-accesskey {
     text-decoration: underline;
+}
+
+
+/* menu header via data attribute */
+.data-title:before {
+    content: attr(data-menutitle);
+    display: block;
+    top: 0;
+    right: 0;
+    left: 0;
+    background: #02b1e8;
+    padding: 10px;
+
+    font-size: 14px;
+    color: #fff;
 }

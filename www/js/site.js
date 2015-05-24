@@ -5,7 +5,9 @@
     slideNav();
     showSettings();
     showSettings2();
-
+    shiftCompiling();
+    sortDemo();
+    extraMenu();
     $('input').iCheck();
 
     $('input').iCheck({
@@ -16,13 +18,19 @@
 
     $(function() {
         $.contextMenu({
+
             selector: '.survey-item',
             trigger: 'left',
+
             callback: function(key, options) {
                 var m = "clicked: " + key;
                 window.console && console.log(m) || alert(m);
             },
             items: {
+                "headline": {
+                    name: "",
+                    className: "not-selectable headline",
+                },
                 "open": {
                     name: "Åbn",
                     icon: "open"
@@ -94,11 +102,58 @@
         });
 
         $('.survey-item').on('click', function(e) {
-            console.log('clicked', this);
+            var menuHeadline = $('.headline');
+            var thisName = $(this).find('p').text()
+            var thisRealName = thisName + '<br>'
+            menuHeadline.find('span').append(thisRealName + this.id);
         })
     });
 
 })(jQuery, window, document);
+
+function shiftCompiling() {
+    var status = $('.compiling');
+    setTimeout(function() {
+        if (status.hasClass('compiling--red')) {
+            status.removeClass('compiling--red').addClass('compiling--yellow');
+        }
+    }, 5000);
+    setTimeout(function() {
+        if (status.hasClass('compiling--yellow')) {
+            status.removeClass('compiling--yellow').addClass('compiling--done');
+        }
+    }, 10000);
+}
+
+function sortDemo() {
+    var sortingHead = $('.item-overview-header ul li');
+    sortingHead.on('click', function(e) {
+        sortingHead.not($(this)).removeClass('sorted').removeClass('up');
+        var self = $(this);
+        if (!self.hasClass('sorted')) {
+            self.addClass('sorted');
+        } else if (self.hasClass('sorted') && self.hasClass('up')) {
+            self.removeClass('up');
+        } else if (self.hasClass('sorted')) {
+            self.addClass('up');
+        }
+    });
+}
+
+function extraMenu() {
+    var extraBtn = $('.extra-menu-btn');
+    var extraMenu = $('.extra-menu');
+    extraBtn.on('click', function(e) {
+        if(!extraMenu.hasClass('active')){
+            extraMenu.addClass('active');
+            extraBtn.addClass('active');
+        }
+        else{
+            extraMenu.removeClass('active');
+            extraBtn.removeClass('active');
+        }
+    });
+}
 
 function slideMenu() {
     var slideMenuBtn = $('.slide-menu-btn');
