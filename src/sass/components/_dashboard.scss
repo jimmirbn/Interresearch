@@ -10,9 +10,10 @@
     @include transition(left 300ms ease);
     .item-overview-header {
         display: block;
-        width: 100%;
+        width: 98%;
         margin-bottom: 15px;
         padding: 0 10px;
+        margin-left: 2%;
         ul {
             margin: 0;
             list-style: none;
@@ -28,7 +29,6 @@
                 @include selection {
                     background-color: transparent;
                 }
-
                 display: table-cell;
                 vertical-align: middle;
                 // float: left;
@@ -49,7 +49,6 @@
                     width: 10%;
                     padding-left: 0;
                     // text-align: center;
-               
                 }
                 &.respondStatus {
                     width: 16%;
@@ -89,7 +88,8 @@
     .survey-item {
         padding: 0 5px 0 10px;
         display: block;
-        width: 100%;
+        width: 98%;
+        margin-left: 2%;
         background: #ddd;
         position: relative;
         // height: 35px;
@@ -134,7 +134,6 @@
                     padding-left: 0;
                     padding-right: 20px;
                     // text-align: center;
-               
                 }
                 &.respondStatus {
                     width: 16%;
@@ -149,7 +148,6 @@
                         // top: 50%;
                         // transform: translateY(-50%);
                         // @include transform(trans)
-                   
                     }
                 }
                 p {
@@ -162,6 +160,12 @@
             cursor: pointer;
             background: darken(#ddd, 10%);
         }
+        .checkbox {
+            position: absolute;
+            left: -32px;
+            top: 50%;
+            @include transform(translateY(-50%));
+        }
     }
     &.side-menu-active {
         left: 310px;
@@ -173,7 +177,6 @@
         @include transform(rotate(360deg));
     }
 }
-
 
 @include keyframes(check) {
     0% {
@@ -189,7 +192,6 @@
         width: 10px;
     }
 }
-
 
 .compiling {
     display: inline-block;

@@ -28,15 +28,15 @@
     }
 }
 
-.extra-menu-btn {
-    top: 5px;
-    right: 23px;
-   	will-change: transform;
-   	@include transition(transform 250ms ease);
-    &.active{
-    	@include transform(rotate(45deg));
-    }
-}
+// .extra-menu-btn {
+//     top: 5px;
+//     right: 23px;
+//    	will-change: transform;
+//    	@include transition(transform 250ms ease);
+//     &.active{
+//     	@include transform(rotate(45deg));
+//     }
+// }
 
 .extra-menu:after,
 .extra-menu:before {

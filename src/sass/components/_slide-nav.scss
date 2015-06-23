@@ -3,7 +3,7 @@
     width: 300px;
     background: #fff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    z-index: 99;
+    z-index: 999;
     top: 65px;
     left: 0;
     @include transform(translate(-300px));
@@ -12,14 +12,14 @@
     &.active {
         @include transform(translate(0px));
         li {
-            @include transform(translatex(0px));
+            @include transform(translateX(0px));
         }
     }
     ul {
         margin: 0;
         li {
             position: relative;
-            @include transform(translatex(-300px));
+            @include transform(translateX(-300px));
             @include transition-property(transform);
             @include transition-duration(350ms);
             @include transition-timing-function(cubic-bezier(0.72, 0.05, 0.51, 1));

@@ -146,11 +146,11 @@ function extraMenu() {
     extraBtn.on('click', function(e) {
         if(!extraMenu.hasClass('active')){
             extraMenu.addClass('active');
-            extraBtn.addClass('active');
+            extraBtn.addClass('open');
         }
         else{
             extraMenu.removeClass('active');
-            extraBtn.removeClass('active');
+            extraBtn.removeClass('open');
         }
     });
 }
