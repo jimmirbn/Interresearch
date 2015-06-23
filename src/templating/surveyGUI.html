@@ -11,7 +11,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" href="css/style.css">
-    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <!--[if lt IE 9]>
   <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -29,6 +28,7 @@
                 <ul>
                     <li class="info"><a><span></span></a></li>
                     <li class="helpBtn"><a>Help</a></li>
+                    <li class="importBtn"><a>Import</a></li>
                 </ul>
                 <ul class="right">
                     <li class="previewBtn"><a>Preview</a></li>
@@ -74,60 +74,129 @@
             </div>
             <div class="clearfix"></div>
             <div class="survey">
-                <div class="question-types">
-                    <div class="row">
-                        <div class="col col-xs-4 col-sm-4 col-md-4">
-                            <div class="thumbnail oneAnswerBtn">
-                                <button class="btn col-md-4">Only one answer<span></span></button>
+                <div class="question-types carousel vertical slide" id="carousel-btn" data-ride="carousel">
+                    <div class="question-types-content">
+                        <div class="carousel-inner" role="listbox">
+                            <div class="item active">
+                                <div class="row">
+                                    <div class="col col-xs-4 col-sm-4 col-md-4">
+                                        <div class="thumbnail oneAnswerBtn">
+                                            <button class="btn">Only one answer<span></span></button>
+                                        </div>
+                                    </div>
+                                    <div class="col col-xs-4 col-sm-4 col-md-4">
+                                        <div class="thumbnail sliderBtn">
+                                            <button class="btn">Slider<span></span></button>
+                                        </div>
+                                    </div>
+                                    <div class="col col-xs-4 col-sm-4 col-md-4">
+                                        <div class="thumbnail freeTextBtn">
+                                            <button class="btn">Free text answer<span></span></button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col col-xs-4 col-sm-4 col-md-4">
+                                        <div class="thumbnail multipleBtn">
+                                            <button class="btn">Multiple answers<span></span></button>
+                                        </div>
+                                    </div>
+                                    <div class="col col-xs-4 col-sm-4 col-md-4">
+                                        <div class="thumbnail frequencyBtn">
+                                            <button class="btn">Matrix<span></span></button>
+                                        </div>
+                                    </div>
+                                    <div class="col col-xs-4 col-sm-4 col-md-4">
+                                        <div class="thumbnail descriptionBtn">
+                                            <button class="btn">Description<span></span></button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col col-xs-4 col-sm-4 col-md-4">
+                                        <div class="thumbnail numericBtn">
+                                            <button class="btn">Numeric<span>1 2 3</span></button>
+                                        </div>
+                                    </div>
+                                    <div class="col col-xs-4 col-sm-4 col-md-4">
+                                        <div class="thumbnail formBtn">
+                                            <button class="btn">Form<span></span></button>
+                                        </div>
+                                    </div>
+                                    <div class="col col-xs-4 col-sm-4 col-md-4">
+                                        <div class="thumbnail fileBtn">
+                                            <button class="btn">File<span></span></button>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col col-xs-4 col-sm-4 col-md-4">
-                            <div class="thumbnail sliderBtn">
-                                <button class="btn">Slider<span></span></button>
-                            </div>
-                        </div>
-                        <div class="col col-xs-4 col-sm-4 col-md-4">
-                            <div class="thumbnail freeTextBtn">
-                                <button class="btn">Free text answer<span></span></button>
+                            <div class="item">
+                                <div class="row">
+                                    <div class="col col-xs-4 col-sm-4 col-md-4">
+                                        <div class="thumbnail oneAnswerBtn">
+                                            <button class="btn">2 Only one answer<span></span></button>
+                                        </div>
+                                    </div>
+                                    <div class="col col-xs-4 col-sm-4 col-md-4">
+                                        <div class="thumbnail sliderBtn">
+                                            <button class="btn">2 Slider<span></span></button>
+                                        </div>
+                                    </div>
+                                    <div class="col col-xs-4 col-sm-4 col-md-4">
+                                        <div class="thumbnail freeTextBtn">
+                                            <button class="btn">2 Free text answer<span></span></button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col col-xs-4 col-sm-4 col-md-4">
+                                        <div class="thumbnail multipleBtn">
+                                            <button class="btn">2 Multiple answers<span></span></button>
+                                        </div>
+                                    </div>
+                                    <div class="col col-xs-4 col-sm-4 col-md-4">
+                                        <div class="thumbnail frequencyBtn">
+                                            <button class="btn">2 Matrix<span></span></button>
+                                        </div>
+                                    </div>
+                                    <div class="col col-xs-4 col-sm-4 col-md-4">
+                                        <div class="thumbnail descriptionBtn">
+                                            <button class="btn">2 Description<span></span></button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col col-xs-4 col-sm-4 col-md-4">
+                                        <div class="thumbnail numericBtn">
+                                            <button class="btn">2 Numeric<span>1 2 3</span></button>
+                                        </div>
+                                    </div>
+                                    <div class="col col-xs-4 col-sm-4 col-md-4">
+                                        <div class="thumbnail formBtn">
+                                            <button class="btn">2 Form<span></span></button>
+                                        </div>
+                                    </div>
+                                    <div class="col col-xs-4 col-sm-4 col-md-4">
+                                        <div class="thumbnail fileBtn">
+                                            <button class="btn">2 File<span></span></button>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col col-xs-4 col-sm-4 col-md-4">
-                            <div class="thumbnail multipleBtn">
-                                <button class="btn">Multiple answers<span></span></button>
-                            </div>
-                        </div>
-                        <div class="col col-xs-4 col-sm-4 col-md-4">
-                            <div class="thumbnail frequencyBtn">
-                                <button class="btn">Matrix<span></span></button>
-                            </div>
-                        </div>
-                        <div class="col col-xs-4 col-sm-4 col-md-4">
-                            <div class="thumbnail descriptionBtn">
-                                <button class="btn">Description<span></span></button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col col-xs-4 col-sm-4 col-md-4">
-                            <div class="thumbnail numericBtn">
-                                <button class="btn">Numeric<span>1 2 3</span></button>
-                            </div>
-                        </div>
-                        <div class="col col-xs-4 col-sm-4 col-md-4">
-                            <div class="thumbnail formBtn">
-                                <button class="btn">Form<span></span></button>
-                            </div>
-                        </div>
-                        <div class="col col-xs-4 col-sm-4 col-md-4">
-                            <div class="thumbnail fileBtn">
-                                <button class="btn">File<span></span></button>
-                            </div>
-                        </div>
+                    <div class="question-types-extra">
+                        <a class="left carousel-control" href="#carousel-btn" role="button" data-slide="prev">
+                            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="right carousel-control" href="#carousel-btn" role="button" data-slide="next">
+                            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
                     </div>
                 </div>
-            <h1 class="survey__title">Survey Title</h1>
+                <h1 class="survey__title">Survey Title</h1>
                 <div class="survey__list">
                     <div class="survey-collapse">
                         <img class="dots" src="img/dots.png" alt="defgo">
@@ -185,7 +254,6 @@
                         <div class="question-container">
                             <h2>Multiple answers - checkbox</h2>
                             <div class="question draggable">
-
                                 <div class="checkbox">
                                     <input type="checkbox" id="checkbox1">
                                     <label for="checkbox1">
@@ -482,9 +550,9 @@
                                         <div class="panel-heading" role="tab" id="headingTwo">
                                             <h4 class="panel-title" id="-collapsible-group-item-#2-">
                                                 <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                                   <span></span>Egenskaber for spørgsmål
-                                               </a>
-                                           </h4>
+                                                 <span></span>Egenskaber for spørgsmål
+                                             </a>
+                                         </h4>
                                         </div>
                                         <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo" aria-expanded="false">
                                             <div class="panel-body">

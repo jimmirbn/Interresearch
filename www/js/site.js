@@ -1,4 +1,8 @@
 (function($, window, document, undefined) {
+    $('#carousel-btn').carousel({
+        interval: false,
+        keyboard: false,
+    })
 
     slideMenu();
     questionType();
@@ -144,11 +148,10 @@ function extraMenu() {
     var extraBtn = $('.extra-menu-btn');
     var extraMenu = $('.extra-menu');
     extraBtn.on('click', function(e) {
-        if(!extraMenu.hasClass('active')){
+        if (!extraMenu.hasClass('active')) {
             extraMenu.addClass('active');
             extraBtn.addClass('open');
-        }
-        else{
+        } else {
             extraMenu.removeClass('active');
             extraBtn.removeClass('open');
         }

@@ -55,6 +55,7 @@ module.exports = function (grunt) {
                     '<%= src.bower %>/bootstrap-sass/assets/javascripts/bootstrap/collapse.js',
                     '<%= src.bower %>/bootstrap-sass/assets/javascripts/bootstrap/transition.js',
                     '<%= src.bower %>/bootstrap-sass/assets/javascripts/bootstrap/modal.js',
+                    '<%= src.bower %>/bootstrap-sass/assets/javascripts/bootstrap/carousel.js',
                     '<%= src.bower %>/icheck/icheck.min.js',
                     '<%= src.bower %>/jQuery-contextMenu/src/jquery.contextMenu.js',
                     '<%= src.bower %>/jQuery-contextMenu/src/jquery.ui.position.js',
