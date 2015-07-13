@@ -1,0 +1,218 @@
+.nav-select {
+    width: 200px;
+    position: relative;
+    &.nav-help {
+        width: 170px;
+        .nav-options {
+            width: 160px;
+        }
+    }
+    & > span {
+        display: block;
+        position: relative;
+        cursor: pointer;
+        padding: 13px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        color: #fff;
+        font-weight: bold;
+        @include transition(background 300ms ease);
+        padding-right: 3em;
+        &:hover {
+            background: rgba(0, 0, 0, 0.3);
+        }
+        &:after {
+            speak: none;
+            @include position(absolute, 50% null null null);
+            @include transform(translateY(-50%));
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            content: '\25BE';
+            right: 1em;
+        }
+    }
+    &.nav-active {
+        z-index: 200;
+        & > span {
+            background-color: #fff;
+            color: #02b1e8;
+            &:after {
+                @include transform(translateY(-50%) rotate(180deg));
+            }
+        }
+        .nav-options {
+            visibility: visible;
+            pointer-events: auto;
+            z-index: 99;
+            @include old-ie {
+                display: block;
+            }
+            & > ul {
+                @include old-ie {
+                    background-color: #fff;
+                }
+                &:before {
+                    @include transform(scale3d(1, 1, 1));
+                    @include transition(none);
+                    @include animation(expand 0.6s ease-out);
+                    @include old-ie {
+                        background-color: transparent;
+                    }
+                }
+                li {
+                    @include transform(translate3d(0, 0, 0));
+                    opacity: 1;
+                    @include transition(none);
+                    @include animation(bounce 0.6s ease-out);
+                }
+            }
+        }
+    }
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        span {
+            padding: 1em;
+        }
+    }
+}
+
+.nav-options {
+    @include old-ie {
+        display: none;
+    }
+    @include position(absolute, null null null 5px);
+    width: 190px;
+    overflow: visible;
+    background: transparent;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: none;
+    color: #02b1e8;
+    & > ul {
+        &:before {
+            content: '';
+            @include size(100%, 100%);
+            @include position(absolute, 0 null null 0);
+            @include transform(scale3d(1, 0, 1));
+            background: #fff;
+            @include transform-origin(50% 0%);
+            @include transition(transform 0.3s)
+        }
+        li {
+            opacity: 0;
+            @include transform(translate3d(0, -25px, 0));
+            @include transition(transform 0.15s, background-color 200ms ease, color 200ms ease);
+            &:hover {
+                background-color: #02b1e8;
+                & > a {
+                    color: #fff;
+                    text-decoration: none;
+                }
+            }
+             & > a, & > span {
+                padding: 13px 20px 13px 50px;
+                position: relative;
+                top: 2px;
+                display: block;
+                font-weight: bold;
+                cursor: pointer;
+                &:hover{
+                    color: #fff;
+                }
+            }
+            i {
+                display: block;
+                position: absolute;
+                top: 50%;
+                left: 15px;
+                @include transform(translateY(-50%));
+            }
+            &.logout {
+                @include transition-delay(20ms);
+                i {
+                    @include transition(transform 200ms ease);
+                    background: url("../img/logout.png") no-repeat;
+                    height: 21px;
+                    width: 22px;
+                }
+                &:hover {
+                    i {
+                        @include transform(translate(-5px, -50%));
+                    }
+                }
+            }
+            &.dashboard {
+                @include transition-delay(40ms);
+                i {
+                    background: url("../img/dashboard_blue.png") no-repeat;
+                    height: 21px;
+                    width: 21px;
+                }
+                &:hover {
+                    i {
+                        background: url("../img/dashboard_white.png") no-repeat;
+                        height: 21px;
+                        width: 21px;
+                    }
+                }
+            }
+            &.contact {
+                @include transition-delay(60ms);
+                i {
+                    background: url("../img/contact.png") no-repeat;
+                    height: 17px;
+                    width: 22px;
+                }
+                &:hover {
+                    i {
+                        background: url("../img/contact_white.png") no-repeat;
+                        height: 17px;
+                        width: 22px;
+                    }
+                }
+            }
+            &.users {
+                @include transition-delay(80ms);
+                i {
+                    background: url("../img/users.png") no-repeat;
+                    height: 20px;
+                    width: 22px;
+                }
+                &:hover {
+                    i {
+                        background: url("../img/users-white.png") no-repeat;
+                        height: 20px;
+                        width: 22px;
+                    }
+                }
+            }
+            &.howto {
+                @include transition-delay(100ms);
+                i {
+                    background: url("../img/howto.png") no-repeat;
+                    height: 21px;
+                    width: 22px;
+                }
+                &:hover {
+                    i {
+                        background: url("../img/howto_white.png") no-repeat;
+                        height: 21px;
+                        width: 22px;
+                    }
+                }
+            }
+            &.support {
+                @include transition-delay(120ms);
+                i {
+                    background: url("../img/support.png") no-repeat;
+                    height: 21px;
+                    width: 22px;
+                }
+            }
+        }
+    }
+}

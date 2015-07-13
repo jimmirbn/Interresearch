@@ -3,8 +3,9 @@
     height: 24px;
     width: 23px;
     position: absolute;
-    top: 50%;
-    @include transform(translateY(-50%));
+    // top: 50%;
+    // @include transform(translateY(-50%));
+    bottom: 5px;
     &--questionaire {
         background: url(../img/questionaire.png) no-repeat;
     }

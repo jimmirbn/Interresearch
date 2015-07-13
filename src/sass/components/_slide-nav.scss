@@ -1,94 +1,94 @@
-.slide-nav {
-    position: absolute;
-    width: 300px;
-    background: #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    z-index: 999;
-    top: 65px;
-    left: 0;
-    @include transform(translate(-300px));
-    @include transition(transform 300ms ease);
-    will-change: transform;
-    &.active {
-        @include transform(translate(0px));
-        li {
-            @include transform(translateX(0px));
-        }
-    }
-    ul {
-        margin: 0;
-        li {
-            position: relative;
-            @include transform(translateX(-300px));
-            @include transition-property(transform);
-            @include transition-duration(350ms);
-            @include transition-timing-function(cubic-bezier(0.72, 0.05, 0.51, 1));
-            will-change: transform;
-            a {
-                display: block;
-                padding: 20px 20px 20px 50px;
-                position: relative;
-                top: 2px;
-            }
-            &:hover {
-                background: #eee;
-            }
-            i {
-                display: block;
-                position: absolute;
-                top: 50%;
-                left: 15px;
-                    @include transform(translateY(-50%));
+// // .slide-nav {
+// //     position: absolute;
+// //     width: 300px;
+// //     background: #fff;
+// //     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+// //     z-index: 999;
+// //     top: 65px;
+// //     left: 0;
+// //     @include transform(translate(-300px));
+// //     @include transition(transform 300ms ease);
+// //     will-change: transform;
+// //     &.active {
+// //         @include transform(translate(0px));
+// //         li {
+// //             @include transform(translateX(0px));
+// //         }
+// //     }
+// //     ul {
+// //         margin: 0;
+//         li {
+//             position: relative;
+//             @include transform(translateX(-300px));
+//             @include transition-property(transform);
+//             @include transition-duration(350ms);
+//             @include transition-timing-function(cubic-bezier(0.72, 0.05, 0.51, 1));
+//             will-change: transform;
+//             a {
+//                 display: block;
+//                 padding: 20px 20px 20px 50px;
+//                 position: relative;
+//                 top: 2px;
+//             }
+//             &:hover {
+//                 background: #eee;
+//             }
+//             i {
+//                 display: block;
+//                 position: absolute;
+//                 top: 50%;
+//                 left: 15px;
+//                     @include transform(translateY(-50%));
 
-            }
-            &.logout {
-                @include transition-delay(20ms);
-                i {
-                    background: url("../img/logout.png") no-repeat;
-                    height: 21px;
-                    width: 22px;
-                }
-            }
-            &.dashboard {
-                @include transition-delay(40ms);
-                i {
-                    background: url("../img/dashboard_blue.png") no-repeat;
-                    height: 21px;
-                    width: 21px;
-                }
-            }
-            &.contact {
-                @include transition-delay(60ms);
-                i {
-                    background: url("../img/contact.png") no-repeat;
-                    height: 17px;
-                    width: 22px;
-                }
-            }
-            &.users {
-                @include transition-delay(80ms);
-                i {
-                    background: url("../img/users.png") no-repeat;
-                    height: 20px;
-                    width: 22px;
-                }
-            }
-            &.howto {
-                @include transition-delay(100ms);
-                i {
-                    background: url("../img/howto.png") no-repeat;
-                    height: 21px;
-                    width: 22px;
-                }
-            }
-            &.support {
-                @include transition-delay(120ms);
-                i {
-                    background: url("../img/support.png") no-repeat;
-                    height: 21px;
-                    width: 22px;
-                }
-            }
-        }
-    }
-}
+//             }
+//             &.logout {
+//                 @include transition-delay(20ms);
+//                 i {
+//                     background: url("../img/logout.png") no-repeat;
+//                     height: 21px;
+//                     width: 22px;
+//                 }
+//             }
+//             &.dashboard {
+//                 @include transition-delay(40ms);
+//                 i {
+//                     background: url("../img/dashboard_blue.png") no-repeat;
+//                     height: 21px;
+//                     width: 21px;
+//                 }
+//             }
+//             &.contact {
+//                 @include transition-delay(60ms);
+//                 i {
+//                     background: url("../img/contact.png") no-repeat;
+//                     height: 17px;
+//                     width: 22px;
+//                 }
+//             }
+//             &.users {
+//                 @include transition-delay(80ms);
+//                 i {
+//                     background: url("../img/users.png") no-repeat;
+//                     height: 20px;
+//                     width: 22px;
+//                 }
+//             }
+//             &.howto {
+//                 @include transition-delay(100ms);
+//                 i {
+//                     background: url("../img/howto.png") no-repeat;
+//                     height: 21px;
+//                     width: 22px;
+//                 }
+//             }
+//             &.support {
+//                 @include transition-delay(120ms);
+//                 i {
+//                     background: url("../img/support.png") no-repeat;
+//                     height: 21px;
+//                     width: 22px;
+//                 }
+//             }
+//         }
+// //     }
+// // }

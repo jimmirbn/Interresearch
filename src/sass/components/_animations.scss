@@ -1,0 +1,82 @@
+@include keyframes(expand) {
+    0% {
+        @include transform(scale3d(1, 0, 1));
+    }
+    25% {
+        @include transform(scale3d(1, 1.2, 1));
+    }
+    50% {
+        @include transform(scale3d(1, 0.85, 1));
+    }
+    75% {
+        @include transform(scale3d(1, 1.05, 1));
+    }
+    100% {
+        @include transform(scale3d(1, 1, 1));
+    }
+}
+
+@include keyframes(bounce) {
+    0% {
+        @include transform(translate3d(0, -25px, 0));
+        opacity: 0;
+    }
+    25% {
+        @include transform(translate3d(0, 10px, 0));
+    }
+    50% {
+        @include transform(translate3d(0, -6px, 0));
+    }
+    75% {
+        @include transform(translate3d(0, 2px, 0));
+    }
+    100% {
+        @include transform(translate3d(0, 0, 0));
+        opacity: 1;
+    }
+}
+@include keyframes(bounce-one) {
+    0% {
+        @include transform(translate3d(0, -15px, 0));
+        opacity: 0;
+    }
+    25% {
+        @include transform(translate3d(0, 5px, 0));
+    }
+    50% {
+        @include transform(translate3d(0, -2px, 0));
+    }
+    75% {
+        @include transform(translate3d(0, 1px, 0));
+    }
+    100% {
+        @include transform(translate3d(0, 0, 0));
+        opacity: 1;
+    }
+}
+@include keyframes(animate-positive){
+    0% { width:0%; }
+}
+@include keyframes(animate-negative){
+    0% { width:100%; }
+}
+@include keyframes(spin) {
+    100% {
+        @include transform(rotate(360deg));
+    }
+}
+
+@include keyframes(check) {
+    0% {
+        height: 0;
+        width: 0;
+    }
+    25% {
+        height: 0;
+        width: 10px;
+    }
+    50% {
+        height: 20px;
+        width: 10px;
+    }
+}

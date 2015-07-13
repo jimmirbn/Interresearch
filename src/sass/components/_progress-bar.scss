@@ -1,9 +1,4 @@
-// .progress{
-// 	margin-bottom: 0;
-// 	border-radius: 0;
-// 	box-shadow: none;
-// }
-// 
+
 $bar-width: 112px;
 $bar-height: 25px;
 .progress-bar{
@@ -12,12 +7,11 @@ $bar-height: 25px;
   width:$bar-width;
   height:$bar-height;
   line-height:$bar-height;
-  vertical-align:midle;
+  vertical-align:middle;
   overflow:hidden;
-  top: 50%;
-  right: 2px;
-  @include transform(translateY(-50%));
-  // box-shadow:0 4px 10px -5px rgba(0, 0, 0, 0.25);
+  @include position(absolute, null 2px 5px 50%);
+  margin-left: -56px; // half width
+  background-color:#07A4DD;
   .bar{      
     position:absolute;
     top:0;
@@ -37,32 +31,15 @@ $bar-height: 25px;
         left:0;
         color:#333;
       }
-      -webkit-animation: animate-positive 2s;
-      animation: animate-positive 2s;
+      @include animation(animate-positive 2s);
     }      
     &.negative{
-      background:#07A4DD;
       right:0;
       span{
         right:0;
         color:#fff;
       }
-      
-      -webkit-animation: animate-negative 2s;
-      animation: animate-negative 2s;
+      @include animation(animate-negative 2s);
     }    
   }
-}
-
-@-webkit-keyframes animate-positive {
-  0% { width:0%; }
-}
-@keyframes animate-positive {
-  0% { width:0%; }
-}
-@-webkit-keyframes animate-negative {
-  0% { width:100%; }  
-}
-@keyframes animate-negative {
-  0% { width:100%; }  
 }

@@ -12,6 +12,7 @@
     shiftCompiling();
     sortDemo();
     extraMenu();
+    navSelect();
     $('input').iCheck();
 
     $('input').iCheck({
@@ -147,7 +148,8 @@ function sortDemo() {
 function extraMenu() {
     var extraBtn = $('.extra-menu-btn');
     var extraMenu = $('.extra-menu');
-    extraBtn.on('click', function(e) {
+    extraBtn.on('click', function(event) {
+        event.preventDefault()
         if (!extraMenu.hasClass('active')) {
             extraMenu.addClass('active');
             extraBtn.addClass('open');
@@ -158,54 +160,44 @@ function extraMenu() {
     });
 }
 
+function navSelect() {
+    var selectBtn = $('.nav-placeholder');
+    var select = $('.nav-select ');
+    selectBtn.on('click', function(event) {
+
+        var self = $(this);
+        var navParent = self.parent();
+        event.preventDefault()
+        if (!navParent.hasClass('nav-active')) {
+            if (select.hasClass('nav-active')) {
+                select.removeClass('nav-active');
+            }
+            navParent.addClass('nav-active');
+        } else {
+            navParent.removeClass('nav-active');
+        }
+    });
+}
+
 function slideMenu() {
-    var slideMenuBtn = $('.slide-menu-btn');
+    var slideMenuBtn = $('.slideBtn');
     var slideMenu = $('.slide-menu');
     var surveyContainer = $('.survey-innerContainer');
     var htmlMaster = $('html');
     var typeContainer = $('.question-types');
     var dashboard = $('.dashboard-container');
     slideMenuBtn.click(function() {
-        //IE8 Fix
-        if (htmlMaster.hasClass('lt-ie9') || htmlMaster.hasClass('ie9')) {
-            if (slideMenu.css('left') != '-5px') {
-
-                slideMenu.animate({
-                    left: "-5px",
-
-                }, 350);
-                surveyContainer.animate({
-                    left: "315px",
-
-                }, 350);
-
-            } else {
-                slideMenu.animate({
-                    left: "-260px",
-
-                }, 350);
-                surveyContainer.animate({
-                    left: "60px",
-
-                }, 350);
-            }
+        if (!slideMenu.hasClass('active')) {
+            slideMenu.addClass('active');
+            slideMenuBtn.addClass('active');
+            dashboard.addClass('side-menu-active');
 
         } else {
-
-            if (!slideMenu.hasClass('active')) {
-                // if(typeContainer.hasClass('active')){
-                //     typeContainer.removeClass('active');
-                // }
-                slideMenu.addClass('active');
-                slideMenuBtn.addClass('active');
-                dashboard.addClass('side-menu-active');
-
-            } else {
-                slideMenu.removeClass('active');
-                slideMenuBtn.removeClass('active');
-                dashboard.removeClass('side-menu-active');
-            }
+            slideMenu.removeClass('active');
+            slideMenuBtn.removeClass('active');
+            dashboard.removeClass('side-menu-active');
         }
+
     });
 }
 
@@ -290,91 +282,10 @@ function showSettings2() {
     });
 }
 
-(function($) {
-    $.fn.openActive = function(activeSel) {
-        activeSel = activeSel || ".active";
 
-        var c = this.attr("class");
-
-        this.find(activeSel).each(function() {
-            var el = $(this).parent();
-            while (el.attr("class") !== c) {
-                if (el.prop("tagName") === 'UL') {
-                    el.show();
-                } else if (el.prop("tagName") === 'LI') {
-                    el.removeClass('tree-closed');
-                    el.addClass("tree-opened");
-                }
-
-                el = el.parent();
-            }
-        });
-
-        return this;
-    }
-
-    $.fn.treemenu = function(options) {
-        options = options || {};
-        options.delay = options.delay || 0;
-        options.openActive = options.openActive || false;
-        options.activeSelector = options.activeSelector || "";
-
-        this.find("> li").each(function() {
-            e = $(this);
-            var subtree = e.find('> ul');
-            var toggler = $('<span>');
-            toggler.addClass('toggler');
-
-            e.prepend(toggler);
-            if (subtree.length > 0) {
-                subtree.hide();
-
-                e.addClass('tree-closed');
-
-                e.find(toggler).click(function() {
-                    var li = $(this).parent('li');
-                    li.find('> ul').toggle(options.delay);
-                    li.toggleClass('tree-opened');
-                    li.toggleClass('tree-closed');
-                });
-
-                $(this).find('> ul').treemenu(options);
-            } else {
-                $(this).addClass('tree-empty');
-            }
-        });
-
-        if (options.openActive) {
-            this.openActive(options.activeSelector);
-        }
-
-        return this;
-    }
-})(jQuery);
-
-$(function() {
-    $(".tree").treemenu({
-        delay: 300
-    }).openActive();
-});
 $(function() {
     $('[data-toggle="tooltip"]').tooltip({
-        container: 'body'
+        container: 'body',
     });
+     // $('.settlement-icon--open').tooltip('show');
 })
-$(".tree li a span").hover(
-    function() {
-        var parent = $(this).parent();
-        var toggler = $('.toggler');
-        parent.css('background-color', '#02b1e8');
-        $(this).css('color', 'white')
-            // toggler.addClass('hover');
-    },
-    function() {
-        var parent = $(this).parent();
-        var toggler = $('.toggler');
-        $(this).css('color', '#333333')
-        parent.css('background-color', 'transparent');
-        // toggler.removeClass('hover');
-    }
-);

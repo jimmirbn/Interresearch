@@ -147,32 +147,27 @@
     height: 100%;
     border: solid 2px white;
     background-color: #02b1e8;
-    // border-left: 1px;
 }
 
-// @media (max-width: 1223px) {
-//     .question-types .btn span {
-//         display: none;
-//     }
-// }
 .carousel-control.left {
-    left: 49%;
+    left: 45%;
     @include transform(translateX(-50%));
-    background-color: black;
-    height: 15px;
-    width: 15px!important;
+    height: 19px;
+    width: 11px!important;
     opacity: 1;
     top: 10px!important;
+    background-image: url(../img/chevron-large-collapsed-reverse-white.png);
+
 }
 
 .carousel-control.right {
     left: 49%;
     right: auto;
     @include transform(translateX(-50%));
-    height: 15px;
-    width: 15px!important;
+    height: 19px;
+    width: 11px!important;
     bottom: 10px!important;
-    background-color: black;
+    background-image: url(../img/chevron-large-collapsed-white.png);
     opacity: 1;
     top: auto!important;
 }

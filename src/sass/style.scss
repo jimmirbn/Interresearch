@@ -5,11 +5,13 @@
 @import "base/fonts";
 @import "base/base";
 
+@import "components/animations";
 @import "components/button";
 @import "components/checkbox";
 @import "components/radio";
 @import "components/select";
 @import "components/nav";
+@import "components/nav-dropdown";
 @import "components/modal";
 @import "components/slide-nav";
 @import "components/input-text";

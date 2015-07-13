@@ -1,3 +1,23 @@
 .clearfix{
 	clear: both;
 }
+@mixin old-ie9() {
+    @at-root {
+        .ie9  & { 
+            @content
+        }
+    }
+}
+@mixin old-ie8() {
+    @at-root {
+        .lt-ie9 & { 
+            @content
+        }
+    }
+}@mixin old-ie() {
+    @at-root {
+        .lt-ie9 &, .ie9  & { 
+            @content
+        }
+    }
+}
