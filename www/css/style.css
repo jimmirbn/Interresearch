@@ -3321,10 +3321,10 @@ ul {
   position: relative;
 }
 .nav-select.nav-help {
-  width: 170px;
+  width: 130px;
 }
 .nav-select.nav-help .nav-options {
-  width: 160px;
+  width: 120px;
 }
 .nav-select > span {
   display: block;
