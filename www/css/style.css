@@ -3346,8 +3346,8 @@ ul {
 }
 .nav-select > span:after {
   speak: none;
-  position: absolute;
-  top: 50%;
+  position: relative;
+  top: 4px;
   -webkit-transform: translateY(-50%);
   -moz-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
@@ -3355,8 +3355,12 @@ ul {
   transform: translateY(-50%);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  content: '\25BE';
-  right: 1em;
+  content: '';
+  right: -8px;
+  background-image: url(../img/chevron-white.png);
+  height: 9px;
+  width: 15px;
+  display: inline-block;
 }
 .nav-select.nav-active {
   z-index: 200;
@@ -3371,6 +3375,9 @@ ul {
   -ms-transform: translateY(-50%) rotate(180deg);
   -o-transform: translateY(-50%) rotate(180deg);
   transform: translateY(-50%) rotate(180deg);
+  background-image: url(../img/chevron-blue-small.png);
+  height: 9px;
+  width: 15px;
 }
 .nav-select.nav-active .nav-options {
   visibility: visible;
@@ -4736,7 +4743,7 @@ input[type=text]:focus {
   position: absolute;
   right: 10px;
   width: 210px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.3);
   z-index: 1;
   top: 70px;
   visibility: hidden;

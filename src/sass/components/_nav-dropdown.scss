@@ -24,12 +24,16 @@
         }
         &:after {
             speak: none;
-            @include position(absolute, 50% null null null);
+            @include position(relative, 4px null null null);
             @include transform(translateY(-50%));
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
-            content: '\25BE';
-            right: 1em;
+            content: '';
+            right: -8px;
+            background-image: url(../img/chevron-white.png);
+            height: 9px;
+            width: 15px;
+            display: inline-block;
         }
     }
     &.nav-active {
@@ -39,6 +43,9 @@
             color: #02b1e8;
             &:after {
                 @include transform(translateY(-50%) rotate(180deg));
+                background-image: url(../img/chevron-blue-small.png);
+                height: 9px;
+                width: 15px;
             }
         }
         .nav-options {
@@ -113,14 +120,15 @@
                     text-decoration: none;
                 }
             }
-             & > a, & > span {
+            & > a,
+            & > span {
                 padding: 13px 20px 13px 50px;
                 position: relative;
                 top: 2px;
                 display: block;
                 font-weight: bold;
                 cursor: pointer;
-                &:hover{
+                &:hover {
                     color: #fff;
                 }
             }
