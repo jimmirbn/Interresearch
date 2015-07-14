@@ -179,6 +179,23 @@
     }
 }
 
+.page-break2 {
+    margin-left: 20px;
+    position: relative;
+    padding-left: 40px;
+    span {
+        background-image: url('../img/questionaire-torn.png');
+        height: 31px;
+        width: 20px;
+        display: block;
+        float: left;
+        margin-right: 10px;
+        position: absolute;
+        top: 1px;
+        left: 10px;
+    }
+}
+
 // .extra-menu-btn {
 //     // background: url('../img/extra-menu.png') no-repeat;
 //     // width: 14px;
@@ -187,7 +204,6 @@
 //     // &:hover {
 //     //     cursor: pointer;
 //     // }
-    
 //     position: absolute;
 //   right: 25px;
 //   top: 7px;
@@ -203,7 +219,6 @@
 //     cursor: pointer;
 //   }
 // }
-
 // .grid-icon {
 //     position: absolute;
 //     display: block;
