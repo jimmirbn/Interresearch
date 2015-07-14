@@ -18,7 +18,8 @@
     }
     .btn {
         width: 100%;
-        font-size: 0.875rem;
+        font-size: 14px;
+        line-height: 1;
         height: 35px;
         padding: 10px 0 8px;
         span {
@@ -63,7 +64,7 @@
                 width: 30px;
                 height: 20px;
                 left: 10px;
-                top: 10px;
+                top: 12px;
                 background-size: 30px;
                 background-repeat: no-repeat;
             }

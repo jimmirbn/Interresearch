@@ -1,3 +1,24 @@
+//detect css animation end
+function whichAnimationEvent() {
+    var t,
+        el = document.createElement("fakeelement");
+
+    var animations = {
+        "animation": "animationend",
+        "OAnimation": "oAnimationEnd",
+        "MozAnimation": "animationend",
+        "WebkitAnimation": "webkitAnimationEnd"
+    }
+
+    for (t in animations) {
+        if (el.style[t] !== undefined) {
+            return animations[t];
+        }
+    }
+}
+
+var animationEvent = whichAnimationEvent();
+
 (function($, window, document, undefined) {
     $('#carousel-btn').carousel({
         interval: false,
@@ -14,6 +35,7 @@
     sortDemo();
     extraMenu();
     navSelect();
+    progressDemo();
     $('input').iCheck();
 
     $('input').iCheck({
@@ -117,6 +139,21 @@
 
 })(jQuery, window, document);
 
+function progressDemo() {
+    var bar = $('.progress-bar');
+
+    $.each(bar, function() {
+        if ($(this).hasClass('all')) {
+            var theBar = $(this).find('.positive');
+
+            theBar.one(animationEvent,
+                function(event) {
+                    $(this).addClass('active');
+                });
+        }
+    });
+}
+
 function shiftCompiling() {
     var status = $('.compiling');
     setTimeout(function() {
@@ -143,7 +180,7 @@ function shiftCompiling2() {
             status.removeClass('compiling--yellow').removeClass('compiling2').addClass('compiling--error');
         }
     }, 10000);
-    setTimeout(function(){
+    setTimeout(function() {
         status.addClass('active');
     }, 10050);
 }

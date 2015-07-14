@@ -2493,19 +2493,20 @@ button.close {
   outline: 0;
 }
 
-:after, :before {
+:after,
+:before {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 
-html {
-  font-size: 16px;
+html, body {
   font-family: "Corisande-regular", Helvetica;
   -webkit-font-smoothing: antialiased;
   font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   height: 100%;
+  line-height: 1.6;
 }
 
 .tooltip {
@@ -2908,7 +2909,6 @@ ul {
   color: #fff;
   padding: 0 13px;
   height: 35px;
-  font-size: 18px;
   font-weight: normal;
   text-align: center;
   white-space: nowrap;
@@ -4188,7 +4188,8 @@ input[type=text]:focus {
 }
 .question-types .btn, .question-types .btn--header {
   width: 100%;
-  font-size: 0.875rem;
+  font-size: 14px;
+  line-height: 1;
   height: 35px;
   padding: 10px 0 8px;
 }
@@ -4235,7 +4236,7 @@ input[type=text]:focus {
   width: 30px;
   height: 20px;
   left: 10px;
-  top: 10px;
+  top: 12px;
   background-size: 30px;
   background-repeat: no-repeat;
 }
@@ -4767,8 +4768,11 @@ input[type=text]:focus {
   text-align: center;
 }
 .progress-bar .bar.positive {
-  background: #fff;
+  background-color: #fff;
   left: 0;
+  -webkit-transition: background-color 350ms ease, color 350ms ease;
+  -o-transition: background-color 350ms ease, color 350ms ease;
+  transition: background-color 350ms ease, color 350ms ease;
   -webkit-animation: animate-positive 2s;
   -o-animation: animate-positive 2s;
   animation: animate-positive 2s;
@@ -4776,6 +4780,12 @@ input[type=text]:focus {
 .progress-bar .bar.positive span {
   left: 0;
   color: #333;
+}
+.progress-bar .bar.positive.active {
+  background-color: #06b01f;
+}
+.progress-bar .bar.positive.active span {
+  color: #fff;
 }
 .progress-bar .bar.negative {
   right: 0;
@@ -4789,27 +4799,36 @@ input[type=text]:focus {
 }
 
 .type {
-  float: left;
-  height: 24px;
-  width: 23px;
   position: absolute;
-  bottom: 5px;
 }
 .type--questionaire {
   background: url(../img/questionaire.png) no-repeat;
+  bottom: 4px;
+  width: 20px;
+  height: 29px;
 }
 .type--rapport {
-  height: 28px;
+  bottom: 7px;
+  width: 21px;
+  height: 24px;
   background: url(../img/rapport.png) no-repeat;
 }
 .type--excel {
   background: url(../img/excel.png) no-repeat;
+  width: 23px;
+  height: 23px;
+  bottom: 6px;
 }
 .type--folder {
-  background: url(../img/folder.png) no-repeat;
+  width: 25px;
+  height: 21px;
+  bottom: 8px;
+  background: url(../img/folder-new.png) no-repeat;
 }
 .type--image {
   width: 26px;
+  height: 23px;
+  bottom: 6px;
   background: url(../img/image.png) no-repeat;
 }
 

@@ -25,13 +25,20 @@ $bar-height: 25px;
       text-align:center;
     }
     &.positive{
-      background:#fff;
+      background-color:#fff;
       left:0;    
+      @include transition(background-color 350ms ease, color 350ms ease);
       span{
         left:0;
         color:#333;
       }
       @include animation(animate-positive 2s);
+      &.active{
+        background-color: #06b01f;
+        span{
+          color: #fff;
+        }
+      }
     }      
     &.negative{
       right:0;

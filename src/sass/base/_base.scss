@@ -1,62 +1,65 @@
 * {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  -webkit-touch-callout: none;
-                -webkit-user-select: none;
-                -khtml-user-select: none;
-                -moz-user-select: none;
-                -ms-user-select: none;
-                user-select: none;
-                @include selection {
-                    background-color: transparent;
-                }
-  &:focus {
-    outline: 0;
-  }
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    @include selection {
+        background-color: transparent;
+    }
+    &:focus {
+        outline: 0;
+    }
 }
 
-:after, :before {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
+:after,
+:before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
-html {
-  font-size: 16px;
-  font-family: "Corisande-regular", Helvetica;
-  -webkit-font-smoothing: antialiased;
-  font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  height: 100%;
+html,body {
+    font-family: "Corisande-regular", Helvetica;
+    -webkit-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    height: 100%;
+    line-height: 1.6;
 }
-.tooltip{
-  z-index: 99;
+
+.tooltip {
+    z-index: 99;
 }
-body{
-  background: #eeeeee;
+
+body {
+    background: #eeeeee;
 }
 
 a {
-  outline: 0;
-  &:hover {
-    cursor: pointer;
-  }
-  &:focus {
     outline: 0;
-  }
+    &:hover {
+        cursor: pointer;
+    }
+    &:focus {
+        outline: 0;
+    }
 }
 
 hr {
-  display: block;
-  height: 1px;
-  border: 0;
-  border-top: 1px solid #acacac;
-  margin: 1em 0;
-  padding: 0;
-  clear: both;
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #acacac;
+    margin: 1em 0;
+    padding: 0;
+    clear: both;
 }
 
 ul {
-  padding: 0;
+    padding: 0;
 }

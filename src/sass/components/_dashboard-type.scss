@@ -1,26 +1,28 @@
 .type {
-    float: left;
-    height: 24px;
-    width: 23px;
     position: absolute;
-    // top: 50%;
-    // @include transform(translateY(-50%));
-    bottom: 5px;
     &--questionaire {
         background: url(../img/questionaire.png) no-repeat;
+        bottom: 4px;
+        @include size(20px, 29px);
     }
-    &--rapport{
-    	height: 28px;
+    &--rapport {
+        bottom: 7px;
+        @include size(21px, 24px);
         background: url(../img/rapport.png) no-repeat;
     }
-    &--excel{
-    	background: url(../img/excel.png) no-repeat;
+    &--excel {
+        background: url(../img/excel.png) no-repeat;
+        @include size(23px, 23px);
+        bottom: 6px;
     }
-    &--folder{
-    	background: url(../img/folder.png) no-repeat;
+    &--folder {
+        @include size(25px, 21px);
+        bottom: 8px;
+        background: url(../img/folder-new.png) no-repeat;
     }
-    &--image{
-    	width: 26px;
-    	background: url(../img/image.png) no-repeat;
+    &--image {
+        @include size(26px, 23px);
+        bottom: 6px;
+        background: url(../img/image.png) no-repeat;
     }
 }
