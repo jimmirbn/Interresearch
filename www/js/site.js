@@ -36,6 +36,7 @@ var animationEvent = whichAnimationEvent();
     extraMenu();
     navSelect();
     progressDemo();
+    pageBreak();
     $('input').iCheck();
 
     $('input').iCheck({
@@ -151,6 +152,29 @@ function progressDemo() {
                     $(this).addClass('active');
                 });
         }
+    });
+}
+
+function pageBreak() {
+    var breakBtn = $('.breaker');
+    var surveyListDivs = $('.survey__list').children();
+    var survey__list = $('.survey__list');
+    var count = 0;
+    breakBtn.click(function() {
+        var countDivs = $('.survey__list .page').length;
+        count++;
+        var breakerContainer = $(this);
+        if (countDivs == 0) {
+            survey__list.prepend('<div class="page page' + count + '"><p>Page ' + count + '</p></div>');
+        } else {
+            $('<div class="page page' + count + '"><p>Page ' + count + '</p></div>').insertAfter($('.page'+(count-1)));
+        }
+        $.each(surveyListDivs, function() {
+            $('.page' + count).append($(this).not('.page div'));
+            if ($(this).is(breakerContainer)) {
+                return false;
+            }
+        });
     });
 }
 
