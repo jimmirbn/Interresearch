@@ -110,6 +110,11 @@
             @include transition(transform 0.3s)
         }
         li {
+            &:hover{
+                & > a, & > span{
+                    color: #fff;
+                }
+            }
             opacity: 0;
             @include transform(translate3d(0, -25px, 0));
             @include transition(transform 0.15s, background-color 200ms ease, color 200ms ease);
@@ -128,9 +133,6 @@
                 display: block;
                 font-weight: bold;
                 cursor: pointer;
-                &:hover {
-                    color: #fff;
-                }
             }
             i {
                 display: block;
@@ -140,7 +142,6 @@
                 @include transform(translateY(-50%));
             }
             &.logout {
-                @include transition-delay(20ms);
                 i {
                     @include transition(transform 200ms ease);
                     background: url("../img/logout.png") no-repeat;
@@ -154,7 +155,6 @@
                 }
             }
             &.dashboard {
-                @include transition-delay(40ms);
                 i {
                     background: url("../img/dashboard_blue.png") no-repeat;
                     height: 21px;
@@ -169,7 +169,6 @@
                 }
             }
             &.contact {
-                @include transition-delay(60ms);
                 i {
                     background: url("../img/contact.png") no-repeat;
                     height: 17px;
@@ -184,7 +183,6 @@
                 }
             }
             &.users {
-                @include transition-delay(80ms);
                 i {
                     background: url("../img/users.png") no-repeat;
                     height: 20px;
@@ -199,7 +197,6 @@
                 }
             }
             &.howto {
-                @include transition-delay(100ms);
                 i {
                     background: url("../img/howto.png") no-repeat;
                     height: 21px;
@@ -214,11 +211,24 @@
                 }
             }
             &.support {
-                @include transition-delay(120ms);
                 i {
                     background: url("../img/support.png") no-repeat;
                     height: 21px;
                     width: 22px;
+                }
+            }
+            &.excel {
+                i {
+                    background: url("../img/excel.png") no-repeat;
+                    height: 23px;
+                    width: 23px;
+                }
+            }
+            &.word {
+                i {
+                    background: url("../img/word.png") no-repeat;
+                    height: 23px;
+                    width: 23px;
                 }
             }
         }

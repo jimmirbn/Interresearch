@@ -10,6 +10,7 @@
     showSettings();
     showSettings2();
     shiftCompiling();
+    shiftCompiling2();
     sortDemo();
     extraMenu();
     navSelect();
@@ -128,6 +129,23 @@ function shiftCompiling() {
             status.removeClass('compiling--yellow').addClass('compiling--done');
         }
     }, 10000);
+}
+
+function shiftCompiling2() {
+    var status = $('.compiling2');
+    setTimeout(function() {
+        if (status.hasClass('compiling--red')) {
+            status.removeClass('compiling--red').addClass('compiling--yellow');
+        }
+    }, 5000);
+    setTimeout(function() {
+        if (status.hasClass('compiling--yellow')) {
+            status.removeClass('compiling--yellow').removeClass('compiling2').addClass('compiling--error');
+        }
+    }, 10000);
+    setTimeout(function(){
+        status.addClass('active');
+    }, 10050);
 }
 
 function sortDemo() {
@@ -287,7 +305,7 @@ $(function() {
     $('[data-toggle="tooltip"]').tooltip({
         container: 'body',
     });
-     // $('.settlement-icon--open').tooltip('show');
+    // $('.settlement-icon--open').tooltip('show');
 })
 
 //# sourceMappingURL=site.js.map

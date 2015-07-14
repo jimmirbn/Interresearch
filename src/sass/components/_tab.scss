@@ -45,21 +45,13 @@
     }
   }
   .tab-content {
-    // border-bottom: solid 2px #acacac;
-    // position: absolute;
-    // width: 100%;
-    // border-left: 2px solid #acacac;
-    // border-right: 2px solid #acacac;
-    // bottom: 55px;
-    // top: 41px;
     padding: 15px 10px 10px;
-    // overflow-y: auto;
     p {
       margin: 0;
     }
     label {
       margin: 5px 0 10px;
-      display: block;
+      display: inline-block;
       input[type="text"] {
         margin-top: 5px;
       }
