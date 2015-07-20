@@ -25,7 +25,7 @@ var animationEvent = whichAnimationEvent();
         keyboard: false,
     })
 
-    // slideMenu();
+    slideMenu();
     questionType();
     // slideNav();
     showSettings();
@@ -258,28 +258,28 @@ function navSelect() {
     });
 }
 
-// function slideMenu() {
-//     var navBtn = $('.info');
-//     var slideMenuBtn = $('.slideBtn');
-//     var slideMenu = $('.slide-menu');
-//     var surveyContainer = $('.survey-innerContainer');
-//     var htmlMaster = $('html');
-//     var typeContainer = $('.question-types');
-//     var dashboard = $('.dashboard-container');
-//     navBtn.click(function() {
-//         if (!slideMenu.hasClass('active')) {
-//             slideMenu.addClass('active');
-//             navBtn.addClass('active');
-//             dashboard.addClass('side-menu-active');
+function slideMenu() {
+    var navBtn = $('.info');
+    var slideMenuBtn = $('.slideBtn');
+    var slideMenu = $('.slide-menu');
+    var surveyContainer = $('.survey-innerContainer');
+    var htmlMaster = $('html');
+    var typeContainer = $('.question-types');
+    var dashboard = $('.dashboard-container');
+    slideMenuBtn.click(function() {
+        if (!slideMenu.hasClass('active')) {
+            slideMenu.addClass('active');
+            slideMenuBtn.addClass('active');
+            dashboard.addClass('side-menu-active');
 
-//         } else {
-//             slideMenu.removeClass('active');
-//             navBtn.removeClass('active');
-//             dashboard.removeClass('side-menu-active');
-//         }
+        } else {
+            slideMenu.removeClass('active');
+            slideMenuBtn.removeClass('active');
+            dashboard.removeClass('side-menu-active');
+        }
 
-//     });
-// }
+    });
+}
 var navBtn = $('.info');
 navBtn.click(function(e) {
 

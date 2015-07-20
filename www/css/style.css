@@ -4108,7 +4108,6 @@ input[type=text]:focus {
 .folder-tree {
   margin: 0;
   width: 90%;
-  height: 100%;
   overflow: hidden;
   float: left;
 }
