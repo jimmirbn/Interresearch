@@ -1,7 +1,7 @@
 //detect css animation end
 function whichAnimationEvent() {
     var t,
-        el = document.createElement("fakeelement");
+    el = document.createElement("fakeelement");
 
     var animations = {
         "animation": "animationend",
@@ -25,9 +25,9 @@ var animationEvent = whichAnimationEvent();
         keyboard: false,
     })
 
-    slideMenu();
+    // slideMenu();
     questionType();
-    slideNav();
+    // slideNav();
     showSettings();
     showSettings2();
     shiftCompiling();
@@ -130,13 +130,13 @@ var animationEvent = whichAnimationEvent();
             }
         });
 
-        $('.survey-item').on('click', function(e) {
-            var menuHeadline = $('.headline');
-            var thisName = $(this).find('p').text()
-            var thisRealName = thisName + '<br>'
-            menuHeadline.find('span').append(thisRealName + this.id);
-        })
-    });
+$('.survey-item').on('click', function(e) {
+    var menuHeadline = $('.headline');
+    var thisName = $(this).find('p').text()
+    var thisRealName = thisName + '<br>'
+    menuHeadline.find('span').append(thisRealName + this.id);
+})
+});
 
 })(jQuery, window, document);
 
@@ -167,7 +167,7 @@ function pageBreak() {
         if (countDivs == 0) {
             survey__list.prepend('<div class="page page' + count + '"><p>Page ' + count + '</p></div>');
         } else {
-            $('<div class="page page' + count + '"><p>Page ' + count + '</p></div>').insertAfter($('.page'+(count-1)));
+            $('<div class="page page' + count + '"><p>Page ' + count + '</p></div>').insertAfter($('.page' + (count - 1)));
         }
         $.each(surveyListDivs, function() {
             $('.page' + count).append($(this).not('.page div'));
@@ -258,27 +258,45 @@ function navSelect() {
     });
 }
 
-function slideMenu() {
-    var slideMenuBtn = $('.slideBtn');
-    var slideMenu = $('.slide-menu');
-    var surveyContainer = $('.survey-innerContainer');
-    var htmlMaster = $('html');
-    var typeContainer = $('.question-types');
+// function slideMenu() {
+//     var navBtn = $('.info');
+//     var slideMenuBtn = $('.slideBtn');
+//     var slideMenu = $('.slide-menu');
+//     var surveyContainer = $('.survey-innerContainer');
+//     var htmlMaster = $('html');
+//     var typeContainer = $('.question-types');
+//     var dashboard = $('.dashboard-container');
+//     navBtn.click(function() {
+//         if (!slideMenu.hasClass('active')) {
+//             slideMenu.addClass('active');
+//             navBtn.addClass('active');
+//             dashboard.addClass('side-menu-active');
+
+//         } else {
+//             slideMenu.removeClass('active');
+//             navBtn.removeClass('active');
+//             dashboard.removeClass('side-menu-active');
+//         }
+
+//     });
+// }
+var navBtn = $('.info');
+navBtn.click(function(e) {
+
     var dashboard = $('.dashboard-container');
-    slideMenuBtn.click(function() {
-        if (!slideMenu.hasClass('active')) {
-            slideMenu.addClass('active');
-            slideMenuBtn.addClass('active');
-            dashboard.addClass('side-menu-active');
-
-        } else {
-            slideMenu.removeClass('active');
-            slideMenuBtn.removeClass('active');
-            dashboard.removeClass('side-menu-active');
-        }
-
-    });
-}
+    e.preventDefault();
+    var divWrapper = $('#wrapper');
+    // divWrapper.toggleClass("toggled");
+    if (!divWrapper.hasClass('toggled')) {
+        divWrapper.addClass('toggled');
+        navBtn.addClass('active');
+        dashboard.addClass('side-menu-active');
+    } else {
+        divWrapper.removeClass('toggled');
+        navBtn.removeClass('active');
+        dashboard.removeClass('side-menu-active');
+    }
+});
 
 function questionType() {
     var typeBtn = $('.q-types');
@@ -301,28 +319,28 @@ function questionType() {
     });
 }
 
-function slideNav() {
-    var navBtn = $('.info');
-    var slideNav = $('.slide-nav');
-    var closeNav = $('.survey-innerContainer');
+// function slideNav() {
+//     var navBtn = $('.info');
+//     var slideNav = $('.slide-nav');
+//     var closeNav = $('.survey-innerContainer');
 
-    navBtn.click(function() {
-        if (!slideNav.hasClass('active')) {
-            slideNav.addClass('active');
-            navBtn.addClass('active');
-        } else {
-            slideNav.removeClass('active');
-            navBtn.removeClass('active');
-        }
-    });
+//     navBtn.click(function() {
+//         if (!slideNav.hasClass('active')) {
+//             slideNav.addClass('active');
+//             navBtn.addClass('active');
+//         } else {
+//             slideNav.removeClass('active');
+//             navBtn.removeClass('active');
+//         }
+//     });
 
-    $('.survey-innerContainer, .dashboard-container').click(function() {
-        if (slideNav.hasClass('active')) {
-            slideNav.removeClass('active');
-            navBtn.removeClass('active');
-        }
-    });
-}
+//     $('.survey-innerContainer, .dashboard-container').click(function() {
+//         if (slideNav.hasClass('active')) {
+//             slideNav.removeClass('active');
+//             navBtn.removeClass('active');
+//         }
+//     });
+// }
 
 function showSettings() {
     var settingsBtn = $('.settingsBtn');

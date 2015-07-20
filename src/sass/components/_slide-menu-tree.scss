@@ -208,6 +208,46 @@
     }
 }
 
+.v2 .folder-tree {
+    width: 100%;
+    & > li {
+        a {
+            color: white;
+            & > span {
+                background: url(../img/chevron-right-white.png) no-repeat;
+                display: inline-block;
+                height: 15px;
+                width: 9px;
+                margin: 0 10px 0 0;
+            }
+            &:hover {
+                background-color: #00698e;
+                color: white;
+                text-decoration: none;
+                & > span {
+                    background: url(../img/chevron-right-white.png) no-repeat;
+                }
+            }
+        }
+    }
+    .open {
+        & > a {
+            &:hover {
+                > span {
+                    background: url(../img/chevron-white.png) no-repeat;
+                }
+            }
+            & > span {
+                background: url(../img/chevron-white.png) no-repeat;
+                display: inline-block;
+                height: 9px;
+                width: 15px;
+                margin: 0 10px 0 0;
+            }
+        }
+    }
+}
+
 .folder-tree {
     margin: 0;
     width: 90%;
@@ -292,5 +332,88 @@
                 margin: 0 10px 0 0;
             }
         }
+    }
+}
+
+#wrapper {
+    padding-left: 0;
+    @include transition(padding 300ms ease);
+    background-color: #00698e;
+}
+
+#wrapper.toggled {
+    padding-left: 300px;
+}
+
+.sidebar-header {
+    height: 65px;
+    background-color: #00698e;
+    text-align: center;
+    p {
+        margin: 0;
+        color: #fff;
+        font-size: 22px;
+        position: relative;
+        top: 14px;
+    }
+}
+
+#sidebar-wrapper {
+    background-color: #02b1e8;
+    z-index: 1000;
+    position: fixed;
+    left: -300px;
+    width: 300px;
+    height: 100%;
+    // margin-left: -300px;
+    overflow-y: auto;
+    @include transition(width 300ms ease, transform 300ms ease);
+}
+
+#wrapper.toggled #sidebar-wrapper {
+    // width: 300px;
+    @include transform(translateX(300px));
+}
+
+.search-container {
+    background-color: #1BC6FC;
+    position: relative;
+    input {
+        border: 0;
+        background-color: transparent;
+        color: #fff;
+        font-weight: bold;
+        padding: 15px 50px;
+        font-family: Corisande-regular;
+        font-size: 16px;
+        &::-webkit-input-placeholder {
+            color: #fff;
+        }
+        &:-moz-placeholder {
+            color: #fff;
+        }
+        &:-ms-input-placeholder {
+            color: #fff;
+        }
+        &:focus {
+            -webkit-box-shadow: none;
+            box-shadow: none;
+        }
+        &::-moz-selection {
+            background-color: #00698e;
+        }
+        &::selection {
+            background-color: #00698e;
+        }
+    }
+    &:before {
+        content: '';
+        position: absolute;
+        background-image: url(../img/search.png);
+        height: 19px;
+        width: 23px;
+        top: 50%;
+        left: 5px;
+        margin-top: -10px;
     }
 }

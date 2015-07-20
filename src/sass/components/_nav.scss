@@ -1,4 +1,8 @@
-
+.v2{
+    .nav-container .nav > ul{
+        padding: 0;
+    }
+}
 
 .nav .open > a,
 .nav .open > a:hover,
@@ -28,17 +32,23 @@
         float: left;
        & > li {
             float: left;
-            padding: 10px 5px;
+            padding: 8px 5px;
+            &.nav-select{
+                padding: 8px 5px 9px;
+            }
              & > a {
                 display: block;
-                padding: 11px 10px;
+                padding: 13px 10px;
                 color: #fff;
                 font-weight: bold;
                 text-align: center;
                 @include transition(background 300ms ease);
-                &:focus{
+                &:active{
                     text-decoration: none;
                     background: rgba(0, 0, 0, 0.3);
+                }
+                &:focus{
+                    text-decoration: none;
                 }
                 &:hover {
                     background: rgba(0, 0, 0, 0.3);
@@ -55,8 +65,9 @@
                 position: relative;
                 height: 65px;
                 width: 60px;
-                background: rgba(0, 0, 0, 0.3);
+                background-color: #00698e;
                 padding: 0;
+                cursor: pointer;
                 a {
                     background-color: transparent;
                     overflow: hidden;
@@ -65,12 +76,14 @@
                     width: 25px;
                     height: 19px;
                     font-size: 0;
+                    margin-left: -13px;
+                    margin-top: -9px;
                     cursor: pointer;
                     @include position(absolute, 50% null null 50%);
-                    @include transform(translate(-50%, -50%));
                     span {
                         position: absolute;
                         top: 8px;
+                        left: 0;
                         display: block;
                         height: 3px;
                         width: 25px;

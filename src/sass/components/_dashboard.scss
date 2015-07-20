@@ -1,3 +1,12 @@
+.v2 {
+    .dashboard-container {
+        left: 0;
+        &.side-menu-active {
+            left: 300px;
+        }
+    }
+}
+
 .dashboard-container {
     min-width: 950px;
     position: absolute;
@@ -20,15 +29,15 @@
             display: table;
             width: 100%;
             li {
-                -webkit-touch-callout: none;
-                -webkit-user-select: none;
-                -khtml-user-select: none;
-                -moz-user-select: none;
-                -ms-user-select: none;
-                user-select: none;
-                @include selection {
-                    background-color: transparent;
-                }
+                // -webkit-touch-callout: none;
+                // -webkit-user-select: none;
+                // -khtml-user-select: none;
+                // -moz-user-select: none;
+                // -ms-user-select: none;
+                // user-select: none;
+                // @include selection {
+                //     background-color: transparent;
+                // }
                 display: table-cell;
                 vertical-align: middle;
                 // float: left;
@@ -160,7 +169,8 @@
     }
 }
 
-.compiling, .compiling2 {
+.compiling,
+.compiling2 {
     display: inline-block;
     width: 20px;
     height: 20px;
@@ -207,7 +217,7 @@
         position: relative;
         top: 2px;
         border-radius: 50%;
-            background-color: #ff0033;
+        background-color: #ff0033;
         span {
             @include transform-origin(left);
             @include transition(width 300ms ease);
@@ -224,8 +234,8 @@
             @include transform(rotate(135deg));
             @include transition-delay(300ms);
         }
-        &.active{
-            span{
+        &.active {
+            span {
                 width: 15px;
             }
         }

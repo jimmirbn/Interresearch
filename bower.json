@@ -14,6 +14,7 @@
     "bourbon": "~4.2.2",
     "jquery": "~1.11.2",
     "bootstrap-sass": "~3.3.4",
-    "jQuery-contextMenu": "~1.6.7"
+    "jQuery-contextMenu": "~1.6.7",
+    "startbootstrap-simple-sidebar": "~1.0.4"
   }
 }
