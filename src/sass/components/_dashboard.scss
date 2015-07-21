@@ -1,8 +1,63 @@
 .v2 {
     .dashboard-container {
         left: 0;
+        right: 0;
+        bottom: 0;
+        padding: 0 20px;
         &.side-menu-active {
             left: 300px;
+        }
+        .item-overview-header {
+            margin-top: 15px;
+            float: right;
+            width: 97%;
+            &:after{
+                clear: both;
+                content:'';
+                display: table;
+            }
+        }
+        .dashboard-items {
+            overflow-y: scroll;
+            position: absolute;
+            bottom: 20px;
+            top: 52px;
+            left: 20px;
+            right: 20px;
+        }
+        .survey-item {
+            padding: 0;
+            width: 100%;
+            margin-left: auto;
+            background: transparent;
+            box-shadow: none;
+            &:hover {
+                background-color: transparent;
+            }
+            &__inner {
+                padding: 0 5px 0 10px;
+                box-shadow: inset 0px -1px 1px rgba(0, 0, 0, 0.25), 0px 1px 0px rgba(0, 0, 0, 0.15);
+                background: #ddd;
+                width: 97%;
+                float: left;
+                &:hover {
+                    cursor: pointer;
+                    background: darken(#ddd, 10%);
+                }
+            }
+            .checkbox {
+                position: relative;
+                left: auto;
+                bottom: auto;
+                float: left;
+                width: 3%;
+                top: 7px;
+            }
+            &:after {
+                content: '';
+                display: table;
+                clear: both;
+            }
         }
     }
 }
@@ -29,39 +84,20 @@
             display: table;
             width: 100%;
             li {
-                // -webkit-touch-callout: none;
-                // -webkit-user-select: none;
-                // -khtml-user-select: none;
-                // -moz-user-select: none;
-                // -ms-user-select: none;
-                // user-select: none;
-                // @include selection {
-                //     background-color: transparent;
-                // }
                 display: table-cell;
                 vertical-align: middle;
-                // float: left;
                 width: 13%;
-                // padding-left: 10px;
                 color: #333;
                 text-align: center;
                 &.name {
                     width: 35%;
                 }
-                // &.date,
-                // &.status,
-                // &.startEndDate,
-                // &.settlement,
-                // &.respondStatus {
-                //     text-align: center;
-                // }
                 &.name {
                     text-align: left;
                 }
                 &.settlement {
                     width: 10%;
                     padding-left: 0;
-                    // text-align: center;
                 }
                 &.respondStatus {
                     width: 16%;
@@ -105,7 +141,6 @@
         margin-left: 2%;
         background: #ddd;
         position: relative;
-        // height: 35px;
         margin-bottom: 15px;
         box-shadow: inset 0px -1px 1px rgba(0, 0, 0, 0.25), 0px 1px 0px rgba(0, 0, 0, 0.15);
         ul {
@@ -118,12 +153,8 @@
             width: 100%;
             li {
                 position: relative;
-                // float: left;
                 width: 13%;
-                // padding-left: 10px;
-                // padding-top: 10px;
                 height: 100%;
-                // white-space: nowrap;
                 font-size: 12px;
                 word-wrap: break-word;
                 display: table-cell;

@@ -15,6 +15,26 @@
         @include size(23px, 23px);
         bottom: 6px;
     }
+    &--word {
+        background: url(../img/word.png) no-repeat;
+        @include size(23px, 23px);
+        bottom: 6px;
+    }
+    &--powerpoint {
+        background: url(../img/powerpoint.png) no-repeat;
+        @include size(23px, 22px);
+        bottom: 6px;
+    }
+    &--pdf {
+        background: url(../img/pdf-icon.png) no-repeat;
+        @include size(23px, 23px);
+        bottom: 6px;
+    }
+    &--html {
+        background: url(../img/html.png) no-repeat;
+        @include size(17px, 23px);
+        bottom: 6px;
+    }
     &--folder {
         @include size(25px, 21px);
         bottom: 8px;

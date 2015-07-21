@@ -3254,6 +3254,10 @@ ul {
   float: left;
   padding: 8px 5px;
 }
+.nav-container .nav > ul > li:before {
+  content: '';
+  position: absolute;
+}
 .nav-container .nav > ul > li.nav-select {
   padding: 8px 5px 9px;
 }
@@ -3261,7 +3265,7 @@ ul {
   display: block;
   padding: 13px 10px;
   color: #fff;
-  font-weight: bold;
+  font-family: "Corisande-bold";
   text-align: center;
   -webkit-transition: background 300ms ease;
   -o-transition: background 300ms ease;
@@ -3288,50 +3292,73 @@ ul {
   position: relative;
   height: 65px;
   width: 60px;
-  background-color: #00698e;
+  background-color: #0F789D;
   padding: 0;
   cursor: pointer;
 }
 .nav-container .nav > ul > li.info a {
-  background-color: transparent;
-  overflow: hidden;
-  margin: 0;
-  padding: 0;
-  width: 25px;
-  height: 19px;
-  font-size: 0;
-  margin-left: -13px;
-  margin-top: -9px;
-  cursor: pointer;
   position: absolute;
-  top: 50%;
   left: 50%;
+  top: 50%;
+  display: inline-block;
+  width: 2em;
+  height: 2em;
+  cursor: pointer;
+  margin-left: -15px;
+  margin-top: -15px;
 }
 .nav-container .nav > ul > li.info a span {
   position: absolute;
-  top: 8px;
+  top: 50%;
   left: 0;
-  display: block;
-  height: 3px;
-  width: 25px;
-  background: #fff;
-}
-.nav-container .nav > ul > li.info a span:before, .nav-container .nav > ul > li.info a span:after {
-  position: absolute;
   display: block;
   width: 100%;
   height: 3px;
+  margin-top: 0;
   background-color: #fff;
-  content: "";
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: background-color 0.3s;
+  transition: background-color 0.3s;
+}
+.nav-container .nav > ul > li.info a span:after, .nav-container .nav > ul > li.info a span:before {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  content: '';
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
 }
 .nav-container .nav > ul > li.info a span:before {
-  top: -7px;
+  -webkit-transform: translateY(-0.5em);
+  transform: translateY(-0.5em);
 }
 .nav-container .nav > ul > li.info a span:after {
-  bottom: -7px;
+  -webkit-transform: translateY(0.5em);
+  transform: translateY(0.5em);
 }
 .nav-container .nav > ul > li.info a:hover {
-  background: transparent;
+  background-color: transparent;
+}
+.nav-container .nav > ul > li.info.active span:before {
+  -webkit-transform: translate(-0.65em, -0.35em) rotate(-45deg) scaleX(0.6);
+  -moz-transform: translate(-0.65em, -0.35em) rotate(-45deg) scaleX(0.6);
+  -ms-transform: translate(-0.65em, -0.35em) rotate(-45deg) scaleX(0.6);
+  -o-transform: translate(-0.65em, -0.35em) rotate(-45deg) scaleX(0.6);
+  transform: translate(-0.65em, -0.35em) rotate(-45deg) scaleX(0.6);
+}
+.nav-container .nav > ul > li.info.active span:after {
+  -webkit-transform: translate(-0.65em, 0.35em) rotate(45deg) scaleX(0.6);
+  -moz-transform: translate(-0.65em, 0.35em) rotate(45deg) scaleX(0.6);
+  -ms-transform: translate(-0.65em, 0.35em) rotate(45deg) scaleX(0.6);
+  -o-transform: translate(-0.65em, 0.35em) rotate(45deg) scaleX(0.6);
+  transform: translate(-0.65em, 0.35em) rotate(45deg) scaleX(0.6);
 }
 .nav-container .nav > ul > li.newQ a:before {
   background: url(../img/plus_white.png) no-repeat;
@@ -3391,7 +3418,7 @@ ul {
   overflow: hidden;
   text-overflow: ellipsis;
   color: #fff;
-  font-weight: bold;
+  font-family: "Corisande-bold";
   -webkit-transition: background 300ms ease;
   -o-transition: background 300ms ease;
   transition: background 300ms ease;
@@ -3400,40 +3427,23 @@ ul {
 .nav-select > span:hover {
   background: rgba(0, 0, 0, 0.3);
 }
-.nav-select > span:after {
-  speak: none;
-  position: relative;
-  top: 4px;
-  -webkit-transform: translateY(-50%);
-  -moz-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  -o-transform: translateY(-50%);
-  transform: translateY(-50%);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  content: '';
-  right: -8px;
-  background-image: url(../img/chevron-white.png);
-  height: 9px;
-  width: 15px;
-  display: inline-block;
-}
 .nav-select.nav-active {
   z-index: 200;
 }
-.nav-select.nav-active > span {
-  background-color: #fff;
-  color: #02b1e8;
-}
-.nav-select.nav-active > span:after {
+.nav-select.nav-active:after {
   -webkit-transform: translateY(-50%) rotate(180deg);
   -moz-transform: translateY(-50%) rotate(180deg);
   -ms-transform: translateY(-50%) rotate(180deg);
   -o-transform: translateY(-50%) rotate(180deg);
   transform: translateY(-50%) rotate(180deg);
   background-image: url(../img/chevron-blue-small.png);
-  height: 9px;
+  height: 10px;
   width: 15px;
+  background-repeat: no-repeat;
+}
+.nav-select.nav-active > span {
+  background-color: #fff;
+  color: #02b1e8;
 }
 .nav-select.nav-active .nav-placeholder {
   border-top: 1px solid #02b1e8;
@@ -3489,6 +3499,25 @@ ul {
 }
 .nav-select ul span {
   padding: 1em;
+}
+.nav-select:after {
+  speak: none;
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  content: '';
+  background-image: url(../img/chevron-white.png);
+  height: 10px;
+  width: 15px;
+  display: inline-block;
+  background-repeat: no-repeat;
 }
 
 .nav-options {
@@ -4195,7 +4224,7 @@ input[type=text]:focus {
 
 .sidebar-header {
   height: 65px;
-  background-color: #00698e;
+  background-color: #0F789D;
   text-align: center;
 }
 .sidebar-header p {
@@ -4236,7 +4265,7 @@ input[type=text]:focus {
   background-color: transparent;
   color: #fff;
   font-weight: bold;
-  padding: 15px 50px;
+  padding: 17px 50px 13px;
   font-family: Corisande-regular;
   font-size: 16px;
 }
@@ -4493,9 +4522,64 @@ input[type=text]:focus {
 
 .v2 .dashboard-container {
   left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 0 20px;
 }
 .v2 .dashboard-container.side-menu-active {
   left: 300px;
+}
+.v2 .dashboard-container .item-overview-header {
+  margin-top: 15px;
+  float: right;
+  width: 97%;
+}
+.v2 .dashboard-container .item-overview-header:after {
+  clear: both;
+  content: '';
+  display: table;
+}
+.v2 .dashboard-container .dashboard-items {
+  overflow-y: scroll;
+  position: absolute;
+  bottom: 20px;
+  top: 52px;
+  left: 20px;
+  right: 20px;
+}
+.v2 .dashboard-container .survey-item {
+  padding: 0;
+  width: 100%;
+  margin-left: auto;
+  background: transparent;
+  box-shadow: none;
+}
+.v2 .dashboard-container .survey-item:hover {
+  background-color: transparent;
+}
+.v2 .dashboard-container .survey-item__inner {
+  padding: 0 5px 0 10px;
+  box-shadow: inset 0px -1px 1px rgba(0, 0, 0, 0.25), 0px 1px 0px rgba(0, 0, 0, 0.15);
+  background: #ddd;
+  width: 97%;
+  float: left;
+}
+.v2 .dashboard-container .survey-item__inner:hover {
+  cursor: pointer;
+  background: #c4c4c4;
+}
+.v2 .dashboard-container .survey-item .checkbox {
+  position: relative;
+  left: auto;
+  bottom: auto;
+  float: left;
+  width: 3%;
+  top: 7px;
+}
+.v2 .dashboard-container .survey-item:after {
+  content: '';
+  display: table;
+  clear: both;
 }
 
 .dashboard-container {
@@ -4963,6 +5047,30 @@ input[type=text]:focus {
 .type--excel {
   background: url(../img/excel.png) no-repeat;
   width: 23px;
+  height: 23px;
+  bottom: 6px;
+}
+.type--word {
+  background: url(../img/word.png) no-repeat;
+  width: 23px;
+  height: 23px;
+  bottom: 6px;
+}
+.type--powerpoint {
+  background: url(../img/powerpoint.png) no-repeat;
+  width: 23px;
+  height: 22px;
+  bottom: 6px;
+}
+.type--pdf {
+  background: url(../img/pdf-icon.png) no-repeat;
+  width: 23px;
+  height: 23px;
+  bottom: 6px;
+}
+.type--html {
+  background: url(../img/html.png) no-repeat;
+  width: 17px;
   height: 23px;
   bottom: 6px;
 }

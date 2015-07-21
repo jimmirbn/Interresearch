@@ -16,37 +16,25 @@
         overflow: hidden;
         text-overflow: ellipsis;
         color: #fff;
-        font-weight: bold;
+        font-family: "Corisande-bold";
         @include transition(background 300ms ease);
         padding-right: 3em;
         &:hover {
             background: rgba(0, 0, 0, 0.3);
         }
-        &:after {
-            speak: none;
-            @include position(relative, 4px null null null);
-            @include transform(translateY(-50%));
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-            content: '';
-            right: -8px;
-            background-image: url(../img/chevron-white.png);
-            height: 9px;
-            width: 15px;
-            display: inline-block;
-        }
     }
     &.nav-active {
         z-index: 200;
+        &:after {
+            @include transform(translateY(-50%) rotate(180deg));
+            background-image: url(../img/chevron-blue-small.png);
+            height: 10px;
+            width: 15px;
+            background-repeat: no-repeat;
+        }
         & > span {
             background-color: #fff;
             color: #02b1e8;
-            &:after {
-                @include transform(translateY(-50%) rotate(180deg));
-                background-image: url(../img/chevron-blue-small.png);
-                height: 9px;
-                width: 15px;
-            }
         }
         .nav-placeholder {
             border-top: 1px solid #02b1e8;
@@ -57,7 +45,6 @@
             visibility: visible;
             pointer-events: auto;
             z-index: 99;
-            // box-shadow: 0px 3px 3px 1px rgba(0, 0, 0, 0.3);
             @include old-ie {
                 display: block;
             }
@@ -90,6 +77,19 @@
         span {
             padding: 1em;
         }
+    }
+    &:after {
+        speak: none;
+        @include position(absolute, 50% 15px null null);
+        @include transform(translateY(-50%));
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        content: '';
+        background-image: url(../img/chevron-white.png);
+        height: 10px;
+        width: 15px;
+        display: inline-block;
+        background-repeat: no-repeat;
     }
 }
 
