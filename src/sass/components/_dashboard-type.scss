@@ -35,6 +35,41 @@
         @include size(17px, 23px);
         bottom: 6px;
     }
+    &--panel {
+        background: url(../img/users.png) no-repeat;
+        @include size(23px, 20px);
+        bottom: 8px;
+    }
+    &--focus-group {
+        background: url(../img/group_blue.png) no-repeat;
+        @include size(23px, 23px);
+        bottom: 7px;
+    }
+    &--form {
+        background: url(../img/form_blue.png) no-repeat;
+        @include size(20px, 22px);
+        bottom: 7px;
+    }
+    &--form-report {
+        background: url(../img/form_report_blue.png) no-repeat;
+        @include size(20px, 23px);
+        bottom: 7px;
+    }
+    &--scheduler {
+        background: url(../img/task_blue.png) no-repeat;
+        @include size(23px, 19px);
+        bottom: 9px;
+    }
+    &--file {
+        background: url(../img/file_new_blue.png) no-repeat;
+        @include size(23px, 23px);
+        bottom: 7px;
+    }
+    &--form-stats {
+        background: url(../img/barchart_blue.png) no-repeat;
+        @include size(23px, 19px);
+        bottom: 7px;
+    }
     &--folder {
         @include size(25px, 21px);
         bottom: 8px;

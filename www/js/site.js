@@ -61,65 +61,65 @@ var animationEvent = whichAnimationEvent();
                     className: "not-selectable headline",
                 },
                 "open": {
-                    name: "Åbn",
+                    name: "Open",
                     icon: "open"
                 },
                 "open as": {
-                    name: "Åben som",
+                    name: "Open as",
                     icon: "openAs"
                 },
                 "print": {
-                    name: "Vis udskrift",
+                    name: "Preview",
                     icon: "print"
                 },
                 "Edit": {
-                    name: "Rediger",
+                    name: "Edit",
                     icon: "edit"
                 },
                 "settlement": {
-                    name: "Afvikling",
+                    name: "Implementation",
                     icon: "settlement"
                 },
                 "sep1": "---------",
                 "rapport": {
-                    name: "Tilføj analyserapport",
+                    name: "Add analysis report",
                     icon: "rapport"
                 },
                 "copy": {
-                    name: "Kopiér",
+                    name: "Copy",
                     icon: "copy"
                 },
                 "rename": {
-                    name: "Omdøb",
+                    name: "Rename",
                     icon: "rename"
                 },
                 "delete": {
-                    name: "Slet",
+                    name: "Delete",
                     icon: "delete"
                 },
                 "move": {
-                    name: "Flyt",
+                    name: "Move",
                     icon: "move"
                 },
                 "sep2": "---------",
                 "answers": {
-                    name: "Bevarelser",
+                    name: "Answers",
                     icon: "answers"
                 },
                 "settings": {
-                    name: "Indstillinger",
+                    name: "Settings",
                     icon: "settings"
                 },
                 "jump": {
-                    name: "Spring",
+                    name: "Leaps",
                     icon: "jump"
                 },
                 "languages": {
-                    name: "Sprogversioner",
+                    name: "Language versions",
                     icon: "languages"
                 },
                 "autoanswer": {
-                    name: "Autosvar",
+                    name: "Auto-reply",
                     icon: "autoanswer"
                 },
                 "adSurvey": {
