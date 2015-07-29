@@ -1,7 +1,7 @@
 //detect css animation end
 function whichAnimationEvent() {
     var t,
-    el = document.createElement("fakeelement");
+        el = document.createElement("fakeelement");
 
     var animations = {
         "animation": "animationend",
@@ -37,6 +37,7 @@ var animationEvent = whichAnimationEvent();
     navSelect();
     progressDemo();
     pageBreak();
+    selectView();
     $('input').iCheck();
 
     $('input').iCheck({
@@ -130,13 +131,13 @@ var animationEvent = whichAnimationEvent();
             }
         });
 
-$('.survey-item').on('click', function(e) {
-    var menuHeadline = $('.headline');
-    var thisName = $(this).find('p').text()
-    var thisRealName = thisName + '<br>'
-    menuHeadline.find('span').append(thisRealName + this.id);
-})
-});
+        $('.survey-item').on('click', function(e) {
+            var menuHeadline = $('.headline');
+            var thisName = $(this).find('p').text()
+            var thisRealName = thisName + '<br>'
+            menuHeadline.find('span').append(thisRealName + this.id);
+        })
+    });
 
 })(jQuery, window, document);
 
@@ -355,6 +356,35 @@ function showSettings() {
             settingsBtn.removeClass('active');
             settings.removeClass('active');
             survey.removeClass('active');
+        }
+    });
+}
+
+function selectView() {
+    var viewBtn = $('.select-view');
+    var bodyClass = $('body');
+    var surveyItem = $('.survey-item__inner > ul > li');
+    var surveyView = $('.survey-item:first-of-type');
+    var surveyItems = $('.survey-item');
+    viewBtn.click(function() {
+
+        if (!bodyClass.hasClass('v3')) {
+            bodyClass.addClass('v3');
+            var theHeight = surveyView.height();
+            $.each(surveyItems, function() {
+                $(this).css('min-height', theHeight+10);
+            });
+            $.each(surveyItem, function() {
+                if ($(this).is(':empty')) {
+                    $(this).append('<p>&nbsp;</p>');
+                }
+            });
+
+        } else {
+            $.each(surveyItems, function() {
+                $(this).css('min-height', 'auto');
+            });
+            bodyClass.removeClass('v3');
         }
     });
 }

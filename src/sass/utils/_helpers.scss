@@ -21,3 +21,25 @@
         }
     }
 }
+$breakpoints: (
+    'small':  (max-width: 768px),
+    'medium': (max-width: 992px),
+    'large': (max-width: 1200px),
+    'x-large': (max-width: 1330px)
+) !global;
+
+/// Responsive manager.
+/// @access public
+/// @param {String} $breakpoint - Breakpoint
+/// @requires $breakpoints
+@mixin respond-to($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media #{inspect(map-get($breakpoints, $breakpoint))} {
+      @content;
+    }
+  }
+
+  @else {
+    // @error 'No value found for `#{$breakpoint}`. Please make sure it is defined in `$breakpoints` map.';
+  }
+}

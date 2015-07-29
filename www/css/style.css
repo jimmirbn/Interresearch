@@ -4378,10 +4378,16 @@ input[type=text]:focus {
 .v2 .dashboard-container.side-menu-active {
   left: 300px;
 }
+.v2 .dashboard-container .select-all {
+  float: left;
+  width: 3%;
+  margin-top: 15px;
+}
 .v2 .dashboard-container .item-overview-header {
   margin-top: 15px;
   float: right;
   width: 97%;
+  margin-left: 0;
 }
 .v2 .dashboard-container .item-overview-header:after {
   clear: both;
@@ -4407,16 +4413,20 @@ input[type=text]:focus {
   background-color: transparent;
 }
 .v2 .dashboard-container .survey-item__inner {
-  padding: 0 5px 0 10px;
+  padding: 0 5px 0 11px;
   box-shadow: inset 0px -1px 1px rgba(0, 0, 0, 0.25), 0px 1px 0px rgba(0, 0, 0, 0.15);
   background: #ddd;
   width: 97%;
   float: left;
   cursor: pointer;
+  position: relative;
 }
 .v2 .dashboard-container .survey-item__inner:hover {
   cursor: pointer;
   background: #c4c4c4;
+}
+.v2 .dashboard-container .survey-item__inner:hover .drag-dots {
+  display: block;
 }
 .v2 .dashboard-container .survey-item .checkbox {
   position: relative;
@@ -4424,12 +4434,158 @@ input[type=text]:focus {
   bottom: auto;
   float: left;
   width: 3%;
-  top: 7px;
+  top: 6px;
 }
 .v2 .dashboard-container .survey-item:after {
   content: '';
   display: table;
   clear: both;
+}
+.v2 .dashboard-container .survey-item .drag-dots {
+  display: none;
+  background-image: url("../img/grippy_small_white.png");
+  position: absolute;
+  height: 18px;
+  width: 5px;
+  left: 3px;
+  top: 50%;
+  margin-top: -9px;
+}
+.v2 .dashboard-container .select-view {
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  background: green;
+  top: 5px;
+  right: 5px;
+  cursor: pointer;
+}
+.v2.v3 .item-overview-header {
+  display: none;
+}
+.v2.v3 .survey-item {
+  margin: 0;
+  width: 20%;
+  float: left;
+  padding: 5px;
+  min-height: 280px;
+}
+.v2.v3 .survey-item:hover {
+  background: #c4c4c4;
+}
+.v2.v3 .survey-item:after {
+  clear: none;
+}
+.v2.v3 .survey-item .drag-dots {
+  margin: 0;
+  left: auto;
+  right: 3px;
+  top: 3px;
+}
+@media (max-width: 1330px) {
+  .v2.v3 .survey-item {
+    width: 25%;
+  }
+}
+@media (max-width: 1200px) {
+  .v2.v3 .survey-item {
+    width: 33.333333333333336%;
+  }
+}
+@media (max-width: 992px) {
+  .v2.v3 .survey-item {
+    width: 50%;
+  }
+}
+@media (max-width: 768px) {
+  .v2.v3 .survey-item {
+    width: 100%;
+  }
+}
+.v2.v3 .survey-item .checkbox {
+  display: none;
+}
+.v2.v3 .survey-item .survey-item__inner {
+  width: 100%;
+  padding: 0;
+}
+.v2.v3 .survey-item .survey-item__inner:hover {
+  background-color: #ddd;
+}
+.v2.v3 .survey-item .survey-item__inner > ul {
+  display: block;
+  width: 100%;
+  height: auto;
+  min-height: auto;
+}
+.v2.v3 .survey-item .survey-item__inner > ul .type {
+  display: block;
+  position: relative;
+  bottom: 0;
+  margin: 6px 0 6px 10px;
+  margin-left: 50px;
+  min-height: 30px;
+}
+.v2.v3 .survey-item .survey-item__inner > ul .type:before {
+  content: attr(data-name) ": ";
+  display: inline-block;
+  left: -40px;
+  top: 4px;
+  position: absolute;
+}
+.v2.v3 .survey-item .survey-item__inner > ul > li {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  text-align: left;
+  min-height: 39px;
+}
+.v2.v3 .survey-item .survey-item__inner > ul > li:nth-child(even) {
+  background-color: #e8e8e8;
+}
+.v2.v3 .survey-item .survey-item__inner > ul > li.respondStatus {
+  max-height: 39px;
+}
+.v2.v3 .survey-item .survey-item__inner > ul > li.settlement {
+  padding: 2px;
+}
+.v2.v3 .survey-item .survey-item__inner > ul > li.settlement span {
+  margin-left: 50px;
+}
+.v2.v3 .survey-item .survey-item__inner > ul > li.settlement:before {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+}
+.v2.v3 .survey-item .survey-item__inner > ul > li.status {
+  padding: 3px;
+}
+.v2.v3 .survey-item .survey-item__inner > ul > li.status:before {
+  position: absolute;
+  top: 10px;
+}
+.v2.v3 .survey-item .survey-item__inner > ul > li.status span {
+  left: 50px;
+  top: 4px;
+}
+.v2.v3 .survey-item .survey-item__inner > ul > li.startEndDate span {
+  width: auto;
+}
+.v2.v3 .survey-item .survey-item__inner > ul > li span {
+  display: inline-block;
+}
+.v2.v3 .survey-item .survey-item__inner > ul > li .progress-bar {
+  position: relative;
+  bottom: 3px;
+  left: auto;
+  top: auto;
+  right: auto;
+  margin-left: 0;
+  display: inline-block;
+}
+.v2.v3 .survey-item .survey-item__inner > ul > li:before {
+  content: attr(data-name) ": ";
+  display: inline-block;
 }
 
 .dashboard-container {
@@ -4516,7 +4672,6 @@ input[type=text]:focus {
 .dashboard-container .survey-item ul {
   margin: 0;
   list-style: none;
-  height: 100%;
   min-height: 35px;
   height: 35px;
   display: table;
