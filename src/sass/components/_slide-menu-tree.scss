@@ -55,163 +55,19 @@
             }
         }
     }
-    .tree {
-        overflow: hidden;
-        margin: 0;
-        width: 90%;
-        float: left;
-        height: 100%;
-        li {
-            list-style: none;
-            position: relative;
-            &.tree-empty > {
-                .toggler {
-                    color: #aaa;
-                }
-                span.toggler:before {
-                    content: "\2212";
-                    height: 18px;
-                    width: 18px;
-                    display: block;
-                    text-align: center;
-                }
-            }
-            &.tree-closed > span.toggler:before {
-                content: ">";
-                height: 18px;
-                width: 18px;
-                display: block;
-                text-align: center;
-            }
-            &.tree-opened > span.toggler:before {
-                content: "\2212";
-                height: 18px;
-                width: 18px;
-                display: block;
-                text-align: center;
-            }
-            a {
-                white-space: nowrap;
-                text-decoration: none;
-                color: #333333;
-                height: 100%;
-                display: block;
-                height: 100%;
-                padding-left: 120px;
-                span {
-                    padding: 20px;
-                    display: block;
-                    position: relative;
-                    top: 2px;
-                }
-            }
-            i.top-folder {
-                background: url(../img/folder-new.png) no-repeat;
-                height: 40px;
-                width: 43px;
-                position: absolute;
-                top: 50%;
-                @include transform(translateY(-50%));
-                left: 60px;
-            }
-            ul {
-                position: absolute;
-                width: 100%;
-                margin: 0;
-                li {
-                    .toggler {
-                        left: 25px;
-                    }
-                    i {
-                        left: 70px !important;
-                    }
-                    a {
-                        padding-left: 130px !important;
-                    }
-                    ul li {
-                        .toggler {
-                            left: 35px;
-                        }
-                        i {
-                            left: 85px !important;
-                        }
-                        a {
-                            padding-left: 145px !important;
-                        }
-                        ul li {
-                            .toggler {
-                                left: 45px;
-                            }
-                            i {
-                                left: 100px !important;
-                            }
-                            a {
-                                padding-left: 160px !important;
-                            }
-                        }
-                    }
-                }
-                .tree-closed i {
-                    background-image: url(../img/folder-new.png) !important;
-                    position: absolute;
-                    width: 43px;
-                    height: 40px;
-                    left: 55px;
-                    top: 50%;
-                    @include transform(translateY(-50%));
-                }
-                .tree-opened i {
-                    background-image: url(../img/folder-open-new.png);
-                    position: absolute;
-                    width: 45px;
-                    height: 42px;
-                    left: 55px;
-                    top: 50%;
-                    @include transform(translateY(-50%));
-                }
-                .tree-empty i {
-                    background-image: url(../img/folder-new.png) !important;
-                    position: absolute;
-                    width: 40px;
-                    height: 43px;
-                    left: 55px;
-                    top: 50%;
-                    @include transform(translateY(-50%));
-                }
-            }
-        }
-        .toggler {
-            padding: 10px;
-            position: absolute;
-            left: 15px;
-            top: 50%;
-            border: solid 1px transparent;
-            @include transform(translateY(-50%));
-            &:hover {
-                border: solid 1px #ddd;
-                cursor: pointer;
-            }
-            &.hover {
-                // border-color: #02b1e8;
-                color: white;
-            }
-        }
-    }
 }
 
 .slide-menu-btn-side {
     float: left;
     width: 10%;
     height: 100%;
-    &:hover {
-        cursor: pointer;
-    }
+    cursor: pointer;
 }
 
 .v2 .folder-tree {
     width: 100%;
     & > li {
-        a {
+        .folder-item {
             color: white;
             & > span {
                 background: url(../img/chevron-right-white.png) no-repeat;
@@ -231,7 +87,7 @@
         }
     }
     .open {
-        & > a {
+        & > .folder-item {
             &:hover {
                 > span {
                     background: url(../img/chevron-white.png) no-repeat;
@@ -256,7 +112,7 @@
     float: left;
     li {
         display: block;
-        a {
+        .folder-item {
             display: block;
             width: 100%;
             padding: 10px;
@@ -275,7 +131,7 @@
     }
     ul {
         & > li {
-            a {
+            .folder-item {
                 padding-left: 15px;
                 & > span {
                     background: url(../img/chevron-right.png) no-repeat;
@@ -285,7 +141,7 @@
                     margin: 0 10px 0 0;
                 }
             }
-            ul > li > a {
+            ul > li > .folder-item {
                 & > span {
                     background: url(../img/chevron-right.png) no-repeat;
                     display: inline-block;
@@ -295,7 +151,7 @@
                 }
                 padding-left: 25px;
             }
-            ul > li > ul > li > a {
+            ul > li > ul > li > .folder-item {
                 & > span {
                     background: url(../img/chevron-right.png) no-repeat;
                     display: inline-block;
@@ -305,7 +161,7 @@
                 }
                 padding-left: 35px;
             }
-            ul > li > ul > li > ul > li > a {
+            ul > li > ul > li > ul > li > .folder-item {
                 & > span {
                     background: url(../img/chevron-right.png) no-repeat;
                     display: inline-block;
@@ -318,7 +174,7 @@
         }
     }
     .open {
-        & > a {
+        & > .folder-item {
             &:hover {
                 > span {
                     background: url(../img/chevron-white.png) no-repeat;

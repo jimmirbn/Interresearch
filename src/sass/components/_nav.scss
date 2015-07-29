@@ -4,9 +4,9 @@
     }
 }
 
-.nav .open > a,
-.nav .open > a:hover,
-.nav .open > a:focus {
+.nav .open > .nav-item,
+.nav .open > .nav-item:hover,
+.nav .open > .nav-item:focus {
     background: rgba(0, 0, 0, 0.3);
     text-decoration: none;
 }
@@ -40,7 +40,8 @@
             &.nav-select {
                 padding: 8px 5px 9px;
             }
-            & > a {
+            & > .nav-item {
+                cursor: pointer;
                 display: block;
                 padding: 13px 10px;
                 color: #fff;
@@ -72,7 +73,7 @@
                 background-color: #0F789D;
                 padding: 0;
                 cursor: pointer;
-                a {
+                .nav-item {
                     position: absolute;
                     left: 50%;
                     top: 50%;
@@ -186,7 +187,7 @@
             // }
             // }
             &.newQ {
-                a {
+                .nav-item {
                     &:before {
                         background: url(../img/plus_white.png) no-repeat;
                         height: 16px;
@@ -196,7 +197,7 @@
                 }
             }
             &.sendout {
-                a {
+                .nav-item {
                     &:before {
                         background: url(../img/sendout_white.png) no-repeat;
                         height: 15px;
@@ -206,7 +207,7 @@
                 }
             }
             &.analyze {
-                a {
+                .nav-item {
                     &:before {
                         background: url(../img/analyze4_white.png) no-repeat;
                         height: 18px;
@@ -215,7 +216,7 @@
                 }
             }
             &.cancelBtn {
-                a {
+                .nav-item {
                     &:before {
                         background: url(../img/cancel_white.png) no-repeat;
                         width: 17px;
@@ -225,7 +226,7 @@
                 }
             }
             &.previewBtn {
-                a {
+                .nav-item {
                     &:before {
                         background: url(../img/preview_white.png) no-repeat;
                         width: 17px;
@@ -235,7 +236,7 @@
                 }
             }
             &.saveBtn {
-                a {
+                .nav-item {
                     &:before {
                         background: url(../img/save_white.png) no-repeat;
                         width: 17px;
@@ -245,7 +246,7 @@
                 }
             }
             &.helpBtn {
-                a {
+                .nav-item {
                     text-align: center;
                 }
             }

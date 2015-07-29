@@ -120,7 +120,7 @@
         }
         li {
             &:hover {
-                & > a,
+                & > .title,
                 & > span {
                     color: #fff;
                 }
@@ -130,12 +130,12 @@
             @include transition(transform 0.15s, background-color 200ms ease, color 200ms ease);
             &:hover {
                 background-color: #02b1e8;
-                & > a {
+                & > .title {
                     color: #fff;
                     text-decoration: none;
                 }
             }
-            & > a,
+            & > .title,
             & > span {
                 padding: 13px 20px 13px 50px;
                 position: relative;
