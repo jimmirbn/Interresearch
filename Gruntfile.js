@@ -59,6 +59,8 @@ module.exports = function (grunt) {
                     '<%= src.bower %>/icheck/icheck.min.js',
                     '<%= src.bower %>/jQuery-contextMenu/src/jquery.contextMenu.js',
                     '<%= src.bower %>/jQuery-contextMenu/src/jquery.ui.position.js',
+                    '<%= src.bower %>/jscrollpane/script/jquery.mousewheel.js',
+                    '<%= src.bower %>/jscrollpane/script/jquery.jscrollpane.js',
                 ],
                 dest : '<%= app.js %>/vendors.js',
                 nonull : true

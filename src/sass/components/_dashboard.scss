@@ -4,8 +4,12 @@
         right: 0;
         bottom: 0;
         padding: 0 20px;
+        @include transition(transform 300ms ease);
+        will-change: transform, right;
         &.side-menu-active {
-            left: 300px;
+            right: 300px;
+            left: 0;
+            @include transform(translateX(300px));
         }
         .select-all {
             float: left;

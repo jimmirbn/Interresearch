@@ -26,8 +26,9 @@
                 <p>Project folders</p>
             </div>
             <div class="search-container">
-                <input type="text" placeholder="Search file by name">
                 <span></span>
+                <input type="text" placeholder="Search file by name">
+                <div class="loader"></div>
             </div>
             <ul class="folder-tree">
                 <li class="top-folder open">
@@ -36,6 +37,86 @@
                         <li class="open">
                             <div class="folder-item"><span></span><img src="img/folder-open-new.png" alt="">Parent folder</div>
                             <ul>
+                                <li class="open">
+                                    <div class="folder-item"><span></span><img src="img/folder-open-new.png" alt="">Child folder</div>
+                                    <ul>
+                                        <li>
+                                            <div class="folder-item"><span></span><img src="img/folder-new.png" alt="">Grand child folder</div>
+                                            <ul>
+                                                <li>
+                                                    <div class="folder-item"><span></span><img src="img/folder-new.png" alt="">Grand grand child folder</div>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <div class="folder-item"><span></span><img src="img/folder-new.png" alt="">Grand child folder</div>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="open">
+                                    <div class="folder-item"><span></span><img src="img/folder-open-new.png" alt="">Child folder</div>
+                                    <ul>
+                                        <li>
+                                            <div class="folder-item"><span></span><img src="img/folder-new.png" alt="">Grand child folder</div>
+                                            <ul>
+                                                <li>
+                                                    <div class="folder-item"><span></span><img src="img/folder-new.png" alt="">Grand grand child folder</div>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <div class="folder-item"><span></span><img src="img/folder-new.png" alt="">Grand child folder</div>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="open">
+                                    <div class="folder-item"><span></span><img src="img/folder-open-new.png" alt="">Child folder</div>
+                                    <ul>
+                                        <li>
+                                            <div class="folder-item"><span></span><img src="img/folder-new.png" alt="">Grand child folder</div>
+                                            <ul>
+                                                <li>
+                                                    <div class="folder-item"><span></span><img src="img/folder-new.png" alt="">Grand grand child folder</div>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <div class="folder-item"><span></span><img src="img/folder-new.png" alt="">Grand child folder</div>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="open">
+                                    <div class="folder-item"><span></span><img src="img/folder-open-new.png" alt="">Child folder</div>
+                                    <ul>
+                                        <li>
+                                            <div class="folder-item"><span></span><img src="img/folder-new.png" alt="">Grand child folder</div>
+                                            <ul>
+                                                <li>
+                                                    <div class="folder-item"><span></span><img src="img/folder-new.png" alt="">Grand grand child folder</div>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <div class="folder-item"><span></span><img src="img/folder-new.png" alt="">Grand child folder</div>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="open">
+                                    <div class="folder-item"><span></span><img src="img/folder-open-new.png" alt="">Child folder</div>
+                                    <ul>
+                                        <li>
+                                            <div class="folder-item"><span></span><img src="img/folder-new.png" alt="">Grand child folder</div>
+                                            <ul>
+                                                <li>
+                                                    <div class="folder-item"><span></span><img src="img/folder-new.png" alt="">Grand grand child folder</div>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <div class="folder-item"><span></span><img src="img/folder-new.png" alt="">Grand child folder</div>
+                                        </li>
+                                    </ul>
+                                </li>
                                 <li class="open">
                                     <div class="folder-item"><span></span><img src="img/folder-open-new.png" alt="">Child folder</div>
                                     <ul>
@@ -87,9 +168,10 @@
                                 <button class="btn btn--extra"><span class="form"></span>Add form</button>
                                 <button class="btn btn--extra"><span class="report"></span>Add form report</button>
                                 <button class="btn btn--extra"><span class="task"></span>Add schedule</button>
-                                <button class="btn btn--extra"><span class="stats"></span>Add form statistics</button>
+                                <button class="btn btn--extra"><span class="stats"></span>tilføj statistik over blanketter</button>
                                 <button class="btn btn--extra"><span class="search"></span>Search</button>
                                 <button class="btn btn--extra"><span class="group"></span>Add focus group</button>
+                                <button class="btn btn--extra"><span class="group"></span>avanceret spørgeudnersøgelse</button>
                             </div>
                         </li>
                         <li class="nav-select nav-elastic nav-help" tabindex="0"><span class="nav-placeholder">Help</span>
@@ -136,7 +218,7 @@
                         <li class="respondStatus"><span>Answers</span></li>
                     </ul>
                 </div>
-                <div class="dashboard-items">
+                <div class="dashboard-items scroll-items">
                     <div class="survey-item" id="1234567">
                         <div class="checkbox">
                             <input type="checkbox" id="checkbox1">

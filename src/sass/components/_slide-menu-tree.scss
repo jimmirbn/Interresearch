@@ -66,9 +66,14 @@
 
 .v2 .folder-tree {
     width: 100%;
-    & > li {
+    overflow-y: auto;
+    position: absolute;
+    bottom: 0;
+    top: 120px;
+    li {
         .folder-item {
             color: white;
+            cursor: pointer;
             & > span {
                 background: url(../img/chevron-right-white.png) no-repeat;
                 display: inline-block;
@@ -222,9 +227,9 @@
     width: 300px;
     height: 100%;
     // margin-left: -300px;
-    overflow-y: auto;
     @include transition(width 300ms ease, transform 300ms ease);
 }
+
 
 #wrapper.toggled #sidebar-wrapper {
     // width: 300px;
@@ -262,7 +267,7 @@
             background-color: #00698e;
         }
     }
-    &:before {
+    & span {
         content: '';
         position: absolute;
         background-image: url(../img/search.png);

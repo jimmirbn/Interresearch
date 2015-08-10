@@ -15,6 +15,7 @@
     "jquery": "~1.11.2",
     "bootstrap-sass": "~3.3.4",
     "jQuery-contextMenu": "~1.6.7",
-    "startbootstrap-simple-sidebar": "~1.0.4"
+    "startbootstrap-simple-sidebar": "~1.0.4",
+    "jscrollpane": "~2.0.22"
   }
 }
