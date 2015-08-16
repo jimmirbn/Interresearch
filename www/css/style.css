@@ -5197,6 +5197,12 @@ input[type=text]:focus {
   height: 23px;
   bottom: 6px;
 }
+.type--xml {
+  background: url(../img/xml.png) no-repeat;
+  width: 17px;
+  height: 23px;
+  bottom: 6px;
+}
 .type--panel {
   background: url(../img/users.png) no-repeat;
   width: 23px;
@@ -5244,6 +5250,12 @@ input[type=text]:focus {
   height: 21px;
   bottom: 8px;
   background: url(../img/folder-new.png) no-repeat;
+}
+.type--zip {
+  width: 25px;
+  height: 21px;
+  bottom: 8px;
+  background: url(../img/zip-folder.png) no-repeat;
 }
 .type--image {
   width: 26px;

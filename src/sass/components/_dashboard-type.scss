@@ -35,6 +35,11 @@
         @include size(17px, 23px);
         bottom: 6px;
     }
+    &--xml {
+        background: url(../img/xml.png) no-repeat;
+        @include size(17px, 23px);
+        bottom: 6px;
+    }
     &--panel {
         background: url(../img/users.png) no-repeat;
         @include size(23px, 20px);
@@ -74,6 +79,11 @@
         @include size(25px, 21px);
         bottom: 8px;
         background: url(../img/folder-new.png) no-repeat;
+    }
+    &--zip {
+        @include size(25px, 21px);
+        bottom: 8px;
+        background: url(../img/zip-folder.png) no-repeat;
     }
     &--image {
         @include size(26px, 23px);
