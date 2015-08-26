@@ -1,9 +1,9 @@
 .type {
     position: absolute;
     &--questionaire {
-        background: url(../img/questionaire.png) no-repeat;
+        background: url(../img/questionaire-2.png) no-repeat;
         bottom: 4px;
-        @include size(20px, 29px);
+        @include size(20px, 26px);
     }
     &--rapport {
         bottom: 7px;

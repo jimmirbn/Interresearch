@@ -33,7 +33,7 @@
         & > li {
             float: left;
             padding: 8px 5px;
-            &:before{
+            &:before {
                 content: '';
                 position: absolute;
             }
@@ -76,13 +76,28 @@
                 .nav-item {
                     position: absolute;
                     left: 50%;
-                    top: 50%;
+                    top: 7px;
                     display: inline-block;
                     width: 2em;
                     height: 2em;
                     cursor: pointer;
                     margin-left: -15px;
-                    margin-top: -15px;
+                    // margin-top: -15px;
+                    p {
+                        width: 100%;
+                        text-align: center;
+                        left: -3px;
+                        position: absolute;
+                        top: 15px;
+                        @include transition(opacity 200ms ease);
+                        &.open{
+                            opacity: 0;
+                        }
+                        &.closed{
+                            opacity: 1;
+                            left: -11px;
+                        }
+                    }
                     span {
                         position: absolute;
                         top: 50%;
@@ -120,22 +135,33 @@
                             transform: translateY(0.5em);
                         }
                     }
-                    &:hover{
+                    &:hover {
                         background-color: transparent;
                     }
                 }
                 &.active {
                     span {
+                        background-color: transparent;
                         &:before {
-                            @include transform(translate(-0.65em, -0.35em) rotate(-45deg) scaleX(0.6));
+                            @include transform(rotate(-45deg));
+
+                            // @include transform(translate(-0.65em, -0.35em) rotate(-45deg) scaleX(0.6));
                             // -webkit-transform: translateY(-0.36em) translateX(0.65em) rotate(45deg) scaleX(0.6);
                             // transform: translateY(-0.35em) translateX(0.65em) rotate(45deg) scaleX(0.6);
                         }
                         &:after {
-                            @include transform(translate(-0.65em, 0.35em) rotate(45deg) scaleX(0.6));
-
+                            @include transform(rotate(45deg));
+                            // @include transform(translate(-0.65em, 0.35em) rotate(45deg) scaleX(0.6));
                             // -webkit-transform: translateY(0.36em) translateX(0.65em) rotate(-45deg) scaleX(0.6);
                             // transform: translateY(0.35em) translateX(0.65em) rotate(-45deg) scaleX(0.6);
+                        }
+                    }
+                    p{
+                        &.open{
+                            opacity: 1;
+                        }
+                        &.closed{
+                            opacity: 0;
                         }
                     }
                 }

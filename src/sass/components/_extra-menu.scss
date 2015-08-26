@@ -79,6 +79,21 @@
                 height: 23px;
                 width: 23px;
             }
+            &.action-list {
+                background-image: url(../img/action-list.png);
+                height: 20px;
+                width: 22px;
+            }
+            &.adv-survey {
+                background-image: url(../img/advanced-survey.png);
+                height: 25px;
+                width: 20px;
+            }
+            &.extra-up {
+                background-image: url(../img/extra-up.png);
+                height: 25px;
+                width: 20px;
+            }
         }
     }
 }

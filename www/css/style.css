@@ -3028,7 +3028,7 @@ ul {
   white-space: nowrap;
   height: auto;
   width: 100%;
-  padding: 7px 8px 9px;
+  padding: 7px 10px 9px 8px;
   font-size: 15px;
   text-align: left;
 }
@@ -3404,13 +3404,29 @@ ul {
 .nav-container .nav > ul > li.info .nav-item {
   position: absolute;
   left: 50%;
-  top: 50%;
+  top: 7px;
   display: inline-block;
   width: 2em;
   height: 2em;
   cursor: pointer;
   margin-left: -15px;
-  margin-top: -15px;
+}
+.nav-container .nav > ul > li.info .nav-item p {
+  width: 100%;
+  text-align: center;
+  left: -3px;
+  position: absolute;
+  top: 15px;
+  -webkit-transition: opacity 200ms ease;
+  -o-transition: opacity 200ms ease;
+  transition: opacity 200ms ease;
+}
+.nav-container .nav > ul > li.info .nav-item p.open {
+  opacity: 0;
+}
+.nav-container .nav > ul > li.info .nav-item p.closed {
+  opacity: 1;
+  left: -11px;
 }
 .nav-container .nav > ul > li.info .nav-item span {
   position: absolute;
@@ -3451,19 +3467,28 @@ ul {
 .nav-container .nav > ul > li.info .nav-item:hover {
   background-color: transparent;
 }
+.nav-container .nav > ul > li.info.active span {
+  background-color: transparent;
+}
 .nav-container .nav > ul > li.info.active span:before {
-  -webkit-transform: translate(-0.65em, -0.35em) rotate(-45deg) scaleX(0.6);
-  -moz-transform: translate(-0.65em, -0.35em) rotate(-45deg) scaleX(0.6);
-  -ms-transform: translate(-0.65em, -0.35em) rotate(-45deg) scaleX(0.6);
-  -o-transform: translate(-0.65em, -0.35em) rotate(-45deg) scaleX(0.6);
-  transform: translate(-0.65em, -0.35em) rotate(-45deg) scaleX(0.6);
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
 }
 .nav-container .nav > ul > li.info.active span:after {
-  -webkit-transform: translate(-0.65em, 0.35em) rotate(45deg) scaleX(0.6);
-  -moz-transform: translate(-0.65em, 0.35em) rotate(45deg) scaleX(0.6);
-  -ms-transform: translate(-0.65em, 0.35em) rotate(45deg) scaleX(0.6);
-  -o-transform: translate(-0.65em, 0.35em) rotate(45deg) scaleX(0.6);
-  transform: translate(-0.65em, 0.35em) rotate(45deg) scaleX(0.6);
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.nav-container .nav > ul > li.info.active p.open {
+  opacity: 1;
+}
+.nav-container .nav > ul > li.info.active p.closed {
+  opacity: 0;
 }
 .nav-container .nav > ul > li.newQ .nav-item:before {
   background: url(../img/plus_white.png) no-repeat;
@@ -4526,6 +4551,7 @@ input[type=text]:focus {
   margin-left: auto;
   background: transparent;
   box-shadow: none;
+  margin-bottom: 10px;
 }
 .v2 .dashboard-container .survey-item:hover {
   background-color: transparent;
@@ -4905,7 +4931,7 @@ input[type=text]:focus {
   width: 21px;
   position: relative;
   top: 2px;
-  border-radius: 50%;
+  border-radius: 4px;
   background-color: #ff0033;
 }
 .compiling--error span,
@@ -5156,10 +5182,10 @@ input[type=text]:focus {
   position: absolute;
 }
 .type--questionaire {
-  background: url(../img/questionaire.png) no-repeat;
+  background: url(../img/questionaire-2.png) no-repeat;
   bottom: 4px;
   width: 20px;
-  height: 29px;
+  height: 26px;
 }
 .type--rapport {
   bottom: 7px;
@@ -5347,6 +5373,21 @@ input[type=text]:focus {
   background-image: url(../img/group.png);
   height: 23px;
   width: 23px;
+}
+.extra-menu .btn span.action-list, .extra-menu .btn--header span.action-list {
+  background-image: url(../img/action-list.png);
+  height: 20px;
+  width: 22px;
+}
+.extra-menu .btn span.adv-survey, .extra-menu .btn--header span.adv-survey {
+  background-image: url(../img/advanced-survey.png);
+  height: 25px;
+  width: 20px;
+}
+.extra-menu .btn span.extra-up, .extra-menu .btn--header span.extra-up {
+  background-image: url(../img/extra-up.png);
+  height: 25px;
+  width: 20px;
 }
 
 .extra-menu:after,
