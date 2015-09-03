@@ -38,8 +38,8 @@ var animationEvent = whichAnimationEvent();
     progressDemo();
     pageBreak();
     selectView();
-        $('.folder-tree').jScrollPane();
-        $('.scroll-items').jScrollPane();
+        // $('.folder-tree').jScrollPane();
+        // $('.scroll-items').jScrollPane();
     $('input').iCheck();
 
     $('input').iCheck({

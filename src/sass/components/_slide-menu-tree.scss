@@ -72,10 +72,11 @@
     top: 120px;
     li {
         .folder-item {
-            color: white;
+            // color: white;
+            color: #333;
             cursor: pointer;
             & > span {
-                background: url(../img/chevron-right-white.png) no-repeat;
+                background: url(../img/chevron-right.png) no-repeat;
                 display: inline-block;
                 height: 15px;
                 width: 9px;
@@ -99,7 +100,7 @@
                 }
             }
             & > span {
-                background: url(../img/chevron-white.png) no-repeat;
+                background: url(../img/chevron-sort.png) no-repeat;
                 display: inline-block;
                 height: 9px;
                 width: 15px;
@@ -126,7 +127,7 @@
                 color: white;
                 text-decoration: none;
                 & > span {
-                    background: url(../img/chevron-right-white.png) no-repeat;
+                    background: url(../img/chevron-right.png) no-repeat;
                 }
             }
             img {
@@ -182,7 +183,7 @@
         & > .folder-item {
             &:hover {
                 > span {
-                    background: url(../img/chevron-white.png) no-repeat;
+                    background: url(../img/chevron-sort.png) no-repeat;
                 }
             }
             & > span {
@@ -220,7 +221,8 @@
 }
 
 #sidebar-wrapper {
-    background-color: #02b1e8;
+    // background-color: #02b1e8;
+    background-color: #fff;
     z-index: 1000;
     position: fixed;
     left: -300px;

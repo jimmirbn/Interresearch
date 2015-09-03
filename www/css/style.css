@@ -2466,10 +2466,12 @@ button.close {
 }
 
 .folder-tree .jspPane {
-  width: 294px !important;
+  width: 100% !important;
+  margin-left: 0 !important;
 }
 
 .jspVerticalBar {
+  display: none;
   position: absolute;
   top: 0;
   right: 0;
@@ -2605,7 +2607,7 @@ html, body {
 }
 
 body {
-  background: #eeeeee;
+  background-color: #fff;
 }
 
 a {
@@ -4088,11 +4090,11 @@ input[type=text]:focus {
   top: 120px;
 }
 .v2 .folder-tree li .folder-item {
-  color: white;
+  color: #333;
   cursor: pointer;
 }
 .v2 .folder-tree li .folder-item > span {
-  background: url(../img/chevron-right-white.png) no-repeat;
+  background: url(../img/chevron-right.png) no-repeat;
   display: inline-block;
   height: 15px;
   width: 9px;
@@ -4110,7 +4112,7 @@ input[type=text]:focus {
   background: url(../img/chevron-white.png) no-repeat;
 }
 .v2 .folder-tree .open > .folder-item > span {
-  background: url(../img/chevron-white.png) no-repeat;
+  background: url(../img/chevron-sort.png) no-repeat;
   display: inline-block;
   height: 9px;
   width: 15px;
@@ -4137,7 +4139,7 @@ input[type=text]:focus {
   text-decoration: none;
 }
 .folder-tree li .folder-item:hover > span {
-  background: url(../img/chevron-right-white.png) no-repeat;
+  background: url(../img/chevron-right.png) no-repeat;
 }
 .folder-tree li .folder-item img {
   margin: 0 10px 0 0;
@@ -4183,7 +4185,7 @@ input[type=text]:focus {
   margin: 0 10px 0 0;
 }
 .folder-tree .open > .folder-item:hover > span {
-  background: url(../img/chevron-white.png) no-repeat;
+  background: url(../img/chevron-sort.png) no-repeat;
 }
 .folder-tree .open > .folder-item > span {
   background: url(../img/chevron-sort.png) no-repeat;
@@ -4219,7 +4221,7 @@ input[type=text]:focus {
 }
 
 #sidebar-wrapper {
-  background-color: #02b1e8;
+  background-color: #fff;
   z-index: 1000;
   position: fixed;
   left: -300px;
@@ -4513,24 +4515,29 @@ input[type=text]:focus {
   will-change: transform, right;
 }
 .v2 .dashboard-container.side-menu-active {
-  right: 300px;
+  right: 0;
   left: 0;
   -webkit-transform: translateX(300px);
   -moz-transform: translateX(300px);
   -ms-transform: translateX(300px);
   -o-transform: translateX(300px);
   transform: translateX(300px);
+  box-shadow: inset 2px -2px 7px rgba(0, 0, 0, 0.25);
 }
 .v2 .dashboard-container .select-all {
   float: left;
   width: 3%;
   margin-top: 15px;
+  position: relative;
 }
 .v2 .dashboard-container .item-overview-header {
   margin-top: 15px;
   float: right;
-  width: 97%;
+  width: 96.7%;
   margin-left: 0;
+  border-bottom: 2px solid #949494;
+  padding-bottom: 5px;
+  margin-bottom: 0;
 }
 .v2 .dashboard-container .item-overview-header:after {
   clear: both;
@@ -4541,7 +4548,7 @@ input[type=text]:focus {
   overflow-y: scroll;
   position: absolute;
   bottom: 20px;
-  top: 52px;
+  top: 44px;
   left: 20px;
   right: 20px;
 }
@@ -4551,23 +4558,22 @@ input[type=text]:focus {
   margin-left: auto;
   background: transparent;
   box-shadow: none;
-  margin-bottom: 10px;
+  margin-bottom: 0px;
 }
 .v2 .dashboard-container .survey-item:hover {
   background-color: transparent;
 }
 .v2 .dashboard-container .survey-item__inner {
   padding: 0 5px 0 11px;
-  box-shadow: inset 0px -1px 1px rgba(0, 0, 0, 0.25), 0px 1px 0px rgba(0, 0, 0, 0.15);
-  background: #ddd;
   width: 97%;
   float: left;
   cursor: pointer;
   position: relative;
+  border-bottom: 1px solid #949494;
 }
 .v2 .dashboard-container .survey-item__inner:hover {
   cursor: pointer;
-  background: #c4c4c4;
+  background: #f5fafe;
 }
 .v2 .dashboard-container .survey-item__inner:hover .drag-dots {
   display: block;
@@ -4887,8 +4893,8 @@ input[type=text]:focus {
 }
 .compiling--yellow,
 .compiling2--yellow {
-  border: solid 2px rgba(255, 204, 0, 0.5);
-  border-top-color: yellow;
+  border: solid 2px rgba(251, 222, 192, 0.5);
+  border-top-color: #f49f3e;
 }
 .compiling--done,
 .compiling2--done {
@@ -4993,6 +4999,27 @@ input[type=text]:focus {
 }
 .settlement-icon--clade {
   background: url(../img/clade.png) no-repeat;
+}
+
+.settlement-active {
+  border-radius: 6px;
+  border: solid 1px #acddb8;
+  padding: 3px 5px;
+  color: #00921f;
+}
+
+.settlement-draft {
+  border-radius: 6px;
+  border: solid 1px #fbdec0;
+  padding: 3px 5px;
+  color: #f49f3e;
+}
+
+.settlement-closed {
+  border-radius: 6px;
+  border: solid 1px #FF3B62;
+  padding: 3px 5px;
+  color: #ff0033;
 }
 
 .lt-ie9 .modal-dialog, .ie9 .modal-dialog {

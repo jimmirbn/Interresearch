@@ -245,9 +245,12 @@
     position: absolute;
 }
 .folder-tree .jspPane{
-    width: 294px!important;
+    // width: 294px!important;
+    width: 100%!important;
+    margin-left: 0!important;
 }
 .jspVerticalBar {
+    display: none;
     position: absolute;
     top: 0;
     right: 0;
